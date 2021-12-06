@@ -9,8 +9,8 @@ public interface AdminService {
 	public void menuSales();
 	
 	//서명 누나 바보 맞긴해
-	public void menu();
-	public void car();
+	//아님
+	
 	
 	//	3. 카테고리별 총매출액 조회
 }
