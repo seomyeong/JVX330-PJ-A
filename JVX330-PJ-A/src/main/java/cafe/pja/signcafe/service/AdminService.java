@@ -10,7 +10,9 @@ public interface AdminService {
 	
 	//서명 누나 바보 맞긴해
 	//아님
+	//마자
 	
-	
+	public void hungry();
 	//	3. 카테고리별 총매출액 조회
+	public void salesByCategory();
 }
