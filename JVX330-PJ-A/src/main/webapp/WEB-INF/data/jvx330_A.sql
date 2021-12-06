@@ -59,9 +59,7 @@ CREATE TABLE ORDER_LIST(
 	order_menuCount		BIGINT			NOT NULL DEFAULT 0,
 	order_size			CHAR(1)			NOT NULL DEFAULT 'M',
 	order_temp			CHAR(1)			NOT NULL DEFAULT 'I',
-	order_totalPrice	DOUBLE			NOT NULL DEFAULT 0.0,
-	CONSTRAINT ORDER_LIST_userCartOrder_FK 
-		FOREIGN KEY(userCartOrder) REFERENCES CART(cartNum)
+	order_totalPrice	DOUBLE			NOT NULL DEFAULT 0.0
 )
 
 
