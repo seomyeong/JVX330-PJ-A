@@ -4,22 +4,14 @@ import java.util.List;
 
 public class Cart {
 	private long cartNum; // PK
-	private String category;
-	private String menuName;
-	private double menuPrice;
-	private long count;
-	private char size; // S, M, L
-	private char temp; // HOT or ICE
+	private String cart_category;
+	private String cart_menuName;
+	private double cart_menuPrice;
+	private long cart_menuCount;
+	private char cart_size; // S, M, L
+	private char cart_temp; // HOT or ICE
+	private double cart_totalPrice;
 	
-	
-	public Cart(String category, String menuName, double menuPrice, long count, char size, char temp) {
-		this.category = category;
-		this.menuName = menuName;
-		this.menuPrice = menuPrice;
-		this.count = count;
-		this.size = size;
-		this.temp = temp;
-	}
 	
 	
 	

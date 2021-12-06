@@ -11,7 +11,4 @@ public class User {
 	private Date regDate;
 	
 	
-	
-	
-	
 }
