@@ -15,4 +15,5 @@ public interface AdminService {
 	public void hungry();
 	//	3. 카테고리별 총매출액 조회
 	public void salesByCategory();
+	
 }
