@@ -16,8 +16,8 @@
 	<div>
 
 	<h2>지영testdfdf</h2>
-
 	<h2>지영test</h2>
+	<h3>서명 test</h3>
 
 		Phone <input value="" type="text" autocomplete="off" name="phoneNum" id="phone" maxlength="11" placeholder="-를 제외한 전화번호를 입력해주세요">
 		Password <input value="" type="password" autocomplete="off" name="userPw" id="pw" maxlength="20" placeholder="비밀번호를 입력해주세요" required>
