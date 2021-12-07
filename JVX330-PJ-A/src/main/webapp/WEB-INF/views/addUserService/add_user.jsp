@@ -7,6 +7,7 @@
 <title>SignCafe</title>
 </head>
 <body>
+<a>test</a>
 	<form action="addUser" method="POST">
 		<table>
 			<tr>
