@@ -13,7 +13,6 @@ public class AddUserController {
 	}
 	@PostMapping("addUserService/addUser")
 	public String addUser(@ModelAttribute UserCommand user) {
-		
 		return "addUserService/add_user";
 	}
 }
