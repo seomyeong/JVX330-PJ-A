@@ -29,8 +29,13 @@ CREATE TABLE MENU(
 	category		VARCHAR(50)		NOT NULL,
 	menuName		VARCHAR(50)		NOT NULL,
 	menuPrice		DOUBLE			NOT NULL DEFAULT 0.0,
-	size			CHAR(1)			NOT NULL DEFAULT 'M',
-	temp			CHAR(1)			NOT NULL DEFAULT 'I'
+	HOT				DOUBLE			NOT NULL DEFAULT 0.0,
+	ICE				DOUBLE			NOT NULL DEFAULT 500.0,
+	SMALL			DOUBLE			NOT NULL DEFAULT 0.0,
+	MEDIUM			DOUBLE			NOT NULL DEFAULT 300.0,
+	LARGE			DOUBLE			NOT NULL DEFAULT 500.0,
+	--size			CHAR(1)			NOT NULL DEFAULT 'M',
+	--temp			CHAR(1)			NOT NULL DEFAULT 'I'
 )
 
 CREATE TABLE CART_ID(
@@ -80,8 +85,8 @@ INSERT INTO CART(userCartNum, cart_category, cart_menuName, cart_menuPrice,
 cart_menuCount, cart_size, cart_temp, cart_totalPrice)
 VALUES(1251, 'OTHER', 'ICE TEA', 4500.0, 1, 'S', 'I', 4500.0*1);
 
---******주문삭제
-DELETE FROM CART where userCartNum=1251;
+--******주문취소 시 카트삭제
+DELETE FROM CART where cartNum=1251;
 
 ---MENU INSERT---
 --test--
