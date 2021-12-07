@@ -15,7 +15,7 @@
 	<p>회원확인을 위해 회원정보를 입력해주세요.</p>
 	<div>
 <<<<<<< HEAD
-		<h2> 서명 test </h2>
+		<h2> 서명 test 222222 </h2>
 =======
 	<h2>지영test</h2>
 >>>>>>> branch 'main' of https://github.com/seomyeong/JVX330-PJ-A.git
