@@ -10,7 +10,6 @@ DROP TABLE CART;
 DROP TABLE CART_ID;
 DROP TABLE ORDER_LIST;
 
-
 CREATE TABLE CAFE_USER(
 	id			BIGINT		PRIMARY KEY GENERATED ALWAYS AS IDENTITY,		
 	name		VARCHAR(30)		NOT NULL,
@@ -20,32 +19,41 @@ CREATE TABLE CAFE_USER(
 	regDate		TIMESTAMP		NOT NULL	DEFAULT CURRENT_TIMESTAMP
 )
 
+
+
 CREATE TABLE MENU(
 	menuNum			BIGINT		PRIMARY KEY GENERATED ALWAYS AS IDENTITY,--	
 	category		VARCHAR(50)		NOT NULL,
 	menuName		VARCHAR(50)		NOT NULL,
 	menuPrice		DOUBLE			NOT NULL DEFAULT 0.0,
-	
 )
-
 
 CREATE TABLE CART_ID(
 	userCartId BIGINT NOT NULL PRIMARY KEY
 )
 
-
 CREATE TABLE CART(
 	cartNum				BIGINT		PRIMARY KEY GENERATED ALWAYS AS IDENTITY,		
+<<<<<<< HEAD
 	
+=======
+>>>>>>> branch 'main' of https://github.com/seomyeong/JVX330-PJ-A.git
 	userCartNum			BIGINT			NOT NULL,
 	
 	cart_category		VARCHAR(50)		NOT NULL DEFAULT 'NONE',
 	cart_menuName		VARCHAR(50)		NOT NULL DEFAULT 'NONE',
 	cart_menuPrice		DOUBLE			NOT NULL DEFAULT 0.0,
-	cart_menuCount		BIGINT			NOT NULL DEFAULT 0,
-	cart_size			CHAR(1)			NOT NULL DEFAULT 'X',
-	cart_temp			CHAR(1)			NOT NULL DEFAULT 'X',
 	cart_totalPrice		DOUBLE			NOT NULL DEFAULT 0.0,
+	
+	=======
+	cart_menuCount		BIGINT			NOT NULL DEFAULT 0,
+	
+	HOT				DOUBLE			NOT NULL DEFAULT 0.0,
+	ICE				DOUBLE			NOT NULL DEFAULT 500.0,
+	SMALL			DOUBLE			NOT NULL DEFAULT 0.0,
+	MEDIUM			DOUBLE			NOT NULL DEFAULT 300.0,
+	LARGE			DOUBLE			NOT NULL DEFAULT 500.0,
+	========
 	CONSTRAINT CART_ID_userCartNum_FK 
 		FOREIGN KEY(userCartNum) REFERENCES CART_ID(userCartId)
 )
@@ -53,7 +61,7 @@ CREATE TABLE CART(
 
 CREATE TABLE ORDER_LIST(
 	orderNum			BIGINT		PRIMARY KEY GENERATED ALWAYS AS IDENTITY,		
-	userCartOrder		BIGINT			NOT NULL,
+	userCartOrd er		BIGINT			NOT NULL,
 	order_category		VARCHAR(50)		NOT NULL,
 	order_menuName		VARCHAR(50)		NOT NULL,
 	order_menuPrice		DOUBLE			NOT NULL DEFAULT 0.0,
@@ -75,9 +83,10 @@ VALUES(1251, 'COFFEE', 'AMERICANO', 4000.0, 2, 'S', 'H', 4000.0*2);
 --******계속해서 주문메뉴 담을때마다 CART INSERT
 INSERT INTO CART(userCartNum, cart_category, cart_menuName, cart_menuPrice, 
 cart_menuCount, cart_size, cart_temp, cart_totalPrice)
-VALUES(1251, 'OTHER', 'ICE TEA', 4500.0, 1, 'S', 'I', 4000.0*1);
+VALUES(1251, 'OTHER', 'ICE TEA', 4500.0, 1, 'S', 'I', 4500.0*1);
 
-
+--******주문취소 시 카트삭제
+DELETE FROM CART where cartNum=1251;
 
 ---MENU INSERT---
 --test--
