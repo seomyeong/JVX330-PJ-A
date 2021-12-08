@@ -34,26 +34,17 @@ CREATE TABLE CART_ID(
 
 CREATE TABLE CART(
 	cartNum				BIGINT		PRIMARY KEY GENERATED ALWAYS AS IDENTITY,		
-<<<<<<< HEAD
-	
-=======
->>>>>>> branch 'main' of https://github.com/seomyeong/JVX330-PJ-A.git
 	userCartNum			BIGINT			NOT NULL,
-	
 	cart_category		VARCHAR(50)		NOT NULL DEFAULT 'NONE',
 	cart_menuName		VARCHAR(50)		NOT NULL DEFAULT 'NONE',
 	cart_menuPrice		DOUBLE			NOT NULL DEFAULT 0.0,
 	cart_totalPrice		DOUBLE			NOT NULL DEFAULT 0.0,
-	
-	=======
 	cart_menuCount		BIGINT			NOT NULL DEFAULT 0,
-	
 	HOT				DOUBLE			NOT NULL DEFAULT 0.0,
 	ICE				DOUBLE			NOT NULL DEFAULT 500.0,
 	SMALL			DOUBLE			NOT NULL DEFAULT 0.0,
 	MEDIUM			DOUBLE			NOT NULL DEFAULT 300.0,
 	LARGE			DOUBLE			NOT NULL DEFAULT 500.0,
-	========
 	CONSTRAINT CART_ID_userCartNum_FK 
 		FOREIGN KEY(userCartNum) REFERENCES CART_ID(userCartId)
 )

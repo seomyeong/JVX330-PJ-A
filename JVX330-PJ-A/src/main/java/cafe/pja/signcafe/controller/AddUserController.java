@@ -1,15 +1,18 @@
 package cafe.pja.signcafe.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
-@Controller
-@RequestMapping(value = "/addUserService/addUser")
+@Controller("controller.AddUserController")
 public class AddUserController {
-	@RequestMapping(method = RequestMethod.GET)
-	public String addUser() {
+	@GetMapping("addUserService/addUser")
+	public String addUserForm() {
 		return "addUserService/add_user";
-		
+	}
+	@PostMapping("addUserService/addUser")
+	public String addUser(@ModelAttribute UserCommand user) {
+		return "addUserService/add_user";
 	}
 }
