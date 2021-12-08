@@ -11,5 +11,6 @@ public class Menu {
 	private double menuPrice;
 	private String extraName;
 	private double extraPrice;
+	private String menuImg;
 	private long menuCount; // ???
 }
