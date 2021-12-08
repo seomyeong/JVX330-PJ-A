@@ -10,5 +10,4 @@ public class Cart {
 	private long cart_menuCount;
 	private double cart_totalPrice;
 	private Extra extra;
-	
 }
