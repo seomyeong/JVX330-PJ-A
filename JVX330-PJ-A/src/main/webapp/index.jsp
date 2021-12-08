@@ -4,9 +4,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>SignCafe</title>
 </head>
 <body>
-<p>test</p>
+<form action="">
+	<h1>SignCafe</h1>
+	<div id="banner"></div>
+	<div id="menuWrap">
+		<a href="addUser.jsp" id="addUser">멤버쉽 가입</a>
+		<a href=".jsp" id="addUser">멤버쉽 가입</a>
+		<a href="addUser.jsp" id="addUser">멤버쉽 가입</a>
+	</div>
+</form>
 </body>
 </html>
