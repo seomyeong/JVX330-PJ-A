@@ -5,11 +5,11 @@ package cafe.pja.signcafe.domain;
  *
  */
 public class Menu {
-//	private long menuNum;
+	private long menuNum;
 	private String category;
 	private String menuName;
 	private double menuPrice;
-	private long menuCount;
-	private char size; // S, M, L
-	private char temp; // HOT or ICE
+	private String extraName;
+	private double extraPrice;
+	private long menuCount; // ???
 }
