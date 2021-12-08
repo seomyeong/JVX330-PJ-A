@@ -9,9 +9,7 @@ public class User {
 	private String passWd;
 	private double mileage;
 	private Date regDate;
-<<<<<<< HEAD
 
-=======
 	
 	public User() {}
 	
@@ -60,5 +58,4 @@ public class User {
 	}
 	
 	
->>>>>>> branch 'main' of https://github.com/seomyeong/JVX330-PJ-A.git
 }
