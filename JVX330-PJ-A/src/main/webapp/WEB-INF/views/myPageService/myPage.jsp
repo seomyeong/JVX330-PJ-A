@@ -18,11 +18,11 @@
 		<table id="userInfo">
 			<tr>	
 				<th>Name
-				<td><input type="text" value="${user.userName}" autocomplete="off" name="userName" id="name"></td>
+				<td><input type="text" value="${user.userName}" autocomplete="off" name="userName" id="name" required></td>
 			</tr>
 			<tr>
 				<th>Phone
-				<td><input type="text" value="${user.phoneNum}" autocomplete="off" name="phoneNum" id="phone" maxlength="11"></td>
+				<td><input type="text" value="${user.phoneNum}" autocomplete="off" name="phoneNum" id="phone" maxlength="11" required></td>
 			</tr>
 			<tr>
 				<th>Password

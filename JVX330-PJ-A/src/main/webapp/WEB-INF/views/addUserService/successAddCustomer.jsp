@@ -9,7 +9,7 @@
 <body>
 	<form>
 		<h2>멤버쉽 가입 성공!</h2>
-		<a href="#">홈으로</a>
+		<a href="index.jsp">홈으로</a>
 	</form>
 </body>
 </html>
