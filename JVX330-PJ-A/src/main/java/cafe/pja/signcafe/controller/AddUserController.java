@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class AddUserController {
 	@GetMapping("addUserService/addUser")
 	public String addUserForm() {
-		return "addUserService/add_user";
+		return "addUserService/addUser";
 	}
 	@PostMapping("addUserService/addUser")
 	public String addUser(@ModelAttribute UserCommand user) {
-		return "addUserService/add_user";
+		return "addUserService/addUser";
 	}
 }
