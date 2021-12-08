@@ -4,7 +4,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import cafe.pja.signcafe.domain.User;
 
-
 public class UserDao {
 	private JdbcTemplate jdbcTemplate;
 
@@ -21,14 +20,13 @@ public class UserDao {
 	 * @return
 	 */
 	public Boolean DuplicateCheck(User user) {
-		String sql = "SELECT * FROM User WHERE phone=?";
-		System.out.println(sql);
+//		String sql = "SELECT * FROM User WHERE phone=?";
 
 		return false;
-	}
+	} // 아직 미구현
 
 	public void addUser(User user) {
-		String sql = "INSERT INTO User() ";
-		System.out.println("UserDao에서 addUser 메소드 호출");
+		String sql = "INSERT INTO CAFE_USER(name, phone, passWd) VALUES(?, ?, ?) ";
+		jdbcTemplate.update(sql, user.getName(), user.getPhone(), user.getPassWd());
 	}
 }
