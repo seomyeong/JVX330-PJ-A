@@ -10,22 +10,38 @@
 </head>
 <body>
 <div id="myPageWrap">
-	<form action="">
+	<form action="myPage" method="POST">
+	
 		<h1>마이페이지</h1>
 		<p>수정하실 정보를 입력해주세요.</p>
-		<div id="myPage">
-			
-			Name <input type="text" value="${user.userName}" autocomplete="off" name="userName" id="name"><br>
-			Phone <input type="text" value="${user.phoneNum}" autocomplete="off" name="phoneNum" id="phone" maxlength="11"><br>
-			Password <input type="password" value="${user.passWd}" autocomplete="off" name="userPw" id="pw" maxlength="20" required><br>
-			
-			<p>*마일리지 확인</p> <!-- <span class="asterisk">*</span> -->
-			mileage <input type="text" value="${user.userMileage}" name="userMileage" id="mileage" readonly><br>
-		</div>
+		
+		<table id="userInfo">
+			<tr>	
+				<th>Name
+				<td><input type="text" value="${user.userName}" autocomplete="off" name="userName" id="name"></td>
+			</tr>
+			<tr>
+				<th>Phone
+				<td><input type="text" value="${user.phoneNum}" autocomplete="off" name="phoneNum" id="phone" maxlength="11"></td>
+			</tr>
+			<tr>
+				<th>Password
+				<td><input type="password" value="${user.passWd}" autocomplete="off" name="userPw" id="pw" maxlength="20" required></td>
+			</tr>
+		</table>
+		
+		<p>*마일리지 확인</p>
+		<table id="userMileage">
+			<tr>
+				<th>mileage
+				<td><input type="text" value="${user.userMileage}" name="userMileage" id="mileage" readonly></td>
+			</tr>
+		</table>
 		
 		<div id="modifyBtn">
 			<a href="index.jsp" id="prev">이전</a> <input type="submit" value="수정">
 		</div>
+		
 	</form>
 </div>
 

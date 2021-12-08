@@ -11,32 +11,27 @@
 </head>
 <body>
 
-<form action="">
+<form action="myPageLogin" method="POST">
+
 	<h1>SignCafe 로그인</h1>
 	<p>회원확인을 위해 회원정보를 입력해주세요.</p>
-	<div>
 	
-		Phone <input value="" type="text" autocomplete="off" name="phoneNum" id="phone" maxlength="11" placeholder="-를 제외한 전화번호를 입력해주세요">
-		Password <input value="" type="password" autocomplete="off" name="userPw" id="pw" maxlength="20" placeholder="비밀번호를 입력해주세요" required>
+	<table>
+		<tr>
+			<th>Phone</th>
+			<td><input value="" type="text" autocomplete="off" name="phoneNum" id="phone" maxlength="11" placeholder="-를 제외한 전화번호를 입력해주세요"></td>
+		</tr>
+		<tr>
+			<th>Password</th>
+			<td><input value="" type="password" autocomplete="off" name="userPw" id="pw" maxlength="20" placeholder="비밀번호를 입력해주세요" required></td>
 		
-	</div>
+	</table>
 	
 	<div>
 		<a href="index.jsp">이전</a>
 		<input type="submit" value="로그인"> 
 	</div>
 	
-	<!-- 
-	$('#eMail').keyup(function(){
-	$(this).css('color','#000');
-	});
-	$('#eMail').blur(function(){
-	var value = $('#labletext').text()+$(this).val();
-
-	alert(value);
-	});
-	// Source: http://stackoverflow.com/
-	 -->
 </form>
 </body>
 </html>
