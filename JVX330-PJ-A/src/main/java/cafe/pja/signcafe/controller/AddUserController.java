@@ -27,9 +27,12 @@ public class AddUserController {
 		System.out.println("Input user Phone : " + user.getPhone());
 		System.out.println("Input user passWd : " + user.getPassWd());
 
-		service.addUser(user);
+		if(service.addUser(user)) {
+			context.close();
+			return "addUserService/successAddUser";
+		}
+		
 		context.close();
-
 		return "addUserService/add_user";
 	}
 }
