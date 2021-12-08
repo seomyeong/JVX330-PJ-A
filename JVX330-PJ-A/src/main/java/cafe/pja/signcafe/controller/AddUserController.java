@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import cafe.pja.signcafe.data.DataSourceConfig;
 import cafe.pja.signcafe.domain.User;
@@ -19,7 +20,7 @@ public class AddUserController {
 	}
 
 	@PostMapping("addUserService/addUser")
-	public String addUser(@ModelAttribute User user) {
+	public ModelAndView addUser(@ModelAttribute User user) {
 		GenericApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
 		UserServiceImpl service = (UserServiceImpl) context.getBean("userServiceImpl");
 
@@ -27,12 +28,17 @@ public class AddUserController {
 		System.out.println("Input user Phone : " + user.getPhone());
 		System.out.println("Input user passWd : " + user.getPassWd());
 
+		ModelAndView mav = new ModelAndView();
+		
 		if(service.addUser(user)) {
 			context.close();
-			return "addUserService/successAddUser";
+			mav.setViewName("/addUserService/successAddUser");
+			return mav;
 		}
 		
 		context.close();
-		return "addUserService/add_user";
+		mav.addObject("errormsg", "해당 전화번호로 가입된 아이디가 있습니다.");
+		mav.setViewName("/addUserService/add_user");
+		return mav;
 	}
 }

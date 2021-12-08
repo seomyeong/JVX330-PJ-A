@@ -29,6 +29,7 @@
 					placeholder="비밀번호를 입력하세요."></td>
 			</tr>
 		</table>
+		<p>${errormsg}</p>
 		<a href="index.jsp">이전</a> <input type="submit" value="가입">
 	</form>
 </body>
