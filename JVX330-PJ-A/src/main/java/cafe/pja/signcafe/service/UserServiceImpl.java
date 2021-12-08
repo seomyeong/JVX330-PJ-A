@@ -14,6 +14,11 @@ public class UserServiceImpl {
 
 	public void addUser(User user) {
 		System.out.println("UserService에서 addUser 메소드 호출");
-		userDao.addUser(user);
+		if(userDao.DuplicateCheck(user)) {
+			System.out.println("해당 번호로 가입된 아이디가 있습니다.");
+		} else {
+			System.out.println("가입에 성공했습니다.");
+			userDao.addUser(user);			
+		}
 	}
 }
