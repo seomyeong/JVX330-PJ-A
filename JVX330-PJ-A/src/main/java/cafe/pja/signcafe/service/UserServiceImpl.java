@@ -23,8 +23,15 @@ public class UserServiceImpl {
 		}
 	}
 	
-	public void login(String phone, String passWd) {
-		System.out.println("UserService에서 login 메소드 호출");
+	public boolean login(User user) {
+		if(userDao.login(user)) {
+			System.out.println("입력하신 정보와 일치하는 회원정보가 없습니다.");
+			return false;
+		} else {
+			System.out.println("로그인에 성공했습니다.");
+			return true;
+		}
+		
 		
 	}
 }

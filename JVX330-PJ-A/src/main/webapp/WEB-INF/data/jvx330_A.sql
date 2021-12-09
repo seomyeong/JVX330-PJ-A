@@ -88,7 +88,7 @@ VALUES(1251, 'OTHER', 'ICE TEA', 4500.0, 1, 'S', 'I', 4500.0*1);
 DELETE FROM CART where cartNum=1251;
 ---------------------------------------------------------------------------
 
-
+INSERT INTO CAFE_USER(name, phone, passWd) VALUES('서명', '010123123', '1234');
 
 
 

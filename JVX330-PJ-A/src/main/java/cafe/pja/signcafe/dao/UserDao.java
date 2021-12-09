@@ -66,9 +66,10 @@ public class UserDao {
 	 * @param passWd
 	 * @return
 	 */
-	public boolean login(String phone, String passWd) {
-		String sql = "SELECT phone, passWd FROM CAFE_USER";
+	public boolean login(User user) {
+		String sql = "SELECT * FROM CAFE_USER";
 		List<User> userLogin = null;
+		ResultSet rs = null;
 		
 		userLogin = jdbcTemplate.query(sql, new RowMapper<User>() {
 
@@ -78,15 +79,11 @@ public class UserDao {
 			}
 		});
 		
-		if(userLogin.size() == 0) {
+		if(rs.getString("phone").equals(phone) && rs.getString("passWd").equals(passWd)) {
 			return false;
-		}
-		else {
+		}	
+			
 			return true;
-		}
 	}
-	
-	
-	// 마일리지 조회
-	
+
 }

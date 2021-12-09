@@ -26,7 +26,7 @@
 			<td><input value="" type="password" autocomplete="off" name="passWd" id="pw" maxlength="20" placeholder="비밀번호를 입력해주세요" required></td>
 		
 	</table>
-	
+	<p>${errormsg}</p>
 	<div>
 		<a href="index.jsp">이전</a>
 		<input type="submit" value="로그인"> 
