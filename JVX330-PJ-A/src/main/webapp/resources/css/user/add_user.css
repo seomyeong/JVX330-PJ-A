@@ -1,8 +1,8 @@
 @charset "utf-8";
 #addUserPage{
     position: relative;
-    margin: 10px auto;
-    width: 600px; height: 720px;
+    margin: 90px auto 10px;
+    width: 600px; height: 480px;
     background: rgba(255, 255, 255);
     border: 2px solid #fff;
     border-radius: 10px;
@@ -18,22 +18,20 @@
 #addUserForm table{
     margin: 100px auto; 
     width: 300px;
-    /* border: 1px solid #000; */
-     /* height: 500px; */
     border-radius: 5px; text-align: center;
     background: rgba(255, 255, 255,0.7);
 }
-#addUserForm table tr{}
-#addUserForm table th{ height: 100px; }
-#addUserForm table td{}
+#addUserForm table th{ height: 70px;}
 #addUserForm table input{height: 30px; border-radius: 5px;}
 
 
 #addUsericon{
-    text-align: center;
-    margin: 15px 0;
+    position: absolute; bottom: -100px; left: 120px;
 }
-#addUsericon{color: #ff3e3e; font-weight: bold;}
+#addUserPage p{
+    text-align: center; position: relative; top: -70px;
+    color: #ff3e3e; font-weight: bold;
+}
 
 #addUsericon input{
     width: 180px; line-height: 50px;

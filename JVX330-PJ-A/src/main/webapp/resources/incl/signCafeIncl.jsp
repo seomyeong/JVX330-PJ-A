@@ -15,10 +15,11 @@
     letter-spacing: -50px;
     text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
     }
-#signCafeLogo #signLine{ height: 600px; width: 4px; background: rgb(223, 223, 223);
-    position: fixed; top: 50px; left: calc(50% - 627px); z-index: 1;
-    transform: rotate(8deg);
-}
+#signCafeLogo #signLine{
+    height: 600px; width: 4px; background: rgb(223, 223, 223);
+    position: fixed; top: 50px; left: 137px;
+    z-index: 1;
+    transform: rotate(8deg);}
 </style>
 </head>
 <body>
