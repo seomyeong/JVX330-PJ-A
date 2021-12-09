@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+#successAddUser{
+    position: relative;
+    margin: 100px auto; 
+    width: 600px; height: 600px; 
+    border-radius: 5px; background: #fff;}
+#successAddUser h2{
+    position: absolute; top: 150px; left: 160px;
+    font-size: 40px;
+    color: #dfc535; font-style: italic;
+    text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
+}
+#successAddUser a{
+    position: relative;
+    top: 500px; left: 210px;
+}
