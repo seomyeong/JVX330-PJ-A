@@ -39,7 +39,7 @@
 		</table>
 		
 		<div id="modifyBtn">
-			<a href="index.jsp" id="prev">이전</a> <input type="submit" value="수정">
+			<a href="../index.jsp" id="prev">이전</a> <input type="submit" value="수정">
 		</div>
 		
 	</form>

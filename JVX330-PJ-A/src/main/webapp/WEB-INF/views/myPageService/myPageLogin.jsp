@@ -29,7 +29,7 @@
 	</table>
 	<p>${errormsg}</p>
 	<div>
-		<a href="index.jsp">이전</a>
+		<a href="../index.jsp">이전</a>
 		<input type="submit" value="로그인"> 
 	</div>
 	

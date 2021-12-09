@@ -9,7 +9,7 @@
 <body>
 	<form>
 		<h2>정보수정 완료!</h2>
-		<a href="index.jsp">홈으로</a>
+		<a href="../index.jsp">홈으로</a>
 	</form>
 </body>
 </html>
