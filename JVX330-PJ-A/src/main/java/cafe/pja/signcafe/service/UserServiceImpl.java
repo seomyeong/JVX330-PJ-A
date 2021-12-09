@@ -31,9 +31,5 @@ public class UserServiceImpl {
 			System.out.println("입력하신 정보와 일치하는 회원정보가 없습니다.");
 			return false;
 		}
-<<<<<<< HEAD
-=======
-		
->>>>>>> branch 'main' of https://github.com/seomyeong/JVX330-PJ-A.git
 	}
 }
