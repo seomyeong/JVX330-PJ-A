@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import cafe.pja.signcafe.data.DataSourceConfig;
 import cafe.pja.signcafe.domain.User;
 import cafe.pja.signcafe.service.AdminServiceImpl;
+import cafe.pja.signcafe.service.command.Info;
 
 @Controller("controller.adminController")
 public class AdminController {
@@ -27,9 +28,9 @@ public class AdminController {
 		
 		// 접속 성공시 
 		if(service.adminLogin(user)) {
-			mav.setViewName("adminService/signCafe_INFO");
-			
-			
+			Info info = service.allInquiryInfo();
+			System.out.println(info.getAllMenuInfo().toString());
+			mav.setViewName("adminService/signCafe_INFO");			
 			context.close();
 			return mav;
 		}

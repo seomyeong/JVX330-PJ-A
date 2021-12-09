@@ -12,7 +12,7 @@ import cafe.pja.signcafe.data.DataSourceConfig;
 import cafe.pja.signcafe.domain.User;
 import cafe.pja.signcafe.service.UserServiceImpl;
 
-@Controller("controller.AddUserController")
+@Controller("controller.addUserController")
 public class AddUserController {
 	@GetMapping("addUserService/addUser")
 	public String addUserForm() {

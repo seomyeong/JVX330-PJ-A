@@ -36,5 +36,11 @@ public class Info {
 	public void setAllOrderedListInfo(List<OrderedList> allOrderedListInfo) {
 		this.allOrderedListInfo = allOrderedListInfo;
 	}
+
+	@Override
+	public String toString() {
+		return "Info [allMenuInfo=" + allMenuInfo + ", allUserInfo=" + allUserInfo + ", allOrderedListInfo="
+				+ allOrderedListInfo + "]";
+	}	
 	
 }

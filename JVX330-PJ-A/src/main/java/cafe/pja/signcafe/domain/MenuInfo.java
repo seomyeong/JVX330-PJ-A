@@ -66,6 +66,13 @@ public class MenuInfo {
 	public void setMenuImgPath(String menuImgPath) {
 		this.menuImgPath = menuImgPath;
 	}
+
+	@Override
+	public String toString() {
+		return "MenuInfo [menuNum=" + menuNum + ", category=" + category + ", menuName=" + menuName + ", menuPrice="
+				+ menuPrice + ", menuCount=" + menuCount + ", mileageCount=" + mileageCount + ", menuImgPath="
+				+ menuImgPath + "]";
+	}
 	
 	
 }

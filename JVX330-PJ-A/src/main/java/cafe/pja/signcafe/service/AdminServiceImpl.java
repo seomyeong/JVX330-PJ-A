@@ -1,8 +1,11 @@
 package cafe.pja.signcafe.service;
 
+import java.util.List;
+
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import cafe.pja.signcafe.dao.AdminDao;
+import cafe.pja.signcafe.domain.MenuInfo;
 import cafe.pja.signcafe.domain.User;
 import cafe.pja.signcafe.service.command.Info;
 
@@ -21,6 +24,16 @@ public class AdminServiceImpl {
 	}
 	
 	public Info allInquiryInfo() {
-		return null;
+		Info info = null;
+		
+		List<MenuInfo> mi = adminDao.inquiryMenuInfo();
+		
+		for(MenuInfo m : mi) {
+			System.out.println(m.toString());
+		}
+		
+		info = new Info(mi, null, null);
+		
+		return info;
 	}
 }
