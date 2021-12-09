@@ -12,6 +12,7 @@ public class User {
 	private String passWd;
 	private double mileage;
 	private Date regDate;
+
 	
 	public User() {}
 	

@@ -86,15 +86,7 @@ public class UserDao {
 		}
 	}
 	
-	// 기능 - 회원정보 조회(로그인을 통해 본인 확인을 거친 후 조회 가능)
-	
-	
-	// 기능 - 회원정보 수정(userName을 제외한 정보의 수정 가능)
-	public void userInfoUpdate(String phone, String passWd) {
-		String sql = "UPDATE"
-	}
 	
 	// 마일리지 조회
 	
-	//
 }

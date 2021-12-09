@@ -19,4 +19,4 @@ public class MyPageController {
 }
 	
 }
-  // addObject("el로 부를 이름", "값")                                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                          
