@@ -12,7 +12,7 @@
 <body>
 	<h1>관리자 페이지</h1>
 	<article id="article1">
-			<p class="caption">제품 정보</p>
+		<p class="caption">제품 정보</p>
 		<div id="productWrap">
 			<table id="product">
 				<tr>
@@ -38,7 +38,7 @@
 	</article>
 
 	<article id="article2">
-			<p class="caption">멤버쉽 가입유저 리스트</p>
+		<p class="caption">멤버쉽 가입유저 리스트</p>
 		<div id="membershipWrap">
 			<table id="membership">
 				<tr>
@@ -112,6 +112,18 @@
 			</table>
 		</div>
 	</article>
+
+	<div id="sellByProduct">
+		<p class="caption">기타 기능</p>
+		<p># 제품별 판매 금액</p>
+		<select>
+			<c:forEach items="${info.allMenuInfo}" var="allMenuInfo">
+				<option value="${allMenuInfo.menuNum}">${allMenuInfo.menuName}</option>
+			</c:forEach>
+			<!-- 여기에 금액 조회만들기 -> 스크립트로 해야할듯 %> -->
+		</select>
+	</div>
+
 	<a href="../index.jsp" id="goMain">메인 메뉴로</a>
 </body>
 </html>

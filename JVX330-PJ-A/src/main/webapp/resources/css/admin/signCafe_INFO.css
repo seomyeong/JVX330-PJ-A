@@ -47,6 +47,11 @@ h1 { text-align: center; padding: 20px 0; background: #ccc; }
 #orderListWrap { width: 930px; height: 243px; overflow:auto; }
 #orderList {}
 
+
+#sellByProduct { position: absolute; left: calc(50% + 280px); top: 48%; width: 460px; }
+
+
+
 #goMain { display: block; width: 80px; position: absolute; left: calc(50% - 40px); top: 87%; 
 		  text-decoration: none; color: #fff; background: #aaa; text-align: center; border-radius: 10px;
 		  padding: 10px 15px; font-family: sans-serif; }
