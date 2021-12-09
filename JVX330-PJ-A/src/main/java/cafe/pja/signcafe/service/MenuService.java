@@ -2,7 +2,7 @@ package cafe.pja.signcafe.service;
 
 import java.util.List;
 
-import cafe.pja.signcafe.domain.Cart;
+import cafe.pja.signcafe.domain.OrderedList;
 import cafe.pja.signcafe.domain.User;
 
 public interface MenuService {
@@ -12,7 +12,7 @@ public interface MenuService {
 	 *		1-1. menuPage.jsp에서 checkBox 클릭한 품목 선택
 	 *		1-2. 선택한 품목을 카트에 담기 (addCart)
 	 */
-	public void addCart(Cart cart);  
+	public void addCart(OrderedList cart);  
 	
 	
 	/*
@@ -33,6 +33,6 @@ public interface MenuService {
 	 *  	3-3. 취소버튼 누를 경우 트랜잭션
 	 */
 	public void addMileage(User user);
-	public List<Cart> addOrderList(Cart cart);
-	public void deleteCart(Cart cart);
+	public List<OrderedList> addOrderList(OrderedList cart);
+	public void deleteCart(OrderedList cart);
 }

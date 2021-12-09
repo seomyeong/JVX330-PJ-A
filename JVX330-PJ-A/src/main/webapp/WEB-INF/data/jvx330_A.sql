@@ -1,19 +1,13 @@
 SELECT * FROM CAFE_USER;
-SELECT * FROM MENU;
-SELECT * FROM EXTRA;
-SELECT * FROM CART;
-SELECT * FROM CART_ID;
-SELECT * FROM SALES;
+SELECT * FROM MENU_INFO;
+SELECT * FROM ORDERED;
 
 DROP TABLE CAFE_USER;
-DROP TABLE MENU;
-DROP TABLE EXTRA;
-DROP TABLE CART;
-DROP TABLE CART_ID;
-DROP TABLE SALES;
+DROP TABLE MENU_INFO;
+DROP TABLE ORDERED;
 
 CREATE TABLE CAFE_USER(
-	id			BIGINT		PRIMARY KEY GENERATED ALWAYS AS IDENTITY,		
+	id			BIGINT			PRIMARY KEY GENERATED ALWAYS AS IDENTITY,		
 	name		VARCHAR(30)		NOT NULL,
 	phone		VARCHAR(20)		NOT NULL,
 	passWd		VARCHAR(30)		NOT NULL,
@@ -22,50 +16,50 @@ CREATE TABLE CAFE_USER(
 )
 
 
-CREATE TABLE MENU(
-	menuNum			BIGINT		PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+CREATE TABLE MENU_INFO(
+	menuNum			BIGINT			PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 	category		VARCHAR(50)		NOT NULL,
 	menuName		VARCHAR(50)		NOT NULL,
 	menuPrice		DOUBLE			NOT NULL DEFAULT 0.0,
-	menuIng			VARCHAR(300)	NOT NULL
+	menuCount		BIGINT			NOT NULL DEFAULT 0,
+	mileageCount	DOUBLE			NOT NULL DEFAULT 0.0,
+	menuImgPath		VARCHAR(300)	NOT NULL DEFAULT ''
 )
 
-CREATE TABLE EXTRA(
-	extraNum	BIGINT		PRIMARY KEY GENERATED ALWAYS AS IDENTITY,	
-	HOT			DOUBLE			NOT NULL DEFAULT 0.0,
-	ICE			DOUBLE			NOT NULL DEFAULT 500.0,
-	SMALL		DOUBLE			NOT NULL DEFAULT 0.0,
-	MEDIUM		DOUBLE			NOT NULL DEFAULT 300.0,
-	LARGE		DOUBLE			NOT NULL DEFAULT 500.0
-)
-
-
-CREATE TABLE CART_ID(
-	userCartId BIGINT NOT NULL PRIMARY KEY
-)
-
-CREATE TABLE CART(
-	cartNum				BIGINT		PRIMARY KEY GENERATED ALWAYS AS IDENTITY,		
-	userCartNum			BIGINT			NOT NULL,
-	cart_menuName		VARCHAR(50)		NOT NULL DEFAULT 'NONE',
-	cart_menuPrice		DOUBLE			NOT NULL DEFAULT 0.0,
-	cart_menuCount		BIGINT			NOT NULL DEFAULT 0,
-	cart_totalPrice		DOUBLE			NOT NULL DEFAULT 0.0,
-	CONSTRAINT CART_ID_userCartNum_FK 
-		FOREIGN KEY(userCartNum) REFERENCES CART_ID(userCartId)
+CREATE TABLE ORDERED(
+	orderedList				BIGINT		PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+	ordered_customerInfo	VARCHAR(50)	NOT NULL 	DEFAULT 'GUEST', --회원번호가 있으면 회원번호가 찍힐것
+	ordered_MenuNum			BIGINT		NOT NULL,
+	ordered_extraSize_Price	DOUBLE		NOT NULL 	DEFAULT 0.0,
+	ordered_extraTemp_Price	DOUBLE		NOT NULL 	DEFAULT 0.0,
+	ordered_menuCount		DOUBLE		NOT NULL 	DEFAULT 0.0,
+	ordered_usingMileage	DOUBLE		NOT NULL 	DEFAULT 0.0,
+	ordered_totalPrice		DOUBLE		NOT NULL 	DEFAULT 0.0,
+	ordered_orderedDate		TIMESTAMP	NOT NULL	DEFAULT CURRENT_TIMESTAMP,
+	
+	CONSTRAINT ORDERED_ordered_MenuNum_FK FOREIGN KEY(ordered_MenuNum) REFERENCES MENU_INFO(menuNum)
 )
 
 
-CREATE TABLE SALES(
-	salesNum			BIGINT		PRIMARY KEY GENERATED ALWAYS AS IDENTITY,		
-	salesByCartNum		BIGINT			NOT NULL,
-	sales_menuName		VARCHAR(50)		NOT NULL,
-	sales_menuPrice		DOUBLE			NOT NULL DEFAULT 0.0,
-	sales_menuCount		BIGINT			NOT NULL DEFAULT 0,
-	sales_totalPrice	DOUBLE			NOT NULL DEFAULT 0.0
-)
+---MENU INSERT 하세요---
+
+INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('COFFEE','클래식 아메리카노',6000.0);
+INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('COFFEE','바닐라빈 라떼',7800.0);
+INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('COFFEE','벨벳 다크 모카 카푸치노',7500.0);
+INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('COFFEE','콜드 브루 플로트',7500.0);
+INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('COFFEE','플랫 화이트',7000.0);
+
+INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('NON_COFFEE','제주 유기농 녹차',7500.0);
+INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('NON_COFFEE','콩고물 블랙 밀크 티',7000.0);
+INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('NON_COFFEE','피치레몬 블렌디드',8000.0);
+
+INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('FOOD','우유 품은 초콜릿 크루아상',6000.0);
+INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('FOOD','한 입에 쏙 치즈 꿀 볼',5500.0);
+INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('FOOD','트리플 치즈 크로크무슈',6500.0);
 
 
+
+------------------[서명]쿼리문 예제 작성중...------------------------------------
 --******USER가 메뉴선택 버튼 눌렀을 때 고유번호 부여 ver1, ver2--
 INSERT INTO CART_ID(userCartId) VALUES(1251);
 
@@ -81,22 +75,10 @@ VALUES(1251, 'OTHER', 'ICE TEA', 4500.0, 1, 'S', 'I', 4500.0*1);
 
 --******주문취소 시 카트삭제
 DELETE FROM CART where cartNum=1251;
+---------------------------------------------------------------------------
 
----MENU INSERT---
 
-INSERT INTO MENU(category, menuName, menuPrice) VALUES('COFFEE','제주 비자림 콜드 브루',8000.0);
-INSERT INTO MENU(category, menuName, menuPrice) VALUES('COFFEE','콜드 브루 플로트',7800.0);
-INSERT INTO MENU(category, menuName, menuPrice) VALUES('COFFEE','더블 에스프레소 칩 프라푸치노',7500.0);
-INSERT INTO MENU(category, menuName, menuPrice) VALUES('COFFEE','사케라또 아포가또',7500.0);
-INSERT INTO MENU(category, menuName, menuPrice) VALUES('COFFEE','스파클링 시트러스 에스프레소',7000.0);
 
-INSERT INTO MENU(category, menuName, menuPrice) VALUES('NON_COFFEE','아이스 제주 유기 녹차',7500.0);
-INSERT INTO MENU(category, menuName, menuPrice) VALUES('NON_COFFEE','아이스 콩고물 블랙 밀크 티',7000.0);
-INSERT INTO MENU(category, menuName, menuPrice) VALUES('NON_COFFEE','아이스 제주 유기농 말차로 만든 라떼',8000.0);
-
-INSERT INTO MENU(category, menuName, menuPrice) VALUES('FOOD','우유 품은 초콜릿 크루아상',6000.0);
-INSERT INTO MENU(category, menuName, menuPrice) VALUES('FOOD','한 입에 쏙 치즈 꿀 볼',5500.0);
-INSERT INTO MENU(category, menuName, menuPrice) VALUES('FOOD','트리플 치즈 크로크무슈',6500.0);
 
 
 
