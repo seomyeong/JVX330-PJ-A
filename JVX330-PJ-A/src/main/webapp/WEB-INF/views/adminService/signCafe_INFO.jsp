@@ -6,31 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>SignCafe</title>
-<style type="text/css">
-* {
-	padding: 0;
-	margin: 0;
-	outline: 0;
-	margin: 0;
-}
-
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-	margin: 50px;
-}
-
-th {
-	color: #c00;
-	background: #eee;
-}
-
-th, td {
-	width: 170px;
-	text-align: center;
-	border: 1px solid #000;
-}
-</style>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/admin/signCafe_INFO.css">
 </head>
 <body>
 	<table>
