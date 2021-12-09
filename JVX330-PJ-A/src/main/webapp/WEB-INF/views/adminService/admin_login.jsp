@@ -26,8 +26,8 @@
 			</tr>
 		</table>
 		<p>${errorMsg}</p>
-		<input type="submit" value="로그인"/>
 		<a href="../index.jsp">이전</a>
+		<input type="submit" value="로그인"/>
 	</form>
 </body>
 </html>
