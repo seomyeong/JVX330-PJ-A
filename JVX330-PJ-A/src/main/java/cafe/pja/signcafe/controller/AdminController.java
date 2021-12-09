@@ -24,16 +24,16 @@ public class AdminController {
 		GenericApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
 		AdminServiceImpl service = (AdminServiceImpl)context.getBean("adminServiceImpl");
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("adminService/admin_login");
 		
+		// 접속 성공시 
 		if(service.adminLogin(user)) {
-			System.out.println("로그인성공");
+			mav.setViewName("adminService/signCafe_INFO");
 			context.close();
 			return mav;
 		}
 		
-		System.out.println("로그인실패");
-		
+		mav.addObject("errorMsg", "관리자 정보와 일치하지 않습니다.");
+		mav.setViewName("adminService/admin_login");
 		context.close();
 		return mav;
 	}
