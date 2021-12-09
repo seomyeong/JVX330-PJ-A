@@ -44,7 +44,10 @@ CREATE TABLE ORDERED(
 ---admin 계정---
 INSERT INTO CAFE_USER(name,phone,passWd) VALUES ('admin', 'admin', 'admin');
 
-
+---ORDERED INSERT---
+INSERT INTO ORDERED(ordered_customerInfo, ordered_MenuNum, ordered_extraSize_Price, ordered_extraTemp_Price,
+ordered_menuCount, ordered_usingMileage, ordered_totalPrice) 
+VALUES ('GUEST',1,300.0,500.0,2,0.0,6000.0+300.0+500.0);
 
 
 ---MENU INSERT 하세요---
