@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import cafe.pja.signcafe.domain.User;
+
 @Controller("controller.myPageLoginController")
 public class MyPageLoginController {
 	
@@ -14,7 +16,7 @@ public class MyPageLoginController {
 	}
 	
 	@PostMapping("myPageService/myPageLogin")
-	public String myPageLogin(@ModelAttribute UserCommand user) {
+	public String myPageLogin(@ModelAttribute User user) {
 		return "myPageService/myPageLogin";
 	}
 }

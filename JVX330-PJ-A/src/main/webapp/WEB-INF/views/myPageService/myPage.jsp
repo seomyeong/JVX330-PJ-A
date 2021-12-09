@@ -18,7 +18,7 @@
 		<table id="userInfo">
 			<tr>	
 				<th>Name
-				<td><input type="text" value="${user.userName}" autocomplete="off" name="userName" id="name" required></td>
+				<td><input type="text" value="${user.userName}" autocomplete="off" name="userName" id="name" required readonly></td>
 			</tr>
 			<tr>
 				<th>Phone

@@ -19,11 +19,11 @@
 	<table>
 		<tr>
 			<th>Phone</th>
-			<td><input value="" type="text" autocomplete="off" name="phoneNum" id="phone" maxlength="11" placeholder="-를 제외한 전화번호를 입력해주세요"></td>
+			<td><input value="" type="text" autocomplete="off" name="phone" id="phone" maxlength="11" placeholder="-를 제외한 전화번호를 입력해주세요"></td>
 		</tr>
 		<tr>
 			<th>Password</th>
-			<td><input value="" type="password" autocomplete="off" name="userPw" id="pw" maxlength="20" placeholder="비밀번호를 입력해주세요" required></td>
+			<td><input value="" type="password" autocomplete="off" name="passWd" id="pw" maxlength="20" placeholder="비밀번호를 입력해주세요" required></td>
 		
 	</table>
 	
