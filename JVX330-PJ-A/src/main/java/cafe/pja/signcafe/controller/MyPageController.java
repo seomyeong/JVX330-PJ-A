@@ -13,7 +13,7 @@ public class MyPageController {
 	public String myPageForm() {
 		return "myPageService/myPage";
 	}
-	@PostMapping("myPageService.myPage")
+	@PostMapping("myPageService/myPage")
 	public String myPage(@ModelAttribute User user) {
 		return "myPageService/myPage";
 }
