@@ -4,6 +4,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import cafe.pja.signcafe.dao.AdminDao;
 import cafe.pja.signcafe.domain.User;
+import cafe.pja.signcafe.service.command.Info;
 
 public class AdminServiceImpl {
 	private AdminDao adminDao;
@@ -17,5 +18,9 @@ public class AdminServiceImpl {
 			return true;
 		}
 		return false;
+	}
+	
+	public Info allInquiryInfo() {
+		return null;
 	}
 }

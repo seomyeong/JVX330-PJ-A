@@ -23,8 +23,7 @@ private JdbcTemplate jdbcTemplate;
 
 			@Override
 			public MenuInfo mapRow(ResultSet rs, int rowNum) throws SQLException {
-				MenuInfo mi = new MenuInfo();
-
+				MenuInfo mi = new MenuInfo(rs.getLong("menuNum"), rs.getString("category"), rs.getString("menuName"), rs.getDouble("menuPrice"), rs.getLong("menuCount"), rs.getDouble("mileageCount"), rs.getString("menuImgPath"));
 				return mi;
 			}
 			
