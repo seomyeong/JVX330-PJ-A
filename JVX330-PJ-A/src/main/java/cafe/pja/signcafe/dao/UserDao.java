@@ -41,7 +41,7 @@ public class UserDao {
 		if (findUser.size() == 0) {
 			return false;
 		}
-
+		
 		return true;
 	}
 
@@ -73,11 +73,14 @@ public class UserDao {
 
 			@Override
 			public User mapRow(ResultSet rs, int rowNum) throws SQLException {
-				return new User(rs.getString("name"), rs.getString("phone"), rs.getString("passWd"));
+				User user = new User(rs.getString("name"), rs.getString("phone"), rs.getString("passWd"));
+				//System.out.println("dao test"+user);
+				return user;
 			}
 		}, user.getPassWd());
 	
 		if(pwCheck.size() == 0) {
+			//System.out.println("pwcheck"+pwCheck);
 			return false;
 		}	
 			

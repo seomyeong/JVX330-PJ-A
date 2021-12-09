@@ -16,7 +16,7 @@ public class MyPageController {
 	@PostMapping("myPageService/myPage")
 	public String myPage(@ModelAttribute User user) {
 		return "myPageService/myPage";
-}
+	}
 	
 }
                                                                                                                                                                                                                                           

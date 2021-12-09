@@ -28,15 +28,16 @@ public class MyPageLoginController {
 		ModelAndView mav = new ModelAndView();
 		
 		if(service.myPageLogin(user)) { // 로그인에 성공한 경우, 마이페이지로 이동
-			context.close();	
 			mav.setViewName("/myPageService/myPage");
 			System.out.println("성공!");
+			context.close();	
 			return mav;
-		} 
-
-			context.close();
+		} else {
 			mav.addObject("errormsg", "입력하신 정보와 일치하는 회원정보가 없습니다.");
 			mav.setViewName("/myPageService/myPageLogin");
+			context.close();
 			return mav;
+		}
+
 	}
 }
