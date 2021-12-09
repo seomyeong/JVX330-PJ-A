@@ -15,5 +15,5 @@
 		<a href="myPageLogin.jsp" id="myPage">마이페이지</a>
 	</div>
 	<a href="adminLogin.jsp">관리자 모드</a>
-</body>
+</body>	
 </html>
