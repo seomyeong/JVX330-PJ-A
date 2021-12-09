@@ -10,16 +10,44 @@
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-	margin: 50px;
 }
 
 th {
-	color: #c00;
-	background: #eee;
+	color: #920;
+	background: #ddd;
 }
 
 th, td {
-	width: 170px;
 	text-align: center;
 	border: 1px solid #000;
 }
+
+body { background: #eee; }
+
+.caption { font-size: 25px; font-weight: bold; text-align: center; margin-bottom: 20px; color: #666; 
+		   background: #ddd; padding: 5px; border-radius: 10px; }
+
+article { position: absolute; }
+
+h1 { text-align: center; padding: 20px 0; background: #ccc; }
+
+
+#article1 { width: 690px; left: calc(50% - 700px); top: 13%; }
+#productWrap { width: 690px; height: 243px; overflow: auto; }
+#product {}
+#product th, #product td, #membership th, #membership td, #orderList th, #orderList td {
+	padding: 1px 10px;
+}
+
+#article2 { width: 690px; left: calc(50% + 50px); top: 13%; }
+#membershipWrap { width: 690px; height: 243px; overflow: auto; }
+#membership {}
+
+#article3 { width: 930px; left: calc(50% - 700px); top: 48%; }
+#orderListWrap { width: 930px; height: 243px; overflow:auto; }
+#orderList {}
+
+#goMain { display: block; width: 80px; position: absolute; left: calc(50% - 40px); top: 87%; 
+		  text-decoration: none; color: #fff; background: #aaa; text-align: center; border-radius: 10px;
+		  padding: 10px 15px; font-family: sans-serif; }
+#goMain:hover { background: #bbb; }

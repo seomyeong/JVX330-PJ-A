@@ -1,7 +1,5 @@
 package cafe.pja.signcafe.domain;
 
-import java.util.Date;
-
 public class OrderedList {
 	private long orderedList; // PK
 	private String customerInfo;
@@ -11,7 +9,7 @@ public class OrderedList {
 	private int menuCount;
 	private double usingMileage;
 	private double totalPrice;
-	private Date orderedDate;
+	private String orderedDate;
 	
 	public OrderedList() {}
 	
@@ -29,7 +27,7 @@ public class OrderedList {
 
 
 	public OrderedList(long orderedList, String customerInfo, MenuInfo menuInfo, double extraSize_Price,
-			double extraTemp_Price, int menuCount, double usingMileage, double totalPrice, Date orderedDate) {
+			double extraTemp_Price, int menuCount, double usingMileage, double totalPrice, String orderedDate) {
 		super();
 		this.orderedList = orderedList;
 		this.customerInfo = customerInfo;
@@ -91,10 +89,10 @@ public class OrderedList {
 	public void setTotalPrice(double totalPrice) {
 		this.totalPrice = totalPrice;
 	}
-	public Date getOrderedDate() {
+	public String getOrderedDate() {
 		return orderedDate;
 	}
-	public void setOrderedDate(Date orderedDate) {
+	public void setOrderedDate(String orderedDate) {
 		this.orderedDate = orderedDate;
 	}
 	
