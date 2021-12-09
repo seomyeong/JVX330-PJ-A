@@ -3,9 +3,7 @@ package cafe.pja.signcafe.domain;
 import java.util.Date;
 
 public class User {
-	public User(String string, String string2) {
-		// TODO Auto-generated constructor stub
-	}
+	
 	private long id; // PK
 	private String name;
 	private String phone;
@@ -19,6 +17,12 @@ public class User {
 	public User(String name, String phone, String passWd) {
 		super();
 		this.name = name;
+		this.phone = phone;
+		this.passWd = passWd;
+	}
+	
+	public User(String phone, String passWd) {
+		super();
 		this.phone = phone;
 		this.passWd = passWd;
 	}

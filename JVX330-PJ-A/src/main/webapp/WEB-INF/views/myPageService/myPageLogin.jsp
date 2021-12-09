@@ -11,7 +11,8 @@
 </head>
 <body>
 
-<form action="myPageLogin" method="POST">
+<form action="myPageLogin
+" method="POST">
 
 	<h1>SignCafe 로그인</h1>
 	<p>회원확인을 위해 회원정보를 입력해주세요.</p>

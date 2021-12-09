@@ -23,15 +23,14 @@ public class UserServiceImpl {
 		}
 	}
 	
-	public boolean login(User user) {
-		if(userDao.login(user)) {
-			System.out.println("입력하신 정보와 일치하는 회원정보가 없습니다.");
-			return false;
-		} else {
+	public boolean myPageLogin(User user) {
+		if(userDao.DuplicateCheck(user) && userDao.passWdCheck(user)) {
 			System.out.println("로그인에 성공했습니다.");
 			return true;
+		} else {
+			System.out.println("입력하신 정보와 일치하는 회원정보가 없습니다.");
+			return false;
 		}
-		
 		
 	}
 }
