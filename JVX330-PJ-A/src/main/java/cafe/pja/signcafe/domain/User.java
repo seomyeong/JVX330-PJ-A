@@ -22,6 +22,16 @@ public class User {
 		this.phone = phone;
 		this.passWd = passWd;
 	}
+	
+	public User(long id, String name, String phone, String passWd, double mileage, Date regDate) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.phone = phone;
+		this.passWd = passWd;
+		this.mileage = mileage;
+		this.regDate = regDate;
+	}
 
 	public long getId() {
 		return id;
