@@ -41,6 +41,15 @@ CREATE TABLE ORDERED(
 )
 
 
+---admin 계정---
+INSERT INTO CAFE_USER(name,phone,passWd) VALUES ('admin', 'admin', 'admin');
+
+---ORDERED INSERT---
+INSERT INTO ORDERED(ordered_customerInfo, ordered_MenuNum, ordered_extraSize_Price, ordered_extraTemp_Price,
+ordered_menuCount, ordered_usingMileage, ordered_totalPrice) 
+VALUES ('GUEST',1,300.0,500.0,2,0.0,6000.0+300.0+500.0);
+
+
 ---MENU INSERT 하세요---
 
 INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('COFFEE','클래식 아메리카노',6000.0);
@@ -61,7 +70,12 @@ INSERT INTO ORDERED(ordered_customerInfo, ordered_MenuNum, ordered_extraSize_Pri
 ordered_menuCount, ordered_usingMileage, ordered_totalPrice) 
 VALUES ('GUEST',1,300.0,500.0,2,0.0,6000.0+300.0+500.0);
 
-------------------[서명]쿼리문 예제 작성중...------------------------------------
+
+
+
+
+
+------------------[서명] 쿼리문 예제 작성중...------------------------------------
 --******USER가 메뉴선택 버튼 눌렀을 때 고유번호 부여 ver1, ver2--
 INSERT INTO CART_ID(userCartId) VALUES(1251);
 
@@ -79,7 +93,7 @@ VALUES(1251, 'OTHER', 'ICE TEA', 4500.0, 1, 'S', 'I', 4500.0*1);
 DELETE FROM CART where cartNum=1251;
 ---------------------------------------------------------------------------
 
-
+INSERT INTO CAFE_USER(name, phone, passWd) VALUES('서명', '010123123', '1234');
 
 
 

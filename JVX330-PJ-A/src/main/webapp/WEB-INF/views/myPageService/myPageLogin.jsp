@@ -11,7 +11,8 @@
 </head>
 <body>
 
-<form action="myPageLogin" method="POST">
+<form action="myPageLogin
+" method="POST">
 
 	<h1>SignCafe 로그인</h1>
 	<p>회원확인을 위해 회원정보를 입력해주세요.</p>
@@ -26,7 +27,7 @@
 			<td><input value="" type="password" autocomplete="off" name="passWd" id="pw" maxlength="20" placeholder="비밀번호를 입력해주세요" required></td>
 		
 	</table>
-	
+	<p>${errormsg}</p>
 	<div>
 		<a href="index.jsp">이전</a>
 		<input type="submit" value="로그인"> 

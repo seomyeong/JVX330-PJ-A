@@ -3,9 +3,7 @@ package cafe.pja.signcafe.domain;
 import java.util.Date;
 
 public class User {
-	public User(String string, String string2) {
-		// TODO Auto-generated constructor stub
-	}
+	
 	private long id; // PK
 	private String name;
 	private String phone;
@@ -23,6 +21,7 @@ public class User {
 		this.passWd = passWd;
 	}
 	
+<<<<<<< HEAD
 	public User(long id, String name, String phone, String passWd, double mileage, Date regDate) {
 		super();
 		this.id = id;
@@ -31,6 +30,12 @@ public class User {
 		this.passWd = passWd;
 		this.mileage = mileage;
 		this.regDate = regDate;
+=======
+	public User(String phone, String passWd) {
+		super();
+		this.phone = phone;
+		this.passWd = passWd;
+>>>>>>> branch 'main' of https://git@github.com/seomyeong/JVX330-PJ-A.git
 	}
 
 	public long getId() {

@@ -41,7 +41,7 @@ public class UserDao {
 		if (findUser.size() == 0) {
 			return false;
 		}
-
+		
 		return true;
 	}
 
@@ -61,32 +61,30 @@ public class UserDao {
 	/**
 	 * 작성자 : 지영
 	 * 
-	 * 기능 - 로그인 회원정보 확인 - userLogin.size() == 0, 찾는 값(phone, passWd)이 있으면 로그인 성공, 없으면 로그인 실패 
-	 * @param phone
+	 * 기능 - 회원 비밀번호 중복검사 - userLogin.size() == 0, 찾는 값(passWd)이 있으면 로그인 성공, 없으면 로그인 실패 
 	 * @param passWd
 	 * @return
 	 */
-	public boolean login(String phone, String passWd) {
-		String sql = "SELECT phone, passWd FROM CAFE_USER";
-		List<User> userLogin = null;
+	public boolean passWdCheck(User user) {
+		String sql = "SELECT * FROM CAFE_USER WHERE passWd=?";
+		List<User> pwCheck = null;
 		
-		userLogin = jdbcTemplate.query(sql, new RowMapper<User>() {
+		pwCheck = jdbcTemplate.query(sql, new RowMapper<User>() {
 
 			@Override
 			public User mapRow(ResultSet rs, int rowNum) throws SQLException {
-				return new User(rs.getString("phone"), rs.getString("passWd"));
+				User user = new User(rs.getString("name"), rs.getString("phone"), rs.getString("passWd"));
+				//System.out.println("dao test"+user);
+				return user;
 			}
-		});
-		
-		if(userLogin.size() == 0) {
+		}, user.getPassWd());
+	
+		if(pwCheck.size() == 0) {
+			//System.out.println("pwcheck"+pwCheck);
 			return false;
-		}
-		else {
+		}	
+			
 			return true;
-		}
 	}
-	
-	
-	// 마일리지 조회
-	
+
 }

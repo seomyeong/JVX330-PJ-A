@@ -22,6 +22,7 @@ table {
 
 th {
 	color: #c00;
+	background: #eee;
 }
 
 th, td {
@@ -120,5 +121,6 @@ th, td {
 			</tr>
 		</c:forEach>
 	</table>
+	<a href="../index.jsp">메인 메뉴로</a>
 </body>
 </html>
