@@ -58,8 +58,14 @@ public class UserDao {
 	}
 
 	
-	// 로그인
-	// userLogin.size() == 0, 찾는 값(phone, passWd)이 있으면 로그인 성공, 없으면 로그인 실패 
+	/**
+	 * 작성자 : 지영
+	 * 
+	 * 기능 - 로그인 회원정보 확인 - userLogin.size() == 0, 찾는 값(phone, passWd)이 있으면 로그인 성공, 없으면 로그인 실패 
+	 * @param phone
+	 * @param passWd
+	 * @return
+	 */
 	public boolean login(String phone, String passWd) {
 		String sql = "SELECT phone, passWd FROM CAFE_USER";
 		List<User> userLogin = null;
@@ -80,8 +86,13 @@ public class UserDao {
 		}
 	}
 	
-	// 회원정보 수정
-	public modifyUserInfo
+	// 기능 - 회원정보 조회(로그인을 통해 본인 확인을 거친 후 조회 가능)
+	
+	
+	// 기능 - 회원정보 수정(userName을 제외한 정보의 수정 가능)
+	public void userInfoUpdate(String phone, String passWd) {
+		String sql = "UPDATE"
+	}
 	
 	// 마일리지 조회
 	
