@@ -15,18 +15,19 @@
 				<th>아이디</th>
 				<td>:</td>
 				<td><input type="text" name="name"
-					placeholder="관리자 아이디를 입력하세요."></td>
+					placeholder="아이디를 입력하세요."></td>
 			</tr>
 
 			<tr>
 				<th>비밀번호</th>
 				<td>:</td>
 				<td><input type="password" name="passWd"
-					placeholder="관리자 비밀번호를 입력하세요."></td>
+					placeholder="비밀번호를 입력하세요."></td>
 			</tr>
 		</table>
-		<input type="submit" value="로그인"/>
+		<p>${errorMsg}</p>
 		<a href="../index.jsp">이전</a>
+		<input type="submit" value="로그인"/>
 	</form>
 </body>
 </html>

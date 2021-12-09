@@ -12,14 +12,14 @@ import cafe.pja.signcafe.data.DataSourceConfig;
 import cafe.pja.signcafe.domain.User;
 import cafe.pja.signcafe.service.UserServiceImpl;
 
-@Controller("controller.AddUserController")
+@Controller("controller.addUserController")
 public class AddUserController {
-	@GetMapping("addUserService/add_user")
+	@GetMapping("addUserService/addUser")
 	public String addUserForm() {
 		return "addUserService/add_user";
 	}
 
-	@PostMapping("addUserService/add_user")
+	@PostMapping("addUserService/addUser")
 	public ModelAndView addUser(@ModelAttribute User user) {
 		GenericApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
 		UserServiceImpl service = (UserServiceImpl) context.getBean("userServiceImpl");
@@ -29,13 +29,13 @@ public class AddUserController {
 		System.out.println("Input user passWd : " + user.getPassWd());
 
 		ModelAndView mav = new ModelAndView();
-		
-		if(service.addUser(user)) {
+
+		if (service.addUser(user)) {
 			context.close();
 			mav.setViewName("/addUserService/successAddUser");
 			return mav;
 		}
-		
+
 		context.close();
 		mav.addObject("errormsg", "해당 전화번호로 가입된 아이디가 있습니다.");
 		mav.setViewName("/addUserService/add_user");
