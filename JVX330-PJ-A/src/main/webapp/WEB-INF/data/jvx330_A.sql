@@ -23,7 +23,7 @@ CREATE TABLE MENU_INFO(
 	menuPrice		DOUBLE			NOT NULL DEFAULT 0.0,
 	menuCount		BIGINT			NOT NULL DEFAULT 0,
 	mileageCount	DOUBLE			NOT NULL DEFAULT 0.0,
-	menuImgPath		VARCHAR(300)	NOT NULL DEFAULT 'NULL'
+	menuImgPath		VARCHAR(300)	NOT NULL DEFAULT ''
 )
 
 CREATE TABLE ORDERED(
@@ -66,7 +66,9 @@ INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('FOOD','우유 품�
 INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('FOOD','한 입에 쏙 치즈 꿀 볼',5500.0);
 INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('FOOD','트리플 치즈 크로크무슈',6500.0);
 
-
+INSERT INTO ORDERED(ordered_customerInfo, ordered_MenuNum, ordered_extraSize_Price, ordered_extraTemp_Price,
+ordered_menuCount, ordered_usingMileage, ordered_totalPrice) 
+VALUES ('GUEST',1,300.0,500.0,2,0.0,6000.0+300.0+500.0);
 
 
 
