@@ -41,6 +41,12 @@ CREATE TABLE ORDERED(
 )
 
 
+---admin 계정---
+INSERT INTO CAFE_USER(name,phone,passWd) VALUES ('admin', 'admin', 'admin');
+
+
+
+
 ---MENU INSERT 하세요---
 
 INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('COFFEE','클래식 아메리카노',6000.0);
@@ -56,6 +62,11 @@ INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('NON_COFFEE','피치
 INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('FOOD','우유 품은 초콜릿 크루아상',6000.0);
 INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('FOOD','한 입에 쏙 치즈 꿀 볼',5500.0);
 INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('FOOD','트리플 치즈 크로크무슈',6500.0);
+
+
+
+
+
 
 
 
