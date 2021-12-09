@@ -10,35 +10,31 @@ import org.springframework.web.servlet.ModelAndView;
 
 import cafe.pja.signcafe.data.DataSourceConfig;
 import cafe.pja.signcafe.domain.User;
-import cafe.pja.signcafe.service.UserServiceImpl;
+import cafe.pja.signcafe.service.AdminServiceImpl;
 
 @Controller("controller.AddUserController")
 public class AddUserController {
-	@GetMapping("addUserService/add_user")
-	public String addUserForm() {
-		return "addUserService/add_user";
+	@GetMapping("adminService/adminLogin")
+	public String adminLogin() {
+		return "adminService/admin_login";
 	}
-
-	@PostMapping("addUserService/add_user")
-	public ModelAndView addUser(@ModelAttribute User user) {
+	
+	@PostMapping("adminService/adminLogin")
+	public ModelAndView adminLogin(@ModelAttribute User user) {
 		GenericApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
-		UserServiceImpl service = (UserServiceImpl) context.getBean("userServiceImpl");
-
-		System.out.println("Input user Name : " + user.getName());
-		System.out.println("Input user Phone : " + user.getPhone());
-		System.out.println("Input user passWd : " + user.getPassWd());
-
+		AdminServiceImpl service = (AdminServiceImpl)context.getBean("adminServiceImpl");
 		ModelAndView mav = new ModelAndView();
+		mav.setViewName("adminService/admin_login");
 		
-		if(service.addUser(user)) {
+		if(service.adminLogin(user)) {
+			System.out.println("로그인성공");
 			context.close();
-			mav.setViewName("/addUserService/successAddUser");
 			return mav;
 		}
 		
+		System.out.println("로그인실패");
+		
 		context.close();
-		mav.addObject("errormsg", "해당 전화번호로 가입된 아이디가 있습니다.");
-		mav.setViewName("/addUserService/add_user");
 		return mav;
 	}
 }
