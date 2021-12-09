@@ -14,12 +14,12 @@ import cafe.pja.signcafe.service.UserServiceImpl;
 
 @Controller("controller.AddUserController")
 public class AddUserController {
-	@GetMapping("addUserService/addUser")
+	@GetMapping("addUserService/add_user")
 	public String addUserForm() {
 		return "addUserService/add_user";
 	}
 
-	@PostMapping("addUserService/addUser")
+	@PostMapping("addUserService/add_user")
 	public ModelAndView addUser(@ModelAttribute User user) {
 		GenericApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
 		UserServiceImpl service = (UserServiceImpl) context.getBean("userServiceImpl");
