@@ -61,7 +61,7 @@ public class UserDao {
 	/**
 	 * 작성자 : 지영
 	 * 
-	 * 기능 - 회원 비밀번호 중복검사 - userLogin.size() == 0, 찾는 값(passWd)이 있으면 로그인 성공, 없으면 로그인 실패 
+	 * 기능 - 회원 비밀번호 중복검사 - userLogin.size() == 0, 찾는 값(passWd)이 없으면 로그인 실패, 있으면 로그인 성공. 
 	 * @param passWd
 	 * @return
 	 */
@@ -87,4 +87,19 @@ public class UserDao {
 			return true;
 	}
 
+	public User inquiryUserInfo(User user) {
+		String sql = "SELECT * FROM CATE_USER WHERE phone=?";
+		List<User> inquiry = null;
+		
+		inquiry = jdbcTemplate.query(sql, new RowMapper<User>() {
+
+			@Override
+			public User mapRow(ResultSet rs, int rowNum) throws SQLException {
+				User user = new User(rs.getString(rowNum))
+				return null;
+			}
+			
+		})
+		return user;
+	}
 }

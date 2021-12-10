@@ -25,7 +25,7 @@
 		<tr>
 			<th>Password</th>
 			<td><input value="" type="password" autocomplete="off" name="passWd" id="pw" maxlength="20" placeholder="비밀번호를 입력해주세요" required></td>
-		
+		</tr>
 	</table>
 	<p>${errormsg}</p>
 	<div>
