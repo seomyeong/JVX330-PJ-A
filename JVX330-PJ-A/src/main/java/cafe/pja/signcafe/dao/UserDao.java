@@ -86,5 +86,19 @@ public class UserDao {
 			
 			return true;
 	}
+	
+	public User searchUserByPhone(User user) {
+		String sql = "SELECT * FROM CAFE_USER WHERE phone=?";
+
+		return jdbcTemplate.queryForObject(sql, new RowMapper<User>() {
+
+			@Override
+			public User mapRow(ResultSet rs, int rowNum) throws SQLException {
+				return new User(rs.getString("name"), rs.getString("phone"), rs.getString("passWd"));
+			}
+
+
+		}, user.getPhone());
+	}
 
 }

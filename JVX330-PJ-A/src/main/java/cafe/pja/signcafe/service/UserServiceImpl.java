@@ -32,4 +32,8 @@ public class UserServiceImpl {
 			return false;
 		}
 	}
+	
+	public User userInfoByPhone(User user) {
+		return userDao.searchUserByPhone(user);
+	}
 }
