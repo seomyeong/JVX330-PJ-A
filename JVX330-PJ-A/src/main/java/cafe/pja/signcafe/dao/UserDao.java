@@ -100,5 +100,11 @@ public class UserDao {
 
 		}, user.getPhone());
 	}
+	
+	public void updateUser(User user, String connectUserPhone) {
+		String sql = "UPDATE CAFE_USER SET phone=?, passWd=? WHERE phone=?";
+		
+		jdbcTemplate.update(sql, user.getPhone(), user.getPassWd(), connectUserPhone);
+	}
 
 }

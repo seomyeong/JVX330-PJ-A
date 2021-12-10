@@ -34,7 +34,24 @@ public class UserServiceImpl {
 	}
 	
 	public User userInfoByPhone(User user) {
+		
 		return userDao.searchUserByPhone(user);
+	}
+	
+	/**
+	 * 작성자 : 종성
+	 * 
+	 * 유저 정보수정 service
+	 * 
+	 * @param user
+	 * @param connectUserPhone
+	 */
+	public boolean updateUserInfo(User user, String connectUserPhone) {
+		if(userDao.DuplicateCheck(user) && !(user.getPhone().equals(connectUserPhone))) {
+			return false;
+		}
+		userDao.updateUser(user, connectUserPhone);
+		return true;
 	}
 
 }

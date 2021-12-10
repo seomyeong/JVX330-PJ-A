@@ -30,6 +30,8 @@
 			</tr>
 		</table>
 		
+		<p>${errormsg}</p>
+		
 		<p>*마일리지 확인</p>
 		<table id="userMileage">
 			<tr>
@@ -37,6 +39,7 @@
 				<td><input type="text" value="${user.mileage}" name="mileage" id="mileage" readonly></td>
 			</tr>
 		</table>
+		
 		
 		<div id="modifyBtn">
 			<a href="../index.jsp" id="prev">이전</a> <input type="submit" value="수정">
