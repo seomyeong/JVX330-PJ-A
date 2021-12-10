@@ -116,14 +116,17 @@
 	<div id="sellByProduct">
 		<p class="caption">기타 기능</p>
 		<p># 제품별 판매 금액</p>
-		<select>
+		<select id="productSelectList">
+			<option value="0.0 원">항목을 선택해주세요.</option>
 			<c:forEach items="${info.allMenuInfo}" var="allMenuInfo">
-				<option value="${allMenuInfo.menuNum}">${allMenuInfo.menuName}</option>
+				<option value="${allMenuInfo.menuPrice * allMenuInfo.menuCount - allMenuInfo.mileageCount} 원 ">${allMenuInfo.menuName}</option>
 			</c:forEach>
-			<!-- 여기에 금액 조회만들기 -> 스크립트로 해야할듯 %> -->
 		</select>
+		<span id="productSelectNum">0.0 원</span>
 	</div>
 
 	<a href="../index.jsp" id="goMain">메인 메뉴로</a>
+	
+	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/signCafe_INFO.js"></script>
 </body>
 </html>

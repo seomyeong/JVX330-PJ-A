@@ -49,7 +49,8 @@ h1 { text-align: center; padding: 20px 0; background: #ccc; }
 
 
 #sellByProduct { position: absolute; left: calc(50% + 280px); top: 48%; width: 460px; }
-
+#productSelectList { margin: 30px 70px; }
+#sellByProduct span { background: #bbb; padding: 5px; }
 
 
 #goMain { display: block; width: 80px; position: absolute; left: calc(50% - 40px); top: 87%; 
