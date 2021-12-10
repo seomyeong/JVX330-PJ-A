@@ -50,7 +50,12 @@ h1 { text-align: center; padding: 20px 0; background: #ccc; }
 
 #sellByProduct { position: absolute; left: calc(50% + 280px); top: 48%; width: 460px; }
 #productSelectList { margin: 30px 70px; }
-#sellByProduct span { background: #bbb; padding: 5px; }
+#sellByProduct span { background: #bbb; padding: 5px; border-radius: 5px; }
+
+#sellByProduct #netSales, #sellByProduct #totalSales { margin: 30px 0 30px 300px; }
+
+#netSalesCap { margin-top: 30px; }
+#totalSalesCap { margin-top: 40px; }
 
 
 #goMain { display: block; width: 80px; position: absolute; left: calc(50% - 40px); top: 87%; 
