@@ -17,18 +17,6 @@ public class MenuInfoDao {
 	}
 	
 	//메뉴불러오기
-//	public List<MenuInfo> AllMenu(){
-//		String sql = "SELECT * FROM MENU_INFO";
-//		
-//		return jdbcTemplate.query(sql, new RowMapper<MenuInfo>() {
-//
-//			@Override
-//			public MenuInfo mapRow(ResultSet rs, int rowNum) throws SQLException {
-//				return new MenuInfo(rs.getLong("menuNum"), rs.getString("category"), rs.getString("menuName"),rs.getDouble("menuPrice"));
-//			}
-//		});
-//	}
-	
 	public List<MenuInfo> AllMenu(){
 		String sql = "SELECT * FROM MENU_INFO";
 		
@@ -36,7 +24,7 @@ public class MenuInfoDao {
 
 			@Override
 			public MenuInfo mapRow(ResultSet rs, int rowNum) throws SQLException {
-				return new MenuInfo(rs.getLong("menuNum"), rs.getString("category"),rs.getString("menuName"),rs.getDouble("menuPrice"));
+				return new MenuInfo(rs.getLong("menuNum"), rs.getString("category"),rs.getString("menuName"),rs.getDouble("menuPrice"),rs.getString("menuImgPath"));
 			}
 			
 		});

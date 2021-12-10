@@ -17,12 +17,16 @@
 					<th>category</th>
 					<th>menuName</th>
 					<th>menuPrice</th>
+					<th>menuImgPath</th>
 				</tr>
 				<c:forEach items="${menuInfoList}" var="menuInfoList">
 					<tr class="">
 						<td class="">${menuInfoList.category}</td>
 						<td class="">${menuInfoList.menuName}</td>
 						<td class="">${menuInfoList.menuPrice}</td>
+						<td class="">
+						<img src="<%=request.getContextPath()%>${menuInfoList.menuImgPath }">
+						</td>
 					</tr>
 				</c:forEach>
 			</table>
