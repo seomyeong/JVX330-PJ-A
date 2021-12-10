@@ -10,26 +10,14 @@
 <body>
 	<h1>TEST : DB에서 메뉴판 값 읽어오기</h1>
 	<section id="menu">
-		<p class="caption">제품 정보</p>
-		<div id="productWrap">
-			<table id="menu_info">
-				<tr>
-					<th>category</th>
-					<th>menuName</th>
-					<th>menuPrice</th>
-					<th>menuImgPath</th>
-				</tr>
+		<div class="menuWrap">
 				<c:forEach items="${menuInfoList}" var="menuInfoList">
-					<tr class="">
-						<td class="">${menuInfoList.category}</td>
-						<td class="">${menuInfoList.menuName}</td>
-						<td class="">${menuInfoList.menuPrice}</td>
-						<td class="">
-						<img src="<%=request.getContextPath()%>${menuInfoList.menuImgPath }">
-						</td>
-					</tr>
+					<div class="menuRow">
+                        <img src="<%=request.getContextPath()%>${menuInfoList.menuImgPath }" width="120" height="120">
+						<p class="">${menuInfoList.menuName}</p>
+						<p class="">${menuInfoList.menuPrice}</p>
+					</div>
 				</c:forEach>
-			</table>
 		</div>
 	</section>
 
