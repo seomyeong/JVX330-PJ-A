@@ -119,14 +119,27 @@
 		<select id="productSelectList">
 			<option value="0.0 원">항목을 선택해주세요.</option>
 			<c:forEach items="${info.allMenuInfo}" var="allMenuInfo">
-				<option value="${allMenuInfo.menuPrice * allMenuInfo.menuCount - allMenuInfo.mileageCount} 원 ">${allMenuInfo.menuName}</option>
+				<option
+					value="${allMenuInfo.menuPrice * allMenuInfo.menuCount - allMenuInfo.mileageCount} 원 ">${allMenuInfo.menuName}</option>
 			</c:forEach>
-		</select>
-		<span id="productSelectNum">0.0 원</span>
+		</select> <span id="productSelectNum">0.0 원</span>
+
+		<p id="netSalesCap"># 매장 순매출</p>
+		<c:forEach items="${info.allMenuInfo}" var="allMenuInfo">
+				<c:set var="netSales" value="${netSales = netSales + (allMenuInfo.menuPrice * allMenuInfo.menuCount - allMenuInfo.mileageCount)}"/>
+		</c:forEach>
+		<span id="netSales">${netSales} 원</span>
+		
+		<p id="totalSalesCap"># 매장 총매출</p>
+		<c:forEach items="${info.allMenuInfo}" var="allMenuInfo">
+				<c:set var="totalSales" value="${totalSales = totalSales + (allMenuInfo.menuPrice * allMenuInfo.menuCount) }"/>
+		</c:forEach>
+		<span id="totalSales">${totalSales} 원</span>
 	</div>
 
 	<a href="../index.jsp" id="goMain">메인 메뉴로</a>
-	
-	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/signCafe_INFO.js"></script>
+
+	<script type="text/javascript"
+		src="<%=request.getContextPath()%>/resources/js/signCafe_INFO.js"></script>
 </body>
 </html>
