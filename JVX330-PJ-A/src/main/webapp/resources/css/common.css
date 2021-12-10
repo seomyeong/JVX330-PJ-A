@@ -1,25 +1,14 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
 body,h1,h2,h3,h4,h5,h6,table,tr,th,td,ul,p,img,input{margin: 0; padding: 0;}
 a{text-decoration: none; color: #000;}
 li{list-style: none;}
 .hidden{position: absolute; left: -9999px;}
 body{min-width: 1280px; position: relative; overflow: hidden;
-background: url(../img/bg4.jpg) no-repeat center / cover fixed;
-font-family: 'EliceDigitalBaeum_Bold';
+font-family: 'Raleway', sans-serif;
 }
 
 
-a{
-    display: inline-block; text-align: center;
-    width: 180px; line-height: 50px;
-    background: #dfc535;
-    border-radius: 5px;
-}
 
 
-@font-face {
-    font-family: 'EliceDigitalBaeum_Bold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/EliceDigitalBaeum_Bold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+
