@@ -47,7 +47,7 @@ public class UserServiceImpl {
 	 * @param connectUserPhone
 	 */
 	public boolean updateUserInfo(User user, String connectUserPhone) {
-		if(userDao.DuplicateCheck(user)) {
+		if(userDao.DuplicateCheck(user) && !(user.getPhone().equals(connectUserPhone))) {
 			return false;
 		}
 		userDao.updateUser(user, connectUserPhone);
