@@ -14,7 +14,7 @@
 #menuWrap{
 	width: 250px;
 	height: 380px;
-	margin: 100px auto;
+	margin: 120px auto;
 }
 
 #menuWrap>a{
@@ -23,8 +23,10 @@
     margin-bottom: 25px;
     text-align: center;
     line-height: 70px;
-    font-size: 30px;
-    background: #fff;
+    font-size: 28px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    
 }
 
 #menuWrap>a:hover{
@@ -33,4 +35,4 @@
     border-radius: 10px;
 }
 
-p {text-align: center; margin-top: 85px; font-size: 12px; color: #000; font-style: italic;}
+p {text-align: center; margin-top: 105px; font-size: 12px; color: #000; font-style: italic;}
