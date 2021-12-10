@@ -34,6 +34,7 @@ public class UserServiceImpl {
 	}
 	
 	public User userInfoByPhone(User user) {
+		
 		return userDao.searchUserByPhone(user);
 	}
 	
@@ -45,8 +46,12 @@ public class UserServiceImpl {
 	 * @param user
 	 * @param connectUserPhone
 	 */
-	public void updateUserInfo(User user, String connectUserPhone) {
+	public boolean updateUserInfo(User user, String connectUserPhone) {
+		if(userDao.DuplicateCheck(user)) {
+			return false;
+		}
 		userDao.updateUser(user, connectUserPhone);
+		return true;
 	}
 
 }

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import cafe.pja.signcafe.data.DataSourceConfig;
 import cafe.pja.signcafe.domain.User;
@@ -22,9 +23,10 @@ public class MyPageController {
 		return "myPageService/myPage";
 	}
 	@PostMapping("myPageService/myPage")
-	public String myPage(@ModelAttribute User user, HttpServletRequest request, HttpServletResponse response) {
+	public ModelAndView myPage(@ModelAttribute User user, HttpServletRequest request, HttpServletResponse response) {
 		GenericApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
 		UserServiceImpl service = (UserServiceImpl)context.getBean("userServiceImpl");
+		ModelAndView mav = new ModelAndView();
 		
 		// 쿠키정보를 들고온다.
 		Cookie[] getCookies = request.getCookies();
@@ -39,7 +41,12 @@ public class MyPageController {
 		}
 		
 		// service에 connectUserPhone 의 정보를 넘겨준다.
-		service.updateUserInfo(user, connectUserPhone);
+		if(!(service.updateUserInfo(user, connectUserPhone))) {
+			mav.addObject("errormsg", "해당 전화번호로 가입된 아이디가 있습니다.");
+			mav.setViewName("myPageService/myPage");
+			
+			return mav;
+		}
 		
 		
 		// 기존에 'connectUserPhone'의 이름을 가지는 쿠키의 값을 null로 만든다.
@@ -51,7 +58,9 @@ public class MyPageController {
 		// 적용시켜 해당 쿠키를 없앤다.
 		response.addCookie(cookie);
 		
-		return "myPageService/successModifyMyPage";
+		mav.setViewName("myPageService/successModifyMyPage");
+		
+		return mav;
 	}
 	
 }
