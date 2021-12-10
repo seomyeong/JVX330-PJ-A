@@ -9,7 +9,7 @@ public class User {
 	private String phone;
 	private String passWd;
 	private double mileage;
-	private Date regDate;
+	private String regDate;
 
 	
 	public User() {}
@@ -21,7 +21,15 @@ public class User {
 		this.passWd = passWd;
 	}
 	
-	public User(long id, String name, String phone, String passWd, double mileage, Date regDate) {
+	public User(String name, String phone, String passWd, double mileage) {
+		super();
+		this.name = name;
+		this.phone = phone;
+		this.passWd = passWd;
+		this.mileage = mileage;
+	}
+	
+	public User(long id, String name, String phone, String passWd, double mileage, String regDate) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -68,10 +76,10 @@ public class User {
 	public void setMileage(double mileage) {
 		this.mileage = mileage;
 	}
-	public Date getRegDate() {
+	public String getRegDate() {
 		return regDate;
 	}
-	public void setRegDate(Date regDate) {
+	public void setRegDate(String regDate) {
 		this.regDate = regDate;
 	}
 	

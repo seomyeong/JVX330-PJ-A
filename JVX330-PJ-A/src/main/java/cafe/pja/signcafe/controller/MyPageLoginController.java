@@ -28,6 +28,8 @@ public class MyPageLoginController {
 		ModelAndView mav = new ModelAndView();
 		
 		if(service.myPageLogin(user)) { // 로그인에 성공한 경우, 마이페이지로 이동
+			User userInfo = service.userInfoByPhone(user);
+			mav.addObject("user", userInfo);
 			mav.setViewName("/myPageService/myPage");
 			System.out.println("성공!");
 			context.close();	

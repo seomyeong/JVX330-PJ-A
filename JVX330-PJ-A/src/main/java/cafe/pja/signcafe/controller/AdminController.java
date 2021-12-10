@@ -28,6 +28,7 @@ public class AdminController {
 		
 		// 접속 성공시 
 		if(service.adminLogin(user)) {
+			System.out.println("되라좀");
 			Info info = service.allInquiryInfo();
 			mav.addObject("info", info);
 			mav.setViewName("adminService/signCafe_INFO");			

@@ -52,8 +52,8 @@ VALUES ('GUEST',1,300.0,500.0,2,0.0,6000.0+300.0+500.0);
 
 ---MENU INSERT 하세요---
 
-INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('COFFEE','클래식 아메리카노',6000.0);
-INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('COFFEE','바닐라빈 라떼',7800.0);
+INSERT INTO MENU_INFO(category, menuName, menuPrice, menuCount) VALUES('COFFEE','클래식 아메리카노',6000.0, 2);
+INSERT INTO MENU_INFO(category, menuName, menuPrice, menuCount) VALUES('COFFEE','바닐라빈 라떼',7800.0, 3);
 INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('COFFEE','벨벳 다크 모카 카푸치노',7500.0);
 INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('COFFEE','콜드 브루 플로트',7500.0);
 INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('COFFEE','플랫 화이트',7000.0);
@@ -93,7 +93,7 @@ VALUES(1251, 'OTHER', 'ICE TEA', 4500.0, 1, 'S', 'I', 4500.0*1);
 DELETE FROM CART where cartNum=1251;
 ---------------------------------------------------------------------------
 
-INSERT INTO CAFE_USER(name, phone, passWd) VALUES('서명', '010123123', '1234');
+INSERT INTO CAFE_USER(name, phone, passWd, mileage) VALUES('서명', '010123123', '1234', 1000000.0);
 
 
 

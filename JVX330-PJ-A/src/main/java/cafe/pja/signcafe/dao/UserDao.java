@@ -86,20 +86,19 @@ public class UserDao {
 			
 			return true;
 	}
+	
+	public User searchUserByPhone(User user) {
+		String sql = "SELECT * FROM CAFE_USER WHERE phone=?";
 
-	public User inquiryUserInfo(User user) {
-		String sql = "SELECT * FROM CATE_USER WHERE phone=?";
-		List<User> inquiry = null;
-		
-		inquiry = jdbcTemplate.query(sql, new RowMapper<User>() {
+		return jdbcTemplate.queryForObject(sql, new RowMapper<User>() {
 
 			@Override
 			public User mapRow(ResultSet rs, int rowNum) throws SQLException {
-				User user = new User(rs.getString(rowNum))
-				return null;
+				return new User(rs.getString("name"), rs.getString("phone"), rs.getString("passWd"), rs.getDouble("mileage"));
 			}
-			
-		})
-		return user;
+
+
+		}, user.getPhone());
 	}
+
 }
