@@ -24,6 +24,16 @@ public class MenuInfo {
 		this.menuImgPath = menuImgPath;
 	}
 	
+	/*
+	 * 서명 - menuPage.jsp에서 MENU_INFO테이블 출력을 위한 생성자
+	 */
+	public MenuInfo(long menuNum, String category, String menuName, double menuPrice) {
+		this.menuNum = menuNum;
+		this.category = category;
+		this.menuName = menuName;
+		this.menuPrice = menuPrice;
+	}
+	
 	public long getMenuNum() {
 		return menuNum;
 	}

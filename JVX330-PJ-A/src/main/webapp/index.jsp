@@ -15,7 +15,12 @@
 		<div id="banner"></div>
 		<div id="menuWrap">
 			<a href="addUserService/addUser" id="addUser">멤버쉽 가입</a>
-			<a href="menuPage.jsp" id="menu">메뉴 선택</a>
+			<a href="menuService/menuPage" id="menu">메뉴 선택</a>
+			
+			<form action="menuService/menuPage" method="post">
+				<input type="submit" value="메뉴 조회">
+			</form>
+			
 			<a href="myPageService/myPageLogin" id="myPage">마이페이지</a>
 			<a href="adminService/adminLogin" id="admin">관리자 모드</a>
 			<p>1.0.1ver</p>
