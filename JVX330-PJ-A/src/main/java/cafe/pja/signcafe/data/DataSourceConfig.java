@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import cafe.pja.signcafe.service.AdminServiceImpl;
+import cafe.pja.signcafe.service.MenuServiceImpl;
 import cafe.pja.signcafe.service.UserServiceImpl;
 
 @Configuration
@@ -38,4 +39,10 @@ public class DataSourceConfig {
 	public AdminServiceImpl adminServiceImpl() {
 		return new AdminServiceImpl(jdbcTemplate());
 	}
+	
+	@Bean
+	public MenuServiceImpl menuServiceImpl() {
+		return new MenuServiceImpl(jdbcTemplate());
+	}
+	
 }
