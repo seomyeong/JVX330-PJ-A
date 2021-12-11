@@ -14,7 +14,7 @@ public class UserServiceImpl {
 
 	public boolean addUser(User user) {
 		if(userDao.DuplicateCheck(user)) {
-			System.out.println("해당 번호로 가입된 아이디가 있습니다.");
+			System.out.println("해당 번호로 가입된 계정이 있습니다.");
 			return false;
 		} else {
 			userDao.addUser(user);
