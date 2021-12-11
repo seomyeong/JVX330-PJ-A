@@ -10,12 +10,30 @@
 
 </head>
 <body>
-    <p>일치하는 회원정보가 없습니다. 멤버쉽가입으로 이동하시겠습니까?</p>
-    <div id="addUserBtn">멤버쉽가입</div>
+   	<jsp:include page="/resources/incl/signCafeIncl.jsp"></jsp:include>
+	<form action="" method="POST">
+		<h2>적립하시겠습니까?</h2>
+		<p>등록된 휴대전화 번호를 입력하세요</p>
+		<table>
+			<tr>
+				<th>Phone</th>
+				<td><input value="" type="text" autocomplete="off" name="phone"
+					id="phone" maxlength="11" placeholder="-를 제외한 전화번호를 입력해주세요"></td>
+				<td><input type="submit" value="확인 및 결제"></td>
+			</tr>
+		</table>
+		<p>${errorMsg}</p>
+		<div id="addUserBtn">멤버쉽가입</div>
+		
+		<div>
+			<a href="menuPage.jsp">이전</a>
+			<a href="payment.jsp">바로결제</a>
+		</div>
+	</form>
 
     <script>
         $('#addUserBtn').on('click', function () {
-            window.open("<%=request.getContextPath()%>/addUserService/addUser", "popup1", "width=1280, height=700, left=50, top=50")
+            window.open("<%=request.getContextPath()%>/addUserService/addUser", "popup1", "width=1280, height=700, left=100, top=50")
         })
     </script>
 </body>
