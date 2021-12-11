@@ -1,23 +1,72 @@
 @charset "UTF-8";
 
-#myPageLoginWrap {
-	width: 800px;
-	height: 800px;
-	margin: 100px auto;
-	text-align: center;
+#myPageLoginPage {
+    position: relative;
+    margin: 30px auto 10px;
+    width: 600px; height: 480px;
 }
 
-#myPageLoginWrap h1 {
-	
+#myPageLoginForm h1 {
+    text-align: center;
+    font-size: 40px;
+    position: relative; top: 70px;
+    color: #000;
 }
 
-#myPageLoginWrap p {
-	
+#myPageLoginForm table {
+    margin: 140px auto;
+    width: 300px;
+    border-radius: 5px; text-align: center; 
 }
 
-form {
-	margin: 100px auto;
-	width: 300px;
-	position: absolute;
-	left: clac(50% - 150px);
+#myPageLoginForm table th {
+	height: 70px;
+}
+
+#myPageLoginForm table input {
+	height: 30px;
+	padding-left: 5px;
+	border-radius: 5px;
+}
+
+#myPageLoginBtn {
+    position: absolute; bottom: 20px; left: 120px;
+}
+
+#myPageLoginPage p {
+	position: relative; top: 120px;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+}
+
+#myPageLoginBtn input {
+    width: 180px;
+    line-height: 50px;
+    font-size: 15px;
+    border-radius: 10px; border: 2px solid #000;
+    background: #fff;
+    font-family: 'EliceDigitalBaeum_Bold';
+    cursor: pointer;
+}
+
+#myPageLoginBtn a {
+    display: inline-block;
+    width: 180px; line-height: 50px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#myPageLoginBtn p {
+	margin: 205px 0;
+}
+
+#myPageLoginBtn input:hover {
+	background: #000; color: #fff;
+}
+
+#myPageLoginBtn a:hover {
+	background: #000;
+	color: #fff;
 }

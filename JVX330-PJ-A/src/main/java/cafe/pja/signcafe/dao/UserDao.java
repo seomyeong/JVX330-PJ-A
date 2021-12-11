@@ -65,7 +65,7 @@ public class UserDao {
 	 * @param passWd
 	 * @return
 	 */
-	public boolean passWdCheck(User user) {
+	public boolean userCheck(User user) {
 		String sql = "SELECT * FROM CAFE_USER WHERE phone=? AND passWd=?";
 		List<User> pwCheck = null;
 		
@@ -80,7 +80,7 @@ public class UserDao {
 		}, user.getPhone(), user.getPassWd());
 	
 		if(pwCheck.size() == 0) {
-			//System.out.println("pwcheck"+pwCheck);
+			//System.out.println("usercheck"+userCheck);
 			return false;
 		}	
 			
