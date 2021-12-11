@@ -72,9 +72,12 @@
 	</section>
 	<section id="ordered">
 		<h2 class="hidden">장바구니</h2>
-		<div>
+		<div id="orderedList">
 			<p>주문하신 상품을 확인하세요.</p>
 		</div>
+		<form action="checkUser" method="POST">
+			<input type="submit" value="결제">
+		</form>
 	</section>
 </body>
 </html>

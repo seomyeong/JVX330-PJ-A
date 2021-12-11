@@ -58,4 +58,8 @@ h1{text-align: center; font-size: 50px;}
     border-radius: 7px;
     position: absolute; bottom: 0px;
 }
-#ordered div p{}
+#ordered input{
+	position: absolute; bottom: 28px; right: 200px;
+	background: #fff;
+	width: 200px; height: 200px;
+}

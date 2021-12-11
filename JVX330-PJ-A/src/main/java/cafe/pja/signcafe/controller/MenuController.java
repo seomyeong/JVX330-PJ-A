@@ -41,10 +41,9 @@ public class MenuController {
 		context.close();
 		return mav;
 	}	
-	
-	@GetMapping("menuService/checkUser")
+
+	@PostMapping("menuService/checkUser")
 	public String checkUser() {
 		return "menuService/checkUser";
 	}
-	
 }
