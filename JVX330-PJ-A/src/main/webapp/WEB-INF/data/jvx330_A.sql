@@ -72,3 +72,10 @@ INSERT INTO ORDERED(ordered_customerInfo, ordered_MenuNum, ordered_extraSize_Pri
 ordered_menuCount, ordered_usingMileage, ordered_totalPrice) 
 VALUES ('GUEST',1,300.0,500.0,2,0.0,6000.0+300.0+500.0);
 
+
+
+
+--서명 SQL 예제 테스트중--
+SELECT * FROM MENU_INFO WHERE CATEGORY='COFFEE';
+SELECT * FROM MENU_INFO WHERE CATEGORY='NON_COFFEE';
+SELECT * FROM MENU_INFO WHERE CATEGORY='FOOD';

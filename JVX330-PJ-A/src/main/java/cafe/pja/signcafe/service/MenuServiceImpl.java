@@ -14,9 +14,9 @@ public class MenuServiceImpl {
 		menuInfoDao = new MenuInfoDao(jdbcTemplate);
 	}
 	
-	//메뉴테이블 불러오기
+	//전체메뉴 조회
 	public List<MenuInfo> allMenu(){
 		List<MenuInfo> menu = menuInfoDao.AllMenu();
 		return menu;
-	}
+	}	
 }

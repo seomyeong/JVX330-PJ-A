@@ -1,0 +1,61 @@
+@charset "utf-8";
+h1{text-align: center; font-size: 50px;}
+
+#menu{
+    width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+.menuWrap{
+    height: 85vh;
+}
+.menuWrap #category{
+    height: 85vh; width: 300px;
+    position: absolute;
+}
+.menuWrap #category>p{
+    cursor: pointer;
+    display: block;
+    font-style: italic;
+    font-weight: bold;
+    height: 18%;
+    padding-top: 16%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border-bottom: 3px solid #000;
+}
+
+.menuWrap .categoryArticle{
+    position: absolute;
+    height: 46vh;
+    width: 70%;
+    overflow-y: scroll;
+    background: #fff;
+    border: 3px solid rgb(199, 255, 95);
+    margin: 10px 0 50px 360px;
+}
+
+.menuWrap .categoryArticle>div{
+    float: left;
+    width: 200px;
+    margin-bottom: 20px;
+}
+.menuWrap .categoryArticle>div>img{
+    width: 100px; height: 100px;
+}
+
+/*주문 공간*/
+#ordered{
+    margin: 0 auto;
+    width: 1280px;
+    text-align: center;
+}
+#ordered div{
+    background: rgb(241, 241, 241);
+    width: 1280px;
+    height: 250px;
+    border-radius: 7px;
+    position: absolute; bottom: 0px;
+}
+#ordered div p{}
