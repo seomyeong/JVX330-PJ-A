@@ -10,6 +10,11 @@
 	href="<%=request.getContextPath()%>/resources/css/common.css">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/menu/menuPage.css">
+<script type="text/javascript"
+	src="<%=request.getContextPath()%>/resources/js/jquery-3.6.0.js"></script>
+<script type="text/javascript"
+	src="<%=request.getContextPath()%>/resources/js/menuPage.js"
+	defer="defer"></script>
 
 </head>
 <body>
@@ -63,17 +68,13 @@
 					</c:if>
 				</c:forEach>
 			</article>
-
-
-			<article id="ordered">
-				<h2 class="hidden">주문상품</h2>
-				<div>
-					<p>주문하신 상품을 확인하세요.</p>
-				</div>
-			</article>
-
 		</div>
 	</section>
-
+	<section id="ordered">
+		<h2 class="hidden">장바구니</h2>
+		<div>
+			<p>주문하신 상품을 확인하세요.</p>
+		</div>
+	</section>
 </body>
 </html>

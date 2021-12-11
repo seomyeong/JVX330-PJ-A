@@ -12,7 +12,7 @@
 <body>
 <jsp:include page="/resources/incl/signCafeIncl.jsp"></jsp:include>	
  	<section id="successAddUser">
-        <h2>멤버쉽 가입 성공!</h2>
+        <h2>Sign Cafe 멤버십 가입이 완료되었습니다.</h2>
         <a href="../index.jsp">홈으로</a>
     </section> 
 </body>

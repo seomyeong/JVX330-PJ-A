@@ -7,11 +7,11 @@
 <title>signCafeIncl</title>
 <style>
 	#signCafeLogo {
-		padding: 40px;
+		padding: 17px;
 		border-bottom: 2px solid #000;
 	}
 	#signCafeLogo h1{
-    	text-align: center; font-size: 70px; 
+    	text-align: center; font-size: 85px; 
     	color: #000;
     }
 

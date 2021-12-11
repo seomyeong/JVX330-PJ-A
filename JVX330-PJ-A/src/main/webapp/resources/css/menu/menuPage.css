@@ -27,26 +27,30 @@ h1{text-align: center; font-size: 50px;}
 }
 
 .menuWrap .categoryArticle{
-    /* position: absolute; */
-    position: relative; z-index: 1;
-    height: 45vh;
+    position: absolute;
+    height: 46vh;
     width: 70%;
-    border: 3px solid rgb(199, 255, 95);
+    overflow-y: scroll;
     background: #fff;
+    border: 3px solid rgb(199, 255, 95);
     margin: 10px 0 50px 360px;
 }
 
 .menuWrap .categoryArticle>div{
     float: left;
     width: 200px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 .menuWrap .categoryArticle>div>img{
     width: 100px; height: 100px;
 }
 
 /*주문 공간*/
-#ordered{}
+#ordered{
+    margin: 0 auto;
+    width: 1280px;
+    text-align: center;
+}
 #ordered div{
     background: rgb(241, 241, 241);
     width: 1280px;

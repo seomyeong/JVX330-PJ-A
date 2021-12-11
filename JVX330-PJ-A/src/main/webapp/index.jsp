@@ -16,15 +16,16 @@
 	<section id="index">
 		<div id="banner">
 			<div id="menuWrap">
-				<a href="addUserService/addUser" id="addUser">멤버쉽 가입</a>
+				<a href="addUserService/addUser" id="addUser">Sign Up</a>
 				<form action="menuService/menuPage" method="post">
-					<input type="submit" value="메뉴 주문">
+					<input type="submit" value="Menu" id="menu">
 				</form>
-				<a href="myPageService/myPageLogin" id="myPage">멤버쉽 조회</a>
-				<a href="adminService/adminLogin" id="admin">관리자 모드</a>
-				<p>1.0.1ver</p>
+				<a href="myPageService/myPageLogin" id="myPage">Membership</a>
+				<a href="adminService/adminLogin" id="admin">Admin Mode</a>
+				<p id="signcafe">SIGN CAFE</p>
+				<p id="version">1.0.1ver</p>
 			</div>
-		</div>
+		</div>	
 	</section>
 
 </body>

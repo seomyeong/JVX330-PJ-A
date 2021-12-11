@@ -13,7 +13,7 @@
     
     <section id="addUserPage">
         <div id="addUserForm">
-            <h2>멤버쉽 가입</h2>
+            <h2>멤버십 가입</h2>
             <form action="addUser" method="POST">
                 <table>
                     <tr>

@@ -1,35 +1,35 @@
 @charset "utf-8";
-#addUserPage{
+#adminLoginPage{
     position: relative;
     margin: 30px auto 10px;
     width: 600px; height: 480px;
 }
 
-#addUserForm h2{
+#adminLoginForm h2{
     text-align: center;
     font-size: 40px;
     position: relative; top: 50px;
     color: #000;
     
 }
-#addUserForm table{
+#adminLoginForm table{
     margin: 100px auto; 
     width: 300px;
     border-radius: 5px; text-align: center; 
 }
-#addUserForm table th{ height: 70px;}
-#addUserForm table input{height: 30px; padding-left: 5px; border-radius: 5px;}
+#adminLoginForm table th{ height: 70px;}
+#adminLoginForm table input{height: 30px; padding-left: 5px; border-radius: 5px;}
 
 
-#addUsericon{
-    position: absolute; bottom: 0px; left: 120px;
+#adminLoginBtn{
+    position: absolute; bottom: 60px; left: 120px;
 }
-#addUserPage p{
+#adminLoginPage p{
     text-align: center; position: relative; top: -70px;
     color: #ff3e3e; font-weight: bold;
 }
 
-#addUsericon input{
+#adminLoginBtn input{
     width: 180px;
     line-height: 50px;
     font-size: 15px;
@@ -38,13 +38,13 @@
     font-family: 'EliceDigitalBaeum_Bold';
     cursor: pointer;
 }
-#addUsericon a{
+#adminLoginBtn a{
     display: inline-block;
     width: 180px; line-height: 50px;
     border: 2px solid #000;
     border-radius: 10px;
     text-align: center;
 }
-#addUsericon p{margin: 205px 0;}
-#addUsericon input:hover{background: #000; color: #fff;}
-#addUsericon a:hover{background: #000; color: #fff;}
+#adminLoginBtn p{margin: 205px 0;}
+#adminLoginBtn input:hover{background: #000; color: #fff;}
+#adminLoginBtn a:hover{background: #000; color: #fff;}
