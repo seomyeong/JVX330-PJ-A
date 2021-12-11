@@ -1,0 +1,62 @@
+@charset "utf-8";
+h1{text-align: center; font-size: 50px;}
+
+#menuListWrap{
+    width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+.menuWrap{
+    height: 85vh;
+}
+.menuWrap #titleMenu{
+    height: 85vh; width: 300px;
+    position: absolute;
+}
+.menuWrap #titleMenu>p{
+    cursor: pointer;
+    display: block;
+    font-style: italic;
+    font-weight: bold;
+    height: 18%;
+    padding-top: 16%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border-bottom: 3px solid #000;
+}
+
+.menuWrap .categoryArticle{
+    position: absolute;
+    height: 46vh;
+    width: 70%;
+    overflow-y: scroll;
+    background: #fff;
+    border: 3px solid rgb(199, 255, 95);
+    margin: 10px 0 50px 360px;
+}
+
+.menuWrap .categoryArticle>div{
+    float: left;
+    width: 200px;
+    margin-bottom: 20px;
+}
+.menuWrap .categoryArticle>div>img{
+    width: 100px; height: 100px;
+}
+
+/*주문 공간*/
+#carList{
+    margin: 0 auto;
+    width: 1280px;
+    height: 35vh;
+    background: #eee;
+    text-align: center;
+    position: relative; bottom: 200px;
+}
+#totalNum{
+    position: absolute; bottom: 50px;
+}
+#payment{
+    position: absolute; bottom: 10px;
+}

@@ -21,9 +21,20 @@ import cafe.pja.signcafe.service.MenuServiceImpl;
 @Controller("controller.menuController")
 public class MenuController {
 	@GetMapping("menuService/menuPage")
-	public String menuPageForm() {
-		return "menuService/menu_Page";
-	}
+	public ModelAndView menuPageGet() {
+		GenericApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
+		MenuServiceImpl menuService = (MenuServiceImpl) context.getBean("menuServiceImpl");
+		
+		ModelAndView mav = new ModelAndView();
+		
+		List<MenuInfo> menuInfoList = menuService.allMenu();
+		mav.addObject("menuInfoList", menuInfoList);
+		
+		mav.setViewName("menuService/menu_Page");
+
+		context.close();
+		return mav;
+	}	
 	
 	
 	@PostMapping("menuService/menuPage")
@@ -41,5 +52,9 @@ public class MenuController {
 		context.close();
 		return mav;
 	}	
-	
+
+	@PostMapping("menuService/checkUser")
+	public String checkUser() {
+		return "menuService/checkUser";
+	}
 }

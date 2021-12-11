@@ -37,7 +37,7 @@ public class AddUserController {
 		}
 
 		context.close();
-		mav.addObject("errormsg", "해당 전화번호로 가입된 아이디가 있습니다.");
+		mav.addObject("errormsg", "해당 번호로 가입된 계정이 있습니다.");
 		mav.setViewName("/addUserService/add_user");
 		return mav;
 	}

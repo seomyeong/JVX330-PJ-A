@@ -22,7 +22,7 @@
                     </tr>
 
                     <tr>
-                        <th>전화번호</th>
+                        <th>연락처</th>
                         <td><input type="text" name="phone" placeholder="전화번호를 입력하세요." pattern="[0-9]+" required></td>
                     </tr>
 

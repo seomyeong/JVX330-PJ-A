@@ -24,7 +24,7 @@ public class UserServiceImpl {
 	}
 	
 	public boolean myPageLogin(User user) {
-		if(userDao.passWdCheck(user)) {
+		if(userDao.userCheck(user)) {
 			System.out.println("로그인에 성공했습니다.");
 			return true;
 		} else {

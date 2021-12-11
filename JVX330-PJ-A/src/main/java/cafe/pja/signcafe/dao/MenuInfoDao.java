@@ -16,7 +16,7 @@ public class MenuInfoDao {
 		this.jdbcTemplate = jdbcTemplate;
 	}
 	
-	//메뉴불러오기
+	//전체 메뉴 불러오기 - menuNum, menuName, menuPrice, menuimgPath
 	public List<MenuInfo> AllMenu(){
 		String sql = "SELECT * FROM MENU_INFO";
 		
@@ -29,6 +29,7 @@ public class MenuInfoDao {
 			
 		});
 	}//end of Method
+	
 	
 }
 
