@@ -23,8 +23,8 @@
 			</tr>
 		</table>
 		<p>${errorMsg}</p>
-		<div id="addUserBtn">멤버쉽가입</div>
 	</form>
+	<div id="addUserBtn">멤버쉽가입</div>
 	<div>
 		<a href="<%=request.getContextPath()%>/menuService/menuPage">이전</a> <!-- 트랜젝션 이슈. 경로수정필요 -->
 		<form action="" method="post">
@@ -35,11 +35,8 @@
 
 	<script>
         $('#addUserBtn').on('click', function () {
-            window.open("<%=request.getContextPath()%>
-		/addUserService/addUser",
-											"popup1",
-											"width=1280, height=700, left=100, top=50")
-						})
+        	window.open("<%=request.getContextPath()%>/addUserService/addUser","popup1","width=1280, height=700, left=100, top=50")
+        	})
 	</script>
 </body>
 </html>
