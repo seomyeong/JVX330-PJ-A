@@ -42,4 +42,9 @@ public class MenuController {
 		return mav;
 	}	
 	
+	@GetMapping("menuService/checkUser")
+	public String checkUser() {
+		return "menuService/checkUser";
+	}
+	
 }
