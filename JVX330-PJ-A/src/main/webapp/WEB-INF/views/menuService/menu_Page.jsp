@@ -35,7 +35,7 @@
 					<c:if test="${menuInfoList.category eq 'COFFEE'}">
 						<div class="eachMenu">
 							<img
-								src="<%=request.getContextPath()%>${menuInfoList.menuImgPath }" class="menuImg">
+								src="<%=request.getContextPath()%>/${menuInfoList.menuImgPath }" class="menuImg">
 							<p id="menuName">${menuInfoList.menuName}</p>
 							<p>${menuInfoList.menuPrice}</p>
 						</div>
