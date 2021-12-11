@@ -8,12 +8,12 @@
 #addUserForm h2{
     text-align: center;
     font-size: 40px;
-    position: relative; top: 50px;
+    position: relative; top: 70px;
     color: #000;
     
 }
 #addUserForm table{
-    margin: 100px auto; 
+    margin: 110px auto;
     width: 300px;
     border-radius: 5px; text-align: center; 
 }
