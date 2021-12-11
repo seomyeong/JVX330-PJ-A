@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +10,7 @@
 
 </head>
 <body>
-   	<jsp:include page="/resources/incl/signCafeIncl.jsp"></jsp:include>
+	<jsp:include page="/resources/incl/signCafeIncl.jsp"></jsp:include>
 	<form action="" method="POST">
 		<h2>적립하시겠습니까?</h2>
 		<p>등록된 휴대전화 번호를 입력하세요</p>
@@ -24,17 +24,22 @@
 		</table>
 		<p>${errorMsg}</p>
 		<div id="addUserBtn">멤버쉽가입</div>
-		
-		<div>
-			<a href="menuPage.jsp">이전</a>
-			<a href="payment.jsp">바로결제</a>
-		</div>
 	</form>
+	<div>
+		<a href="<%=request.getContextPath()%>/menuService/menuPage">이전</a> <!-- 트랜젝션 이슈. 경로수정필요 -->
+		<form action="" method="post">
+			<input type="submit" value="바로결제">
+		</form>
+	</div>
 
-    <script>
+
+	<script>
         $('#addUserBtn').on('click', function () {
-            window.open("<%=request.getContextPath()%>/addUserService/addUser", "popup1", "width=1280, height=700, left=100, top=50")
-        })
-    </script>
+            window.open("<%=request.getContextPath()%>
+		/addUserService/addUser",
+											"popup1",
+											"width=1280, height=700, left=100, top=50")
+						})
+	</script>
 </body>
 </html>
