@@ -1,7 +1,7 @@
 @charset "utf-8";
 h1{text-align: center; font-size: 50px;}
 
-#menu{
+#menuListWrap{
     width: 1280px;
     margin: 0 auto;
     text-align: center;
@@ -10,11 +10,11 @@ h1{text-align: center; font-size: 50px;}
 .menuWrap{
     height: 85vh;
 }
-.menuWrap #category{
+.menuWrap #titleMenu{
     height: 85vh; width: 300px;
     position: absolute;
 }
-.menuWrap #category>p{
+.menuWrap #titleMenu>p{
     cursor: pointer;
     display: block;
     font-style: italic;
@@ -46,20 +46,17 @@ h1{text-align: center; font-size: 50px;}
 }
 
 /*주문 공간*/
-#ordered{
+#carList{
     margin: 0 auto;
     width: 1280px;
+    height: 35vh;
+    background: #eee;
     text-align: center;
+    position: relative; bottom: 200px;
 }
-#ordered div{
-    background: rgb(241, 241, 241);
-    width: 1280px;
-    height: 250px;
-    border-radius: 7px;
-    position: absolute; bottom: 0px;
+#totalNum{
+    position: absolute; bottom: 50px;
 }
-#ordered input{
-	position: absolute; bottom: 28px; right: 200px;
-	background: #fff;
-	width: 200px; height: 200px;
+#payment{
+    position: absolute; bottom: 10px;
 }
