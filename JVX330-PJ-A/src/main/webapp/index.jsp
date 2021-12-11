@@ -13,16 +13,20 @@
 
 <body>
 	<jsp:include page="/resources/incl/signCafeIncl.jsp"></jsp:include>
-	<div id="indexWrap">
-		<div id="index">
+	<section id="index">
+		<div id="banner">
 			<div id="menuWrap">
-				<a href="addUserService/addUser" id="addUser">Membership</a> 
-				<a href="menuPage.jsp" id="menu">Menu</a> 
-				<a href="myPageService/myPageLogin" id="myPage">My Page</a> 
+				<a href="addUserService/addUser" id="addUser">Sign Up</a>
+				<form action="menuService/menuPage" method="post">
+					<input type="submit" value="Menu" id="menu">
+				</form>
+				<a href="myPageService/myPageLogin" id="myPage">Membership</a>
 				<a href="adminService/adminLogin" id="admin">Admin Mode</a>
-				<p>1.0.1ver</p>
+				<p id="signcafe">SIGN CAFE</p>
+				<p id="version">1.0.1ver</p>
 			</div>
-		</div>
-	</div>		
+		</div>	
+	</section>
+
 </body>
 </html>

@@ -66,7 +66,7 @@ public class UserDao {
 	 * @return
 	 */
 	public boolean passWdCheck(User user) {
-		String sql = "SELECT * FROM CAFE_USER WHERE passWd=?";
+		String sql = "SELECT * FROM CAFE_USER WHERE phone=? AND passWd=?";
 		List<User> pwCheck = null;
 		
 		pwCheck = jdbcTemplate.query(sql, new RowMapper<User>() {
@@ -77,7 +77,7 @@ public class UserDao {
 				//System.out.println("dao test"+user);
 				return user;
 			}
-		}, user.getPassWd());
+		}, user.getPhone(), user.getPassWd());
 	
 		if(pwCheck.size() == 0) {
 			//System.out.println("pwcheck"+pwCheck);

@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+#myPageLoginWrap {
+	width: 800px;
+	height: 800px;
+	margin: 100px auto;
+	text-align: center;
+}
+
+#myPageLoginWrap h1 {
+	
+}
+
+#myPageLoginWrap p {
+	
+}
+
+form {
+	width: 400px;
+	position: absolute;
+	left: clac(50% - 200px);
+}

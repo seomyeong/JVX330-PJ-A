@@ -41,64 +41,34 @@ CREATE TABLE ORDERED(
 )
 
 
----admin 계정---
+---CAFE_USER TABLE : admin 계정, 일반 멤버쉽 가입 예제---
 INSERT INTO CAFE_USER(name,phone,passWd) VALUES ('admin', 'admin', 'admin');
-
----ORDERED INSERT---
-INSERT INTO ORDERED(ordered_customerInfo, ordered_MenuNum, ordered_extraSize_Price, ordered_extraTemp_Price,
-ordered_menuCount, ordered_usingMileage, ordered_totalPrice) 
-VALUES ('GUEST',1,300.0,500.0,2,0.0,6000.0+300.0+500.0);
-
-
----MENU INSERT 하세요---
-
-INSERT INTO MENU_INFO(category, menuName, menuPrice, menuCount) VALUES('COFFEE','클래식 아메리카노',6000.0, 2);
-INSERT INTO MENU_INFO(category, menuName, menuPrice, menuCount) VALUES('COFFEE','바닐라빈 라떼',7800.0, 3);
-INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('COFFEE','벨벳 다크 모카 카푸치노',7500.0);
-INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('COFFEE','콜드 브루 플로트',7500.0);
-INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('COFFEE','플랫 화이트',7000.0);
-
-INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('NON_COFFEE','제주 유기농 녹차',7500.0);
-INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('NON_COFFEE','콩고물 블랙 밀크 티',7000.0);
-INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('NON_COFFEE','피치레몬 블렌디드',8000.0);
-
-INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('FOOD','우유 품은 초콜릿 크루아상',6000.0);
-INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('FOOD','한 입에 쏙 치즈 꿀 볼',5500.0);
-INSERT INTO MENU_INFO(category, menuName, menuPrice) VALUES('FOOD','트리플 치즈 크로크무슈',6500.0);
-
-INSERT INTO ORDERED(ordered_customerInfo, ordered_MenuNum, ordered_extraSize_Price, ordered_extraTemp_Price,
-ordered_menuCount, ordered_usingMileage, ordered_totalPrice) 
-VALUES ('GUEST',1,300.0,500.0,2,0.0,6000.0+300.0+500.0);
-
-
-
-
-
-
-------------------[서명] 쿼리문 예제 작성중...------------------------------------
---******USER가 메뉴선택 버튼 눌렀을 때 고유번호 부여 ver1, ver2--
-INSERT INTO CART_ID(userCartId) VALUES(1251);
-
---******메뉴선택 후 전송버튼(결제버튼x) 눌렀을 때 고유번호로 CART에 INSERT
-INSERT INTO CART(userCartNum, cart_category, cart_menuName, cart_menuPrice, 
-cart_menuCount, cart_size, cart_temp, cart_totalPrice)
-VALUES(1251, 'COFFEE', 'AMERICANO', 4000.0, 2, 'S', 'H', 4000.0*2);
-
---******계속해서 주문메뉴 담을때마다 CART INSERT
-INSERT INTO CART(userCartNum, cart_category, cart_menuName, cart_menuPrice, 
-cart_menuCount, cart_size, cart_temp, cart_totalPrice)
-VALUES(1251, 'OTHER', 'ICE TEA', 4500.0, 1, 'S', 'I', 4500.0*1);
-
---******주문취소 시 카트삭제
-DELETE FROM CART where cartNum=1251;
----------------------------------------------------------------------------
-
 INSERT INTO CAFE_USER(name, phone, passWd, mileage) VALUES('서명', '010123123', '1234', 1000000.0);
 
 
 
+---MENU_INFO TABLE : 메뉴 기본 품목 INSERT 하세요---
 
---test--
-INSERT INTO TestUser(userId, passwd, userName, ssn, email, addr) 
-VALUES ('hello001','000123','이서명','950529-2222222','hello001@naver.com','대구시 중구');
-ALTER TABLE Account DROP CONSTRAINT Account_customerId_FK;
+INSERT INTO MENU_INFO(category, menuName, menuPrice, menuImgPath) VALUES('COFFEE','클래식 아메리카노',6000.0,'/resources/img/coffee_1.png');
+INSERT INTO MENU_INFO(category, menuName, menuPrice, menuImgPath) VALUES('COFFEE','바닐라빈 라떼',7800.0,'/resources/img/coffee_2.png');
+INSERT INTO MENU_INFO(category, menuName, menuPrice, menuImgPath) VALUES('COFFEE','벨벳 다크 모카 카푸치노',7500.0, '/resources/img/coffee_3.png');
+INSERT INTO MENU_INFO(category, menuName, menuPrice, menuImgPath) VALUES('COFFEE','콜드 브루 플로트',7500.0, '/resources/img/coffee_4.png');
+INSERT INTO MENU_INFO(category, menuName, menuPrice, menuImgPath) VALUES('COFFEE','플랫 화이트',7000.0, '/resources/img/coffee_5.png');
+
+INSERT INTO MENU_INFO(category, menuName, menuPrice, menuImgPath) VALUES('NON_COFFEE','제주 유기농 녹차',7500.0, '/resources/img/non_coffee_1.png');
+INSERT INTO MENU_INFO(category, menuName, menuPrice, menuImgPath) VALUES('NON_COFFEE','콩고물 블랙 밀크 티',7000.0, '/resources/img/non_coffee_2.png');
+INSERT INTO MENU_INFO(category, menuName, menuPrice, menuImgPath) VALUES('NON_COFFEE','피치레몬 블렌디드',8000.0, '/resources/img/non_coffee_3.png');
+
+INSERT INTO MENU_INFO(category, menuName, menuPrice, menuImgPath) VALUES('FOOD','우유 품은 초콜릿 크루아상',6000.0, '/resources/img/food1.png');
+INSERT INTO MENU_INFO(category, menuName, menuPrice, menuImgPath) VALUES('FOOD','한 입에 쏙 치즈 꿀 볼',5500.0, '/resources/img/food2.png');
+INSERT INTO MENU_INFO(category, menuName, menuPrice, menuImgPath) VALUES('FOOD','트리플 치즈 크로크무슈',6500.0, '/resources/img/food3.png');
+
+--MENU_INFO TABLE : 판매누적수량, 마일리지 사용액 누적 예제--
+UPDATE MENU_INFO SET menuCount=2 WHERE menuNum=1;
+UPDATE MENU_INFO SET menuCount=5, MILEAGECOUNT=500.0 WHERE menuNum=2;
+
+--ORDERED TABLE : INSERT 예제--
+INSERT INTO ORDERED(ordered_customerInfo, ordered_MenuNum, ordered_extraSize_Price, ordered_extraTemp_Price,
+ordered_menuCount, ordered_usingMileage, ordered_totalPrice) 
+VALUES ('GUEST',1,300.0,500.0,2,0.0,6000.0+300.0+500.0);
+
