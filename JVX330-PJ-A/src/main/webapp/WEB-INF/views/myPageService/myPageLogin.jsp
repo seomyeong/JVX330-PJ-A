@@ -19,20 +19,20 @@
 			<table>
 				<tr>
 					<th>연락처</th>
-					<td><input value="" type="text" autocomplete="off" name="phone" id="phone" maxlength="11" placeholder="-를 제외한 전화번호를 입력해주세요"></td>
+					<td><input value="" type="text" autocomplete="off" name="phone" id="phone" maxlength="11" placeholder="-를 제외하고 입력해주세요"></td>
 				</tr>
 				<tr>
 					<th>비밀번호</th>
 					<td><input value="" type="password" autocomplete="off" name="passWd" id="pw" maxlength="20" placeholder="비밀번호를 입력해주세요" required></td>
 				</tr>
 			</table>
-			<p>${errormsg}</p>
+			<p id="errorMsg">${errormsg}</p>
 			<div id="myPageLoginBtn">
 				<a href="../index.jsp">이전</a>
 				<input type="submit" value="로그인"> 
 			</div>
 		</form>
-</div>
+	</div>
 </section>
 
 	
