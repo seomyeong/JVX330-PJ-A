@@ -32,9 +32,9 @@
                     </tr>
                 </table>
                 <div id="addUsericon">
-                    <p>${errormsg}</p>
                     <a href="../index.jsp">이전</a> <input type="submit" value="가입">
                 </div>
+                <p>${errormsg}</p>
             </form>
         </div>
     </section>

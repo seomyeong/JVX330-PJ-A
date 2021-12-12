@@ -2,7 +2,7 @@
 #adminLoginPage{
     position: relative;
     margin: 30px auto 10px;
-    width: 600px; height: 480px;
+    width: 600px; height: 520px;
 }
 
 #adminLoginForm h2{
@@ -22,11 +22,14 @@
 
 
 #adminLoginBtn{
-    position: absolute; bottom: 60px; left: 120px;
+    position: absolute; bottom: 120px; left: 120px;
 }
+
 #adminLoginPage p{
-    text-align: center; position: relative; top: -70px;
-    color: #ff3e3e; font-weight: bold;
+	padding-top: 70px;
+    text-align: center;
+	color: red;
+	font-weight: bold;
 }
 
 #adminLoginBtn input{
@@ -45,6 +48,6 @@
     border-radius: 10px;
     text-align: center;
 }
-#adminLoginBtn p{margin: 205px 0;}
+
 #adminLoginBtn input:hover{background: #000; color: #fff;}
 #adminLoginBtn a:hover{background: #000; color: #fff;}
