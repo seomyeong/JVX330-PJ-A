@@ -5,11 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>SignCafe</title>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/myPage/successModifyMyPage.css">
 </head>
 <body>
-	<form>
-		<h2>정보수정 완료!</h2>
+<jsp:include page="/resources/incl/signCafeIncl.jsp"></jsp:include>	
+ 	<section id="successModifyMyPage">
+		<h2>회원정보 수정 완료!</h2>
 		<a href="../index.jsp">홈으로</a>
-	</form>
+    </section> 
 </body>
 </html>
