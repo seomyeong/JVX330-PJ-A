@@ -25,7 +25,7 @@
 					<td><input type="submit" value="확인 및 결제"></td>
 				</tr>
 			</table>
-		<p id="errorMsg">${errorMsg}</p>
+		<p>${errorMsg}</p>
 		<div id="addUserBtn">멤버쉽가입</div>
 		<div id="checkUserBtn">
 			<a href="<%=request.getContextPath()%>/menuService/menuPage">이전</a> <!-- 트랜젝션 이슈. 경로수정필요 -->

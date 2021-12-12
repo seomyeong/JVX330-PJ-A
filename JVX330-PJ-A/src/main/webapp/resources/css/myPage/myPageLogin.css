@@ -58,8 +58,9 @@
     text-align: center;
 }
 
-#errorMsg p {
-	margin: 205px 0;
+#myPageLoginForm form p {
+	margin: -115px 0;
+	color: red;
 }
 
 #myPageLoginBtn input:hover {
