@@ -64,4 +64,10 @@ public class MenuController {
 		return "menuService/payment";
 	}
 	
+	
+	@PostMapping("menuService/orderSheet")
+	public String orderSheet() {
+		return "menuService/orderSheet";
+	}
+	
 }
