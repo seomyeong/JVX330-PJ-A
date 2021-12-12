@@ -29,7 +29,7 @@ body { background: #eee; }
 
 article { position: absolute; }
 
-h1 { text-align: center; padding: 20px 0; background: #ccc; }
+h1 { text-align: center; padding: 20px 0; background: #aaa; }
 
 
 #article1 { width: 690px; left: calc(50% - 700px); top: 13%; }

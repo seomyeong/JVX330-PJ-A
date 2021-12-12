@@ -57,4 +57,11 @@ public class MenuController {
 	public String checkUser() {
 		return "menuService/checkUser";
 	}
+	
+	
+	@PostMapping("menuService/payment")
+	public String payment() {
+		return "menuService/payment";
+	}
+	
 }

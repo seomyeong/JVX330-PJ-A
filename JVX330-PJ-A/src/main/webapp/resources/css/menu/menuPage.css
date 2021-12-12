@@ -1,7 +1,7 @@
 @charset "utf-8";
 h1{text-align: center; font-size: 50px;}
 
-#menu{
+#menuListWrap{
     width: 1280px;
     margin: 0 auto;
     text-align: center;
@@ -10,11 +10,11 @@ h1{text-align: center; font-size: 50px;}
 .menuWrap{
     height: 85vh;
 }
-.menuWrap #category{
+.menuWrap #titleMenu{
     height: 85vh; width: 300px;
     position: absolute;
 }
-.menuWrap #category>p{
+.menuWrap #titleMenu>p{
     cursor: pointer;
     display: block;
     font-style: italic;
@@ -46,20 +46,76 @@ h1{text-align: center; font-size: 50px;}
 }
 
 /*주문 공간*/
-#ordered{
+#orderedList{
     margin: 0 auto;
     width: 1280px;
+    height: 35vh;
+    background: #eee;
     text-align: center;
+    position: relative; bottom: 250px;
 }
-#ordered div{
-    background: rgb(241, 241, 241);
-    width: 1280px;
-    height: 250px;
-    border-radius: 7px;
-    position: absolute; bottom: 0px;
+#container{
+    overflow-y: scroll;
+    width: 830px; 
+    height: 35vh;
+    float: right;
 }
-#ordered input{
-	position: absolute; bottom: 28px; right: 200px;
-	background: #fff;
-	width: 200px; height: 200px;
+#container p{
+    text-align: left;
+    position: absolute; top: 10px; left: 160px;
 }
+#totalNum{
+    width: 150px;
+    height: 25vh;
+    font-size: 50px;
+    position: absolute; bottom: 0px; left: 160px;
+}
+#payment{
+    cursor: pointer;
+    width: 150px;
+    height: 18vh;
+    background: #fff;
+    position: absolute; bottom: 0px; left: 0px;
+}
+#goToIndex{
+    display: block;
+    width: 150px;
+    height: 15vh;
+    line-height: 50px;
+    background: #fff;
+    border: 1px solid #000;
+}
+
+/* #container에 담긴 개별 메뉴*/
+.commonCart{
+    margin: 10px;
+    width: 200px;
+    height: 150px;
+    padding-top: 35px;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    border-radius: 5px;
+    float: left;
+}
+.cartName{
+   border: none;
+   background: none;
+   text-align: center;
+   font-weight: bold;
+   font-size: 14px;
+}
+.tempWrap{
+    font-size: 5px;
+}
+
+.sizeWrap{
+    font-size: 5px;
+}
+#numWrap input{
+    width: 10px;
+    visibility: hidden;
+}
+.price{
+    width: 40px;
+}
+.remove{}
