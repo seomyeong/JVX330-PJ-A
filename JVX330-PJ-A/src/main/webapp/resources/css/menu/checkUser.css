@@ -58,6 +58,18 @@
     text-align: center;
 }
 
+#addUserBtn {
+	position: absolute; bottom: 120px; left: 210px;
+	width: 180px;
+    line-height: 50px;
+    font-size: 15px;
+    border-radius: 10px; border: 2px solid #000;
+    background: #fff;
+    font-family: 'EliceDigitalBaeum_Bold';
+    cursor: pointer;
+    text-align: center;
+}
+
 #checkUserForm form p {
 	margin: 65px 0;
 	color: red;
@@ -67,3 +79,12 @@
 	background: #000; color: #fff;
 }
 
+#checkUserBtn a:hover {
+	background: #000;
+	color: #fff;
+}
+
+#addUserBtn:hover {
+	background: #000;
+	color: #fff;
+}

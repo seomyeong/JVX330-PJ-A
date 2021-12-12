@@ -28,7 +28,7 @@
 		<p>${errorMsg}</p>
 		<div id="addUserBtn">멤버쉽가입</div>
 		</form>
-		<for maction="" method="POST">
+		<form maction="" method="POST">
 			<div id="checkUserBtn">
 			<a href="<%=request.getContextPath()%>/menuService/menuPage">이전</a> <!-- 트랜젝션 이슈. 경로수정필요 -->
 			<input type="submit" value="바로결제">	
