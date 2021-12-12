@@ -14,6 +14,7 @@
 </head>
 <body>
 	<jsp:include page="/resources/incl/signCafeIncl.jsp"></jsp:include>
+	
 	<section id="checkUserPage">
 		<div id="checkUserForm">
 			<h2>적립하시겠습니까?</h2>
