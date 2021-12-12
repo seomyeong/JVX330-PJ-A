@@ -12,8 +12,6 @@
 	<p>주문내역</p>
 	<p>결제내역</p>
 	
-	<form action="" method="post">
-	<input type="submit" value="확인">
-	</form>
+	<a href="../index.jsp">확인</a>
 </body>
 </html>

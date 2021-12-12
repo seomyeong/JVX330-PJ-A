@@ -34,14 +34,16 @@
 		
 		<p>${errormsg}</p>
 		
-		<p>*마일리지 확인</p>
-		<table id="userMileage">
-			<tr>
-				<th>mileage
-				<td><input type="text" value="${user.mileage}" name="mileage" id="mileage" readonly></td>
-			</tr>
-		</table>
-		
+		<div id="mileageWrap">
+			<p>*마일리지 확인</p>
+			<table id="userMileage">
+				<tr>
+					<th>mileage
+					<td><input type="text" value="${user.mileage}" name="mileage" id="mileage" readonly></td>
+				</tr>
+			</table>	
+		</div>
+				
 		
 		<div id="myPageBtn">
 			<a href="../index.jsp" id="prev">이전</a> <input type="submit" value="수정">

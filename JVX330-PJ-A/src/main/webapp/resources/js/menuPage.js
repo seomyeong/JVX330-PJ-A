@@ -1,6 +1,5 @@
 //카테고리 선택
 $('.menuWrap>article:eq(1)').css({ zIndex: 1 })
-console.log($('.menuWrap>article:eq(1)'))
 
 
 $('#titleMenu p').on('click', function (e) {
@@ -33,8 +32,8 @@ $(document).ready(function () {
             "<input type='text' name=" + nameNameNum + " class='cartName' value=''>" +
 
             "<div id='tempWrap'>" +
-            "<label for='hot'><input type='radio' id='hot'  class='temp' name=" + tempNameNum + " value='0'>HOT</label>" +
-            "<label for='cold'><input type='radio' id='cold'  class='temp' name=" + tempNameNum + " value='500'>COLD</label>" +
+            "<label for='hot'><input type='radio' id='hot' class='temp' name=" + tempNameNum + " value='0'>HOT</label>" +
+            "<label for='cold'><input type='radio' id='cold' class='temp' name=" + tempNameNum + " value='500'>COLD</label>" +
             "</div>" +
             "<div id='sizeWrap'>" +
             "<label for='small'><input type='radio' class='size' id='small' name=" + sizeNameNum + " value='0'>S</label>" +
@@ -53,15 +52,14 @@ $(document).ready(function () {
             "</div>";
 
 
-        $('#totalNum').val(idNum);
+        	$('#totalNum').val(idNum);
 
 
         if ($(this).next().text() == "클래식 아메리카노") {
             $('#container').append(html);
             $('#' + eachCartNum).find('.cartName').val("클래식 아메리카노");
             $('#' + eachCartNum).find('.price').val(Number("6000"));
-
-
+			
             basicSum[idNum - 1] = 6000;
             //conValue1[idNum - 1] = 1500;
         }
@@ -150,10 +148,10 @@ $(document).ready(function () {
 
 
     let tempState = 0;
-    $(document).on("click", ".temp", function (event) {
+    $(document).on("click", ".temp", function() {
         let tempValue = Number($(this).val());
         index = Number($(this).attr('name').slice(4, 5)) - 1;
-
+		
         if (tempValue == 0) {
 
             if (tempState == 1) {
@@ -169,6 +167,7 @@ $(document).ready(function () {
         if (tempValue == 500) {
             basicSum[index] += tempValue;
             $('#eachCart' + (index + 1)).find('.price').val(basicSum[index]);
+			
             tempState = 1;
         }
     });
@@ -176,7 +175,7 @@ $(document).ready(function () {
 
     let sizeState = 0;
     let sizeState2 = 0;
-    let conValue1 = new Array();
+    //let conValue1 = new Array();
     $(document).on("click", ".size", function (event) {
         let sizeValue = Number($(this).val());
         index = Number($(this).attr('name').slice(4, 5)) - 1;
@@ -236,7 +235,6 @@ $(document).ready(function () {
         let countPrice = basicSum[index] / (countNum + 1);
         basicSum[index] = countPrice;
         $(this).parents('#numWrap').next('#price').val(countPrice);
-
 
     })
 
