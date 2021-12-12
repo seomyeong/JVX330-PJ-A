@@ -11,5 +11,9 @@
 	<p>주문이 성공적으로 완료되었습니다.</p>
 	<p>주문내역</p>
 	<p>결제내역</p>
+	
+	<form action="" method="post">
+	<input type="submit" value="확인">
+	</form>
 </body>
 </html>
