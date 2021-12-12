@@ -35,7 +35,7 @@
 					<c:if test="${menuInfoList.category eq 'COFFEE'}">
 						<div class="eachMenu">
 							<img
-								src="<%=request.getContextPath()%>${menuInfoList.menuImgPath }" class="menuImg">
+								src="<%=request.getContextPath()%>/${menuInfoList.menuImgPath }" class="menuImg">
 							<p id="menuName">${menuInfoList.menuName}</p>
 							<p>${menuInfoList.menuPrice}</p>
 						</div>
@@ -70,14 +70,16 @@
 			</article>
 		</div>
 	</section>
-    <section id="carList">
+    <section id="orderedList">
         <h2 class="hidden">장바구니</h2>
-        <form action="menuController" method="post" id="container">
+        <form action="" method="post" id="container">
+            <p>주문하신 총 수량을 확인하세요.</p>
             <input type="text" name="totalNum" id="totalNum">
         </form>
-
-        <input type="submit" value="결제하기" id="payment">
-
+        <form action="checkUser" method="post" id="paymentForm">
+            <input type="submit" value="결제하기" id="payment">
+        </form>
+        <a href="<%=request.getContextPath()%>/index.jsp" id="goToIndex">메인으로</a>
     </section>
 </body>
 </html>

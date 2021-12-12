@@ -43,10 +43,10 @@ $(document).ready(function () {
             "</div>" +
             "<div id='numWrap'>" +
             "<input type='text' class='num' name=" + countNameNum + " value='1'>" +
-            "<div id='controllNum'>" +
-            "<a href='#' class='upper' class='controll'>▲</a>" +
-            "<a href='#' class='lower' class='controll'>▼</a>" +
-            "</div>" +
+            // "<div id='controllNum'>" +
+            // "<a href='#' class='upper' class='controll'>▲</a>" +
+            // "<a href='#' class='lower' class='controll'>▼</a>" +
+            // "</div>" +
             "</div>" +
             "<input type='text' name=" + priceNameNum + " class='price'>" +
             "<a href='#' class='remove'>  X </a>" +
