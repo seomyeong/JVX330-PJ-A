@@ -42,10 +42,9 @@
 		</div>
 	</section>
 
-	<script>
+<script>
         $('#addUserBtn').on('click', function () {
         	window.open("<%=request.getContextPath()%>/addUserService/addUser","popup1","width=1280, height=700, left=100, top=50")
         	})
-	</script>
-</body>
+	</script></body>
 </html>
