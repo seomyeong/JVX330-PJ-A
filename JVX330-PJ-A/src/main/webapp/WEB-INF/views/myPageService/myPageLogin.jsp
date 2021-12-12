@@ -19,7 +19,7 @@
 			<table>
 				<tr>
 					<th>연락처</th>
-					<td><input value="" type="text" autocomplete="off" name="phone" id="phone" maxlength="11" placeholder="-를 제외하고 입력해주세요"></td>
+					<td><input value="" type="text" autocomplete="off" name="phone" id="phone" pattern="[0-9]+" maxlength="11" minlength="11" placeholder="-를 제외하고 입력해주세요" required></td>
 				</tr>
 				<tr>
 					<th>비밀번호</th>

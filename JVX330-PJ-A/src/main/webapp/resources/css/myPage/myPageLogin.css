@@ -14,7 +14,7 @@
 }
 
 #myPageLoginForm table {
-    margin: 140px auto;
+    margin: 140px auto 0;
     width: 300px;
     border-radius: 5px; text-align: center; 
 }
@@ -34,7 +34,7 @@
 }
 
 #myPageLoginPage p {
-	position: relative; top: 120px;
+	position: relative; top: 100px;
     text-align: center;
     color: #000;
     font-weight: bold;
@@ -59,7 +59,7 @@
 }
 
 #myPageLoginForm form p {
-	margin: -115px 0;
+	margin: 65px 0;
 	color: red;
 }
 

@@ -46,17 +46,76 @@ h1{text-align: center; font-size: 50px;}
 }
 
 /*주문 공간*/
-#carList{
+#orderedList{
     margin: 0 auto;
     width: 1280px;
     height: 35vh;
     background: #eee;
     text-align: center;
-    position: relative; bottom: 200px;
+    position: relative; bottom: 250px;
+}
+#container{
+    overflow-y: scroll;
+    width: 830px; 
+    height: 35vh;
+    float: right;
+}
+#container p{
+    text-align: left;
+    position: absolute; top: 10px; left: 160px;
 }
 #totalNum{
-    position: absolute; bottom: 50px;
+    width: 150px;
+    height: 25vh;
+    font-size: 50px;
+    position: absolute; bottom: 0px; left: 160px;
 }
 #payment{
-    position: absolute; bottom: 10px;
+    cursor: pointer;
+    width: 150px;
+    height: 18vh;
+    background: #fff;
+    position: absolute; bottom: 0px; left: 0px;
 }
+#goToIndex{
+    display: block;
+    width: 150px;
+    height: 15vh;
+    line-height: 50px;
+    background: #fff;
+    border: 1px solid #000;
+}
+
+/* #container에 담긴 개별 메뉴*/
+.commonCart{
+    margin: 10px;
+    width: 200px;
+    height: 150px;
+    padding-top: 35px;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    border-radius: 5px;
+    float: left;
+}
+.cartName{
+   border: none;
+   background: none;
+   text-align: center;
+   font-weight: bold;
+   font-size: 14px;
+}
+.tempWrap{
+    font-size: 5px;
+}
+
+.sizeWrap{
+    font-size: 5px;
+}
+#numWrap input{
+    width: 10px;
+    visibility: hidden;
+}
+.price{
+    width: 40px;
+}
+.remove{}

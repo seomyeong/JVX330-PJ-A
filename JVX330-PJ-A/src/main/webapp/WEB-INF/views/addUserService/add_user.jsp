@@ -23,12 +23,12 @@
 
                     <tr>
                         <th>연락처</th>
-                        <td><input type="text" name="phone" placeholder="전화번호를 입력하세요." pattern="[0-9]+" required></td>
+                        <td><input type="text" name="phone" placeholder="전화번호를 입력하세요." pattern="[0-9]+" maxlength="11" minlength="11" required></td>
                     </tr>
 
                     <tr>
                         <th>비밀번호</th>
-                        <td><input type="password" name="passWd" placeholder="비밀번호를 입력하세요." required></td>
+                        <td><input type="password" name="passWd" placeholder="비밀번호를 입력하세요." maxlength="20" required></td>
                     </tr>
                 </table>
                 <div id="addUsericon">
