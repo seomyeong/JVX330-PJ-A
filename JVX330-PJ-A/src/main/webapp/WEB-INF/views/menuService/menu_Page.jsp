@@ -80,6 +80,7 @@
 		<h2 class="hidden">장바구니</h2>
 		<form action="checkUser" method="post" id="container">
 			<p>총 주문 수량을 확인하세요.</p>
+			<p>${sessionScope.errorMsg }</p>
 			<input type="text" name="totalNum" id="totalNum"
 				value="${sessionScope.totalNum}"> <input type="submit"
 				value="결제하기" id="payment">
