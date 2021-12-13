@@ -24,18 +24,16 @@
 			</tr>
 			<tr>
 				<th>Phone
-				<td><input type="text" value="${user.phone}" autocomplete="off" name="phone" id="phone" maxlength="11" required></td>
+				<td><input type="text" value="${user.phone}" autocomplete="off" name="phone" id="phone" pattern="[0-9]+" maxlength="11" minlength="11" required></td>
 			</tr>
 			<tr>
 				<th>Password
 				<td><input type="password" value="${user.passWd}" autocomplete="off" name="passWd" id="pw" maxlength="20" required></td>
 			</tr>
 		</table>
-		
-		<p id="errorMsg">${errormsg}</p>
-		
+			
 		<div id="userMileageWrap">
-			<p id="inquriyMileage">*마일리지 확인</p>
+			<p>*마일리지 확인</p>
 			<table id="userMileage">
 				<tr>
 					<th>mileage
@@ -48,6 +46,7 @@
 			<a href="../index.jsp" id="prev">이전</a> <input type="submit" value="수정">
 		</div>
 		
+		<p id="errorMsg">${errormsg}</p>
 	</form>
 </div>
 </div>
