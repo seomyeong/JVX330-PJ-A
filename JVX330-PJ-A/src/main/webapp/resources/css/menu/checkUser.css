@@ -2,7 +2,7 @@
 
 #checkUserPage {
     position: relative;
-    margin: 30px auto 10px;
+    margin: 10px auto 10px;
     width: 600px; height: 480px;
 }
 
@@ -21,6 +21,10 @@
 
 #checkUserForm table th {
 	height: 70px;
+}
+
+.confirm input {
+	padding: 6px 7px;
 }
 
 #checkUserForm table input {
@@ -59,20 +63,16 @@
 }
 
 #addUserBtn {
-	position: absolute; bottom: 120px; left: 205px;
-	width: 180px;
-    line-height: 50px;
+	position: absolute; bottom: 85px; left: 115px;
+	width: 360px;
+    line-height: 40px;
     font-size: 15px;
     border-radius: 10px; border: 2px solid #000;
     background: #fff;
     font-family: 'EliceDigitalBaeum_Bold';
     cursor: pointer;
     text-align: center;
-}
-
-#checkUserForm form p {
-	margin: 65px 0;
-	color: red;
+    background-color: #ddd;
 }
 
 #checkUserBtn input:hover {
@@ -88,10 +88,9 @@
 	background: #000;
 	color: #fff;
 }
-#errorMsg{
-	margin: 0 auto;
-	display: block;
-	height: 30px;
-	font-size: 30px;
+
+#checkUserForm form p {
+	margin: -40px auto;
 	color: red;
+	font-weight: bold;
 }

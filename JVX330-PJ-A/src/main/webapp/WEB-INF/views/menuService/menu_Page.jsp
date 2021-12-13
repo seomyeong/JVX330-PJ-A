@@ -100,8 +100,13 @@
 								</label>
 							</c:when>
 							<c:when test="${order.extraTemp_Price == 500.0}">
+<<<<<<< HEAD
 								<label for="hot${i}"> <input type='radio' id="hot${i}"
 									class='temp' name="temp${i}" value='0' checked>HOT
+=======
+								<label for='hot'> <input type='radio' id='hot'
+									class='temp' name="temp${i}" value='0'>HOT
+>>>>>>> branch 'main' of https://github.com/seomyeong/JVX330-PJ-A.git
 								</label>
 								<label for="cold${i}"> <input type='radio' id="cold${i}"
 									class='temp' name="temp${i}" value='500' checked>COLD

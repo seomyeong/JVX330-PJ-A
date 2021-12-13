@@ -15,10 +15,53 @@ $('#titleMenu p').on('click', function (e) {
 //개별 메뉴 ordered에 append
 $(document).ready(function () {
  
+	
 	let idNum = $('#totalNum').val();
 	console.log(idNum);
     let eachCartNum = null;
     let basicSum = new Array();
+	let checkStateOnce  = new Array();
+	let tempState = 0;
+	let sizeState = 0;
+    let sizeState2 = 0;
+    let sizeState3 = 0;
+	
+	
+	
+	for(let i = 0; i < idNum; i++){
+		basicSum[i] = Number($('#eachCart' + (i + 1)).find('.price').val());
+		if($('#eachCart' + (i + 1)).find('#cold' + (i + 1)).is(":checked")){
+			checkStateOnce[i] = "c";
+			
+			tempState = 1;
+		}
+		else{
+			checkStateOnce[i] = "h";
+			
+			tempState = 0;
+		}
+	}
+	
+	
+	for(let j = 0; j < idNum; j++){
+		if($('#eachCart' + (j + 1)).find('#small' + (j + 1)).is(":checked")){
+			checkStateOnce[j] = "s";
+			console.log("dfdfdf");
+			sizeState3 = 0;
+		}
+		else if($('#eachCart' + (j + 1)).find('#midium' + (j + 1)).is(":checked")){
+			checkStateOnce[j] = "m";
+			sizeState3 = 1;
+            sizeState2 = 1;
+		}
+		else if($('#eachCart' + (j + 1)).find('#large' + (j + 1)).is(":checked")){
+			checkStateOnce[j] = "l";
+			sizeState = 1;
+            sizeState2 = 0;
+		}
+	}
+	
+	
     let index = 0;
     $('.menuImg').on('click', function () {
         idNum++;
@@ -163,15 +206,14 @@ $(document).ready(function () {
     })
 
 
-	let checkStateOnce  = null;
-
-    let tempState = 0;
+	
+	
     $(document).on("click", ".temp", function() {
         let tempValue = Number($(this).val());
         index = Number($(this).attr('name').slice(4, 5)) - 1;
 		
         if (tempValue == 0) {
-            if(checkStateOnce == "h"){return false;}
+            if(checkStateOnce[index] == "h"){return false;}
             if (tempState == 1) {
                 basicSum[index] -= 500;
                 tempState = 0;
@@ -179,24 +221,22 @@ $(document).ready(function () {
             else { basicSum[index] += tempValue; }
 
             $('#eachCart' + (index + 1)).find('.price').val(basicSum[index]);
-            checkStateOnce = "h";
+            checkStateOnce[index] = "h";
         }
 
 
         if (tempValue == 500) {
-            if(checkStateOnce == "c"){return false;}
+            if(checkStateOnce[index] == "c"){return false;}
             basicSum[index] += tempValue;
             $('#eachCart' + (index + 1)).find('.price').val(basicSum[index]);
 			
             tempState = 1;
-            checkStateOnce = "c";
+            checkStateOnce[index] = "c";
         }
     });
 
 
-    let sizeState = 0;
-    let sizeState2 = 0;
-    let sizeState3 = 0;
+    
     
     $(document).on("click", ".size", function (event) {
         let sum = 0;
@@ -206,7 +246,7 @@ $(document).ready(function () {
         ////////////////////////////////////////
 
         if (sizeValue == 0) {
-            if(checkStateOnce == "s"){return false;}
+            if(checkStateOnce[index] == "s"){return false;}
             if (sizeState2 == 1) {
                 basicSum[index] -= 500;
                 sizeState2 = 0;
@@ -224,13 +264,13 @@ $(document).ready(function () {
                 sizeState3 = 0;
                 $('#eachCart' + (index + 1)).find('.price').val(basicSum[index]);
             }
-            checkStateOnce = "s";
+            checkStateOnce[index] = "s";
         }
 
         /////////////////////////////////////
 
         if (sizeValue == 500) {
-            if(checkStateOnce == "m"){return false;}
+            if(checkStateOnce[index] == "m"){return false;}
             if (sizeState == 1) {
                 basicSum[index] -= 500;
                 sizeState = 0;
@@ -243,13 +283,13 @@ $(document).ready(function () {
                 sizeState2 = 1;
             }
             $('#eachCart' + (index + 1)).find('.price').val(basicSum[index]);
-            checkStateOnce = "m";
+            checkStateOnce[index] = "m";
         }
 
         //////////////////////////////////
 
         if (sizeValue == 1000) {
-            if(checkStateOnce == "l"){return false;}
+            if(checkStateOnce[index] == "l"){return false;}
             if(sizeState3 == 1){
                 basicSum[index] += 500;
                 sizeState3 = 0;
@@ -263,31 +303,9 @@ $(document).ready(function () {
 
             sizeState = 1;
             sizeState2 = 0;
-            checkStateOnce = "l";
+            checkStateOnce[index] = "l";
         }
     });
-
-
-    let countNum = 1;
-    $(document).on("click", ".upper", function (event) {
-        countNum++;
-        $(this).parent().parent().find('#num').val(countNum);
-        let countPrice = basicSum[index] * countNum;
-        basicSum[index] = countPrice;
-        $(this).parents('#numWrap').next('#price').val(countPrice);
-
-
-    })
-
-
-    $(document).on("click", ".lower", function (event) {
-        countNum--;
-        $(this).parent().parent().find('#num').val(countNum);
-        let countPrice = basicSum[index] / (countNum + 1);
-        basicSum[index] = countPrice;
-        $(this).parents('#numWrap').next('#price').val(countPrice);
-
-    })
 
 
     let removeClassNum = 0;
