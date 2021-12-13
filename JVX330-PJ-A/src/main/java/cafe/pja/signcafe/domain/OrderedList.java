@@ -25,7 +25,6 @@ public class OrderedList {
 		this.totalPrice = totalPrice;
 	}
 
-
 	public OrderedList(long orderedList, String customerInfo, MenuInfo menuInfo, double extraSize_Price,
 			double extraTemp_Price, int menuCount, double usingMileage, double totalPrice, String orderedDate) {
 		super();

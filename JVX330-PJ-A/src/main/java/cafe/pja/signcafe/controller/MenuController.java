@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import cafe.pja.signcafe.data.DataSourceConfig;
 import cafe.pja.signcafe.domain.MenuInfo;
+import cafe.pja.signcafe.domain.OrderedList;
 import cafe.pja.signcafe.service.MenuServiceImpl;
 
 @Controller("controller.menuController")
@@ -67,6 +68,11 @@ public class MenuController {
 	
 	@PostMapping("menuService/orderSheet")
 	public String orderSheet() {
+		GenericApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
+		MenuServiceImpl menuService = (MenuServiceImpl) context.getBean("menuServiceImpl");
+		
+		ModelAndView mav = new ModelAndView();
+		
 		return "menuService/orderSheet";
 	}
 	
