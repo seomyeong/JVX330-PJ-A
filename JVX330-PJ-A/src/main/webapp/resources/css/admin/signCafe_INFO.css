@@ -44,7 +44,7 @@ h1 { text-align: center; padding: 20px 0; background: #aaa; }
 #membership {}
 
 #article3 { width: 930px; left: calc(50% - 700px); top: 48%; }
-#orderListWrap { width: 930px; height: 243px; overflow:auto; }
+#orderListWrap { width: 1000px; height: 243px; overflow:auto; }
 #orderList {}
 
 
