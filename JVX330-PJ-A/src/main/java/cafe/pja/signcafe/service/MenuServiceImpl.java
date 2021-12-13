@@ -16,7 +16,7 @@ public class MenuServiceImpl {
 	
 	//전체메뉴 조회
 	public List<MenuInfo> allMenu(){
-		List<MenuInfo> menu = menuInfoDao.AllMenu();
+		List<MenuInfo> menu = menuInfoDao.allMenu();
 		return menu;
 	}	
 }

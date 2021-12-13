@@ -75,6 +75,7 @@
 			</article>
 		</div>
 	</section>
+
 	<section id="orderedList">
 		<h2 class="hidden">장바구니</h2>
 		<form action="checkUser" method="post" id="container">

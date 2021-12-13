@@ -88,3 +88,10 @@
 	background: #000;
 	color: #fff;
 }
+#errorMsg{
+	margin: 0 auto;
+	display: block;
+	height: 30px;
+	font-size: 30px;
+	color: red;
+}

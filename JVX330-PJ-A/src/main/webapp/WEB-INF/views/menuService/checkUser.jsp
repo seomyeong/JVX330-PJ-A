@@ -34,16 +34,12 @@
 			<p id="errorMsg">${errorMsg}</p>
 			<div id="addUserBtn">멤버쉽가입</div>
 
-			<form action="payment" method="POST">
 				<div id="checkUserBtn">
 					<a href="<%=request.getContextPath()%>/menuService/menuPage">이전</a>
-					<!-- 트랜젝션 이슈. 경로수정필요 -->
-					<input type="submit" value="바로결제">
+					<a href="<%=request.getContextPath()%>/menuService/payment">바로결제</a>
 				</div>
-			</form>
 		</div>
 	</section>
-
 <script>
         $('#addUserBtn').on('click', function () {
         	window.open("<%=request.getContextPath()%>/addUserService/addUser","popup1","width=1280, height=700, left=100, top=50")
