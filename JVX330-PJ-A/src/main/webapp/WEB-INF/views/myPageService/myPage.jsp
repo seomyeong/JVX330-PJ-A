@@ -32,10 +32,10 @@
 			</tr>
 		</table>
 		
-		<p>${errormsg}</p>
+		<p id="errorMsg">${errormsg}</p>
 		
-		<div id="mileageWrap">
-			<p>*마일리지 확인</p>
+		<div id="userMileageWrap">
+			<p id="inquriyMileage">*마일리지 확인</p>
 			<table id="userMileage">
 				<tr>
 					<th>mileage
@@ -44,7 +44,6 @@
 			</table>	
 		</div>
 				
-		
 		<div id="myPageBtn">
 			<a href="../index.jsp" id="prev">이전</a> <input type="submit" value="수정">
 		</div>
