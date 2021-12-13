@@ -13,7 +13,7 @@ public class UserServiceImpl {
 	}
 
 	public boolean addUser(User user) {
-		if(userDao.DuplicateCheck(user)) {
+		if(userDao.duplicateCheck(user)) {
 			System.out.println("해당 번호로 가입된 계정이 있습니다.");
 			return false;
 		} else {
@@ -47,7 +47,7 @@ public class UserServiceImpl {
 	 * @param connectUserPhone
 	 */
 	public boolean updateUserInfo(User user, String connectUserPhone) {
-		if(userDao.DuplicateCheck(user) && !(user.getPhone().equals(connectUserPhone))) {
+		if(userDao.duplicateCheck(user) && !(user.getPhone().equals(connectUserPhone))) {
 			return false;
 		}
 		userDao.updateUser(user, connectUserPhone);
@@ -60,7 +60,7 @@ public class UserServiceImpl {
 	 * checkUser.jsp 에서 입력한 폰번호가 디비의 폰번호와 일치하는지 확인
 	 */
 	public boolean checkUserbyPhone(User user) {
-		if(userDao.DuplicateCheck(user)) {
+		if(userDao.duplicateCheck(user)) {
 			System.out.println("폰번호 일치");
 			return true;
 		} else {

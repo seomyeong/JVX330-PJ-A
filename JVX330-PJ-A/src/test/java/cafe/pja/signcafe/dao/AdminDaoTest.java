@@ -24,7 +24,7 @@ public class AdminDaoTest {
 	
 	@Test
 	public void AllInquiryUserInfo() {
-		List<User> userList = dao.AllInquiryUserInfo();
+		List<User> userList = dao.allInquiryUserInfo();
 		assertTrue(userList.size() == 7);
 //		dao.AllInquiryUserInfo().forEach(m-> System.out.println(m));
 	}

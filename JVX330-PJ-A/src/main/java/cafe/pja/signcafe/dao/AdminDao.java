@@ -35,7 +35,7 @@ public class AdminDao {
 		});
 	}
 	
-	public List<User> AllInquiryUserInfo() {
+	public List<User> allInquiryUserInfo() {
 		String sql = "SELECT * FROM CAFE_USER";
 		
 		return jdbcTemplate.query(sql, new RowMapper<User>() {
@@ -50,7 +50,7 @@ public class AdminDao {
 		});
 	}
 	
-	public List<OrderedList> AllInquiryOrderedListInfo() {
+	public List<OrderedList> allInquiryOrderedListInfo() {
 		String sql = "SELECT * FROM ORDERED";
 		
 		return jdbcTemplate.query(sql, new RowMapper<OrderedList>() {

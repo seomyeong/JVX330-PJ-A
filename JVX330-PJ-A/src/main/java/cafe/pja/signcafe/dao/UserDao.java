@@ -24,7 +24,7 @@ public class UserDao {
 	 * @param user
 	 * @return
 	 */
-	public Boolean DuplicateCheck(User user) {
+	public Boolean duplicateCheck(User user) {
 		String sql = "SELECT * FROM CAFE_USER WHERE phone=?";
 		List<User> findUser = null;
 
