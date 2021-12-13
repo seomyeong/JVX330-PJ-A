@@ -1,7 +1,10 @@
 package cafe.pja.signcafe.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -16,8 +19,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import cafe.pja.signcafe.data.DataSourceConfig;
 import cafe.pja.signcafe.domain.MenuInfo;
+import cafe.pja.signcafe.domain.OrderedList;
 import cafe.pja.signcafe.service.MenuServiceImpl;
-import cafe.pja.signcafe.service.command.OrderedCommand;
 
 @Controller("controller.menuController")
 public class MenuController {
@@ -55,34 +58,33 @@ public class MenuController {
 	}	
 
 	@PostMapping("menuService/checkUser")
-	public ModelAndView checkUser(@ModelAttribute OrderedCommand ordered) {
-		public String checkUser(HttpServletRequest request) {
-			HttpSession session = request.getSession();
-			List<OrderedList> orderList = new ArrayList<>();
+	public String checkUser(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		List<OrderedList> orderList = new ArrayList<>();
 			
-			// 총 상품의 개수를 받아온다.
-			int totalNum = Integer.parseInt(request.getParameter("totalNum"));
+		// 총 상품의 개수를 받아온다.
+		int totalNum = Integer.parseInt(request.getParameter("totalNum"));
 			
-			for(int i = 1; i <= totalNum; i++) {
-				MenuInfo m = new MenuInfo();
-				OrderedList o = new OrderedList();
+		for(int i = 1; i <= totalNum; i++) {
+			MenuInfo m = new MenuInfo();
+			OrderedList o = new OrderedList();
 				
-				m.setMenuName(request.getParameter("name" + i));
-				
-				o.setMenuInfo(m);
-				o.setExtraTemp_Price(Double.parseDouble(request.getParameter("temp" + i)));
-				o.setExtraSize_Price(Double.parseDouble(request.getParameter("size" + i)));
-				o.setTotalPrice(Double.parseDouble(request.getParameter("price" + i)));
-				
-				orderList.add(o);
-			}
+			m.setMenuName(request.getParameter("name" + i));
 			
-			// 현재 장바구니 리스트를 세션으로 넘김
-			session.setAttribute("cart", orderList);
-			session.setAttribute("totalNum", totalNum);
-			return "menuService/checkUser";
+			o.setMenuInfo(m);
+			o.setExtraTemp_Price(Double.parseDouble(request.getParameter("temp" + i)));
+			o.setExtraSize_Price(Double.parseDouble(request.getParameter("size" + i)));
+			o.setTotalPrice(Double.parseDouble(request.getParameter("price" + i)));
+				
+			orderList.add(o);
 		}
+			
+		// 현재 장바구니 리스트를 세션으로 넘김
+		session.setAttribute("cart", orderList);
+		session.setAttribute("totalNum", totalNum);
+		return "menuService/checkUser";
 	}
+	
 	
 	
 	@PostMapping("menuService/payment")
