@@ -1,38 +1,83 @@
 @charset "utf-8";
 
-#myPageWrap{
+#myPageWrap {
     position: relative;
-    margin: 30px auto 10px;
+    margin: 20px auto 10px;
     width: 600px; height: 600px;
 }
 
-#myPageForm h1{
+#myPageForm h1 {
     text-align: center;
     font-size: 40px;
-    position: relative; top: 70px;
-    color: #000;
-    
+    position: relative; top: 60px;
+    color: #000;    
 }
+
+#myPageForm
+
+p { font-weight: bold; }
+
+h1+p {
+	padding-top: 80px;
+    text-align: center;
+}
+
 #userInfo {
-    margin: 110px auto;
+    margin: 10px auto;
     width: 300px;
     border-radius: 5px; text-align: center; 
 }
-#userInfo table th{ height: 70px;}
-#userInfo table input{height: 30px; padding-left: 5px; border-radius: 5px;}
 
-#mileageWrap {
-	margin:
+#userInfo th{ 
+	height: 55px;
+}
+
+#userInfo input{
+	height: 30px; padding-left: 5px; border-radius: 5px;
+}
+
+#name {
+	background: #cecece;
+}
+
+#errorMsg {
+    padding-top: 40px;
+    text-align: center;
+	color: red;
+}
+
+#userMileageWrap {
+	width: 300px;
+	margin: 60px auto;
+    border-radius: 5px;
+}
+
+#userMileage {
+	width: 300px;
+	text-align: center;
+}
+
+#userMileageWrap p {
+	position: absolute; top: 370px; left: 250px;
+	text-align: center;
+	/* padding-bottom: 10px; */
+}
+
+#userMileage th {
+	width: 84.77px;
+	height: 55px;
+}
+
+#usesrMileage td {
+	width: 209.23px;
+}
+
+#userMileage input{
+	height: 30px; padding-left: 5px; border-radius: 5px;
 }
 
 #myPageBtn{
-    position: absolute; bottom: 120px; left: 120px;
-}
-#myPageWrap p{
-    padding-top: 60px;
-    text-align: center;
-	color: red;
-	font-weight: bold;
+    position: absolute; bottom: 70px; left: 110px;
 }
 
 #myPageBtn input{
@@ -44,6 +89,7 @@
     font-family: 'EliceDigitalBaeum_Bold';
     cursor: pointer;
 }
+
 #myPageBtn a{
     display: inline-block;
     width: 180px; line-height: 50px;
@@ -52,5 +98,10 @@
     text-align: center;
 }
 
-#myPageBtn input:hover{background: #000; color: #fff;}
-#myPageBtn a:hover{background: #000; color: #fff;}
+#myPageBtn input:hover{
+	background: #000; color: #fff;
+}
+
+#myPageBtn a:hover{
+	background: #000; color: #fff;
+}

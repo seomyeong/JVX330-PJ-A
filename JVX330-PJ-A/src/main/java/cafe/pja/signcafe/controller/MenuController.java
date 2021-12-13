@@ -74,8 +74,8 @@ public class MenuController {
 		// 유저의 폰번호와 일치하지 않으면 error, 일치하면 payment 이동
 		if (userService.checkUserbyPhone(user)) {
 			User userInfo = userService.userInfoByPhone(user);
-			Cookie cookie = new Cookie("cookieUserPhone", user.getPhone());
 
+			Cookie cookie = new Cookie("cookieUserPhone", user.getPhone());
 			cookie.setMaxAge(60*60*24);
 			response.addCookie(cookie);
 			
