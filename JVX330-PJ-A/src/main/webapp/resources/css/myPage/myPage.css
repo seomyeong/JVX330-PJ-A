@@ -1,22 +1,24 @@
 @charset "utf-8";
 
-#myPageWrap{
+#myPageWrap {
     position: relative;
-    margin: 30px auto 10px;
+    margin: 20px auto 10px;
     width: 600px; height: 600px;
 }
 
-#myPageForm h1{
+#myPageForm h1 {
     text-align: center;
     font-size: 40px;
     position: relative; top: 60px;
     color: #000;    
 }
 
+#myPageForm
+
 p { font-weight: bold; }
 
 h1+p {
-	padding-top: 90px;
+	padding-top: 80px;
     text-align: center;
 }
 
@@ -26,21 +28,27 @@ h1+p {
     border-radius: 5px; text-align: center; 
 }
 
-#userInfo th{ height: 55px;}
-#userInfo input{height: 30px; padding-left: 5px; border-radius: 5px;}
+#userInfo th{ 
+	height: 55px;
+}
+
+#userInfo input{
+	height: 30px; padding-left: 5px; border-radius: 5px;
+}
 
 #name {
 	background: #cecece;
 }
+
 #errorMsg {
-    padding-top: 60px;
+    padding-top: 40px;
     text-align: center;
 	color: red;
 }
 
 #userMileageWrap {
 	width: 300px;
-	margin: -50px auto;
+	margin: 60px auto;
     border-radius: 5px;
 }
 
@@ -49,7 +57,13 @@ h1+p {
 	text-align: center;
 }
 
-#userMileage th{
+#userMileageWrap p {
+	position: absolute; top: 370px; left: 250px;
+	text-align: center;
+	/* padding-bottom: 10px; */
+}
+
+#userMileage th {
 	width: 84.77px;
 	height: 55px;
 }
@@ -58,13 +72,12 @@ h1+p {
 	width: 209.23px;
 }
 
-#userMileage input{height: 30px; padding-left: 5px; border-radius: 5px;}
-#mileage {
-		
+#userMileage input{
+	height: 30px; padding-left: 5px; border-radius: 5px;
 }
 
 #myPageBtn{
-    position: absolute; bottom: 60px; left: 120px;
+    position: absolute; bottom: 70px; left: 110px;
 }
 
 #myPageBtn input{
@@ -76,6 +89,7 @@ h1+p {
     font-family: 'EliceDigitalBaeum_Bold';
     cursor: pointer;
 }
+
 #myPageBtn a{
     display: inline-block;
     width: 180px; line-height: 50px;
@@ -84,5 +98,10 @@ h1+p {
     text-align: center;
 }
 
-#myPageBtn input:hover{background: #000; color: #fff;}
-#myPageBtn a:hover{background: #000; color: #fff;}
+#myPageBtn input:hover{
+	background: #000; color: #fff;
+}
+
+#myPageBtn a:hover{
+	background: #000; color: #fff;
+}

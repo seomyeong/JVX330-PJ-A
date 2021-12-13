@@ -54,7 +54,7 @@
 						<td>${allUserInfo.id}</td>
 						<td>${allUserInfo.name}</td>
 						<td>${allUserInfo.phone}</td>
-						<td>${allUserInfo.passWd}</td>
+						<td>********</td>
 						<td>${allUserInfo.mileage}</td>
 						<td>${allUserInfo.regDate}</td>
 					</tr>
