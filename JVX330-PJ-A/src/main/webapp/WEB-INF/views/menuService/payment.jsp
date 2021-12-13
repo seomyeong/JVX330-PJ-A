@@ -39,7 +39,7 @@
 		</tr>
 		<tr>
 			<th>마일리지 사용</th>
-			<td><input type="text"></td>
+			<td><input type="text" pattern="[0-9]+"></td>
 		</tr>
 		<tr>
 			<th>총 결제금액</th>
