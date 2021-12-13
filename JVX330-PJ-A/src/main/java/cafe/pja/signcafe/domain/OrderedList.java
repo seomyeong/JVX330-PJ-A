@@ -95,6 +95,13 @@ public class OrderedList {
 	public void setOrderedDate(String orderedDate) {
 		this.orderedDate = orderedDate;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "OrderedList [orderedList=" + orderedList + ", customerInfo=" + customerInfo + ", menuInfo=" + menuInfo
+				+ ", extraSize_Price=" + extraSize_Price + ", extraTemp_Price=" + extraTemp_Price + ", menuCount="
+				+ menuCount + ", usingMileage=" + usingMileage + ", totalPrice=" + totalPrice + ", orderedDate="
+				+ orderedDate + "]";
+	}
 	
 }

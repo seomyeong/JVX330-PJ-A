@@ -14,7 +14,9 @@ $('#titleMenu p').on('click', function (e) {
 
 //개별 메뉴 ordered에 append
 $(document).ready(function () {
-    let idNum = 0;
+ 
+	let idNum = $('#totalNum').val();
+	console.log(idNum);
     let eachCartNum = null;
     let basicSum = new Array();
     let index = 0;
@@ -27,27 +29,41 @@ $(document).ready(function () {
         let countNameNum = "num" + idNum;
         let priceNameNum = "price" + idNum;
 
+		let eachSmallNum = "small" + idNum;
+        let eachMidiumNum = "midium" + idNum;
+        let eachLargeNum = "large" + idNum;
+
+        let eachHotNum = "hot" + idNum;
+        let eachColdNum = "cold" + idNum;
+
+
         let html =
             "<div id=" + eachCartNum + " class='commonCart'>" +
             "<input type='text' name=" + nameNameNum + " class='cartName' value=''>" +
 
             "<div id='tempWrap'>" +
-            "<label for='hot'><input type='radio' id='hot' class='temp' name=" + tempNameNum + " value='0'>HOT</label>" +
-            "<label for='cold'><input type='radio' id='cold' class='temp' name=" + tempNameNum + " value='500'>COLD</label>" +
+            "<label for=" + eachHotNum + "><input type='radio' id=" + eachHotNum + " class='temp' name=" + tempNameNum + " value='0' checked>HOT</label>" +
+            "<label for=" + eachColdNum + "><input type='radio' id=" + eachColdNum + " class='temp' name=" + tempNameNum + " value='500'>COLD</label>" +
             "</div>" +
             "<div id='sizeWrap'>" +
-            "<label for='small'><input type='radio' class='size' id='small' name=" + sizeNameNum + " value='0'>S</label>" +
-            "<label for='midium'><input type='radio' class='size' id='midium' name=" + sizeNameNum + " value='500'>M</label>" +
-            "<label for='large'><input type='radio' class='size' id='large' name=" + sizeNameNum + " value='1000'>L</label>" +
+            "<label for=" + eachSmallNum + "><input type='radio' class='size' id=" + eachSmallNum + " name=" + sizeNameNum + " value='0' checked>S</label>" +
+            "<label for=" + eachMidiumNum + "><input type='radio' class='size' id=" + eachMidiumNum + " name=" + sizeNameNum + " value='500'>M</label>" +
+            "<label for=" + eachLargeNum + "><input type='radio' class='size' id=" + eachLargeNum + " name=" + sizeNameNum + " value='1000'>L</label>" +
             "</div>" +
             "<div id='numWrap'>" +
-            "<input type='text' class='num' name=" + countNameNum + " value='1'>" +
-            // "<div id='controllNum'>" +
-            // "<a href='#' class='upper' class='controll'>▲</a>" +
-            // "<a href='#' class='lower' class='controll'>▼</a>" +
-            // "</div>" +
+            "<input type='text' class='num' name=" + countNameNum + " value='1' readonly>" +
             "</div>" +
-            "<input type='text' name=" + priceNameNum + " class='price'>" +
+            "<input type='text' name=" + priceNameNum + " class='price' readonly>" +
+            "<a href='#' class='remove'>  X </a>" +
+            "</div>";
+
+ 		let htmlFood=
+            "<div id=" + eachCartNum + " class='commonCart'>" +
+            "<input type='text' name=" + nameNameNum + " class='cartName' value=''>" +
+            "<div id='numWrap'>" +
+            "<input type='text' class='num' name=" + countNameNum + " value='1' readonly>" +
+            "</div>" +
+            "<input type='text' name=" + priceNameNum + " class='price' readonly>" +
             "<a href='#' class='remove'>  X </a>" +
             "</div>";
 
@@ -120,7 +136,7 @@ $(document).ready(function () {
             basicSum[idNum - 1] = 8000;
             //conValue1[idNum - 1] = 3500;
         } else if ($(this).next().text() == "우유 품은 초콜릿 크루아상") {
-            $('#container').append(html);
+            $('#container').append(htmlFood);
             $('#' + eachCartNum).find('.cartName').val("우유 품은 초콜릿 크루아상");
             $('#' + eachCartNum).find('.price').val(Number("6000"));
 
@@ -128,7 +144,7 @@ $(document).ready(function () {
             basicSum[idNum - 1] = 6000;
             //conValue1[idNum - 1] = 3500;
         } else if ($(this).next().text() == "한 입에 쏙 치즈 꿀 볼") {
-            $('#container').append(html);
+            $('#container').append(htmlFood);
             $('#' + eachCartNum).find('.cartName').val("한 입에 쏙 치즈 꿀 볼");
             $('#' + eachCartNum).find('.price').val(Number("5500"));
 
@@ -136,7 +152,7 @@ $(document).ready(function () {
             basicSum[idNum - 1] = 5500;
             //conValue1[idNum - 1] = 3500;
         } else if ($(this).next().text() == "트리플 치즈 크로크무슈") {
-            $('#container').append(html);
+            $('#container').append(htmlFood);
             $('#' + eachCartNum).find('.cartName').val("트리플 치즈 크로크무슈");
             $('#' + eachCartNum).find('.price').val(Number("6500"));
 
@@ -147,13 +163,15 @@ $(document).ready(function () {
     })
 
 
+	let checkStateOnce  = null;
+
     let tempState = 0;
     $(document).on("click", ".temp", function() {
         let tempValue = Number($(this).val());
         index = Number($(this).attr('name').slice(4, 5)) - 1;
 		
         if (tempValue == 0) {
-
+            if(checkStateOnce == "h"){return false;}
             if (tempState == 1) {
                 basicSum[index] -= 500;
                 tempState = 0;
@@ -161,58 +179,91 @@ $(document).ready(function () {
             else { basicSum[index] += tempValue; }
 
             $('#eachCart' + (index + 1)).find('.price').val(basicSum[index]);
+            checkStateOnce = "h";
         }
 
 
         if (tempValue == 500) {
+            if(checkStateOnce == "c"){return false;}
             basicSum[index] += tempValue;
             $('#eachCart' + (index + 1)).find('.price').val(basicSum[index]);
 			
             tempState = 1;
+            checkStateOnce = "c";
         }
     });
 
 
     let sizeState = 0;
     let sizeState2 = 0;
-    //let conValue1 = new Array();
+    let sizeState3 = 0;
+    
     $(document).on("click", ".size", function (event) {
+        let sum = 0;
         let sizeValue = Number($(this).val());
         index = Number($(this).attr('name').slice(4, 5)) - 1;
 
+        ////////////////////////////////////////
+
         if (sizeValue == 0) {
+            if(checkStateOnce == "s"){return false;}
             if (sizeState2 == 1) {
                 basicSum[index] -= 500;
                 sizeState2 = 0;
+                sizeState3 = 0;
+                $('#eachCart' + (index + 1)).find('.price').val(basicSum[index]);
             }
             if (sizeState == 1) {
                 basicSum[index] -= 1000;
                 sizeState = 0;
+                sizeState3 = 0;
+                $('#eachCart' + (index + 1)).find('.price').val(basicSum[index]);
             }
-            else { basicSum[index] += sizeValue; }
-            $('#eachCart' + (index + 1)).find('.price').val(basicSum[index]);
-            // conValue1[index] = sum;
+            else { 
+                basicSum[index] += sizeValue;
+                sizeState3 = 0;
+                $('#eachCart' + (index + 1)).find('.price').val(basicSum[index]);
+            }
+            checkStateOnce = "s";
         }
 
+        /////////////////////////////////////
 
         if (sizeValue == 500) {
+            if(checkStateOnce == "m"){return false;}
             if (sizeState == 1) {
                 basicSum[index] -= 500;
-                sizeState2 = 1;
                 sizeState = 0;
+                sizeState2 = 1;
+                sizeState3 = 1;
             }
-            else { basicSum[index] += sizeValue; }
+            else { 
+                basicSum[index] += sizeValue; 
+                sizeState3 = 1;
+                sizeState2 = 1;
+            }
             $('#eachCart' + (index + 1)).find('.price').val(basicSum[index]);
-
+            checkStateOnce = "m";
         }
 
+        //////////////////////////////////
 
         if (sizeValue == 1000) {
-            basicSum[index] += sizeValue;
+            if(checkStateOnce == "l"){return false;}
+            if(sizeState3 == 1){
+                basicSum[index] += 500;
+                sizeState3 = 0;
+                
+            }
+            else{
+                basicSum[index] += sizeValue;
+              
+            }
             $('#eachCart' + (index + 1)).find('.price').val(basicSum[index]);
 
             sizeState = 1;
-
+            sizeState2 = 0;
+            checkStateOnce = "l";
         }
     });
 
