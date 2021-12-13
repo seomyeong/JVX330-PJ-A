@@ -8,19 +8,21 @@ import java.util.List;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
 
 import cafe.pja.signcafe.domain.MenuInfo;
 import cafe.pja.signcafe.domain.OrderedList;
 import cafe.pja.signcafe.domain.User;
 
+@Repository
 public class AdminDao {
-private JdbcTemplate jdbcTemplate;
+	private JdbcTemplate jdbcTemplate;
 	
 	public AdminDao(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}
 
-	public List<MenuInfo> AllInquiryMenuInfo() {
+	public List<MenuInfo> allInquiryMenuInfo() {
 		String sql = "SELECT * FROM MENU_INFO";
 		
 		return jdbcTemplate.query(sql, new RowMapper<MenuInfo>() {

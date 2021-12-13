@@ -61,14 +61,11 @@ public class MenuController {
 	public String checkUser(HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		List<OrderedList> orderList = new ArrayList<>();
-
 		// 총 상품의 개수를 받아온다.
 		int totalNum = Integer.parseInt(request.getParameter("totalNum"));
-
-		for (int i = 1; i <= totalNum; i++) {
+		for(int i = 1; i <= totalNum; i++) {
 			MenuInfo m = new MenuInfo();
 			OrderedList o = new OrderedList();
-
 			m.setMenuName(request.getParameter("name" + i));
 
 			o.setMenuInfo(m);
@@ -89,7 +86,7 @@ public class MenuController {
 	 * chechUser.jsp에서 적립하지않고 바로결제 누를 경우 이동
 	 */
 	@GetMapping("menuService/payment")
-	public String payment() {
+	public String paymentForm() {
 		return "menuService/payment";
 	}
 

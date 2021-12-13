@@ -25,7 +25,7 @@ public class AdminServiceImpl {
 	}
 	
 	public Info allInquiryInfo() {
-		List<MenuInfo> m = adminDao.AllInquiryMenuInfo();
+		List<MenuInfo> m = adminDao.allInquiryMenuInfo();
 		List<User> u = adminDao.AllInquiryUserInfo();
 		List<OrderedList> o = adminDao.AllInquiryOrderedListInfo();
 		
