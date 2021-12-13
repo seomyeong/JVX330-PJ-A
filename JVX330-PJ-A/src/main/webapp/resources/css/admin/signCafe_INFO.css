@@ -32,7 +32,7 @@ article { position: absolute; }
 h1 { text-align: center; padding: 20px 0; background: #aaa; }
 
 
-#article1 { width: 690px; left: calc(50% - 700px); top: 13%; }
+#article1 { width: 760px; left: calc(50% - 770px); top: 13%; }
 #productWrap { width: 690px; height: 177px; overflow: auto; }
 #product {}
 #product th, #product td, #membership th, #membership td, #orderList th, #orderList td {
