@@ -56,13 +56,32 @@ public class MenuController {
 
 	@PostMapping("menuService/checkUser")
 	public ModelAndView checkUser(@ModelAttribute OrderedCommand ordered) {
-		//카트 내용 쿠키로 보내기
-		ModelAndView mav = new ModelAndView();
-		mav.addObject("ordered", ordered);
-		System.out.println(mav);
-		//mav.setViewName("example4/checkUser");
-		
-		return mav;
+		public String checkUser(HttpServletRequest request) {
+			HttpSession session = request.getSession();
+			List<OrderedList> orderList = new ArrayList<>();
+			
+			// 총 상품의 개수를 받아온다.
+			int totalNum = Integer.parseInt(request.getParameter("totalNum"));
+			
+			for(int i = 1; i <= totalNum; i++) {
+				MenuInfo m = new MenuInfo();
+				OrderedList o = new OrderedList();
+				
+				m.setMenuName(request.getParameter("name" + i));
+				
+				o.setMenuInfo(m);
+				o.setExtraTemp_Price(Double.parseDouble(request.getParameter("temp" + i)));
+				o.setExtraSize_Price(Double.parseDouble(request.getParameter("size" + i)));
+				o.setTotalPrice(Double.parseDouble(request.getParameter("price" + i)));
+				
+				orderList.add(o);
+			}
+			
+			// 현재 장바구니 리스트를 세션으로 넘김
+			session.setAttribute("cart", orderList);
+			session.setAttribute("totalNum", totalNum);
+			return "menuService/checkUser";
+		}
 	}
 	
 	
