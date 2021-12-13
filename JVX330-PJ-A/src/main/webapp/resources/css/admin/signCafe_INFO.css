@@ -58,7 +58,7 @@ h1 { text-align: center; padding: 20px 0; background: #aaa; }
 #totalSalesCap { margin-top: 40px; }
 
 
-#goMain { display: block; width: 80px; position: absolute; left: calc(50% - 40px); top: 87%; 
+#goMain { display: block; width: 100px; position: absolute; left: calc(50% - 40px); top: 87%; 
 		  text-decoration: none; color: #fff; background: #aaa; text-align: center; border-radius: 10px;
 		  padding: 10px 15px; font-family: sans-serif; }
 #goMain:hover { background: #bbb; }
