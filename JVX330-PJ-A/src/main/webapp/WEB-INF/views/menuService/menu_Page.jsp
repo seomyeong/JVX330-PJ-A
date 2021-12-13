@@ -101,7 +101,7 @@
 							</c:when>
 							<c:when test="${order.extraTemp_Price == 500.0}">
 								<label for='hot'> <input type='radio' id='hot'
-									class='temp' name="temp${i}" value='0' checked>HOT
+									class='temp' name="temp${i}" value='0'>HOT
 								</label>
 								<label for='cold'> <input type='radio' id='cold'
 									class='temp' name="temp${i}" value='500' checked>COLD
