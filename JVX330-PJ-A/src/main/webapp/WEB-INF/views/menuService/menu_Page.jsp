@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,7 +37,8 @@
 					<c:if test="${menuInfoList.category eq 'COFFEE'}">
 						<div class="eachMenu">
 							<img
-								src="<%=request.getContextPath()%>/${menuInfoList.menuImgPath }" class="menuImg">
+								src="<%=request.getContextPath()%>/${menuInfoList.menuImgPath }"
+								class="menuImg">
 							<p id="menuName">${menuInfoList.menuName}</p>
 							<p>${menuInfoList.menuPrice}</p>
 						</div>
@@ -48,7 +51,8 @@
 					<c:if test="${menuInfoList.category eq 'NON_COFFEE'}">
 						<div class="eachMenu">
 							<img
-								src="<%=request.getContextPath()%>${menuInfoList.menuImgPath }" class="menuImg">
+								src="<%=request.getContextPath()%>${menuInfoList.menuImgPath }"
+								class="menuImg">
 							<p id="menuName">${menuInfoList.menuName}</p>
 							<p>${menuInfoList.menuPrice}</p>
 						</div>
@@ -61,7 +65,8 @@
 					<c:if test="${menuInfoList.category eq 'FOOD'}">
 						<div class="eachMenu">
 							<img
-								src="<%=request.getContextPath()%>${menuInfoList.menuImgPath }" class="menuImg">
+								src="<%=request.getContextPath()%>${menuInfoList.menuImgPath }"
+								class="menuImg">
 							<p id="menuName">${menuInfoList.menuName}</p>
 							<p>${menuInfoList.menuPrice}</p>
 						</div>
@@ -70,6 +75,7 @@
 			</article>
 		</div>
 	</section>
+<<<<<<< HEAD
     <section id="orderedList">
         <h2 class="hidden">장바구니</h2>
         <form action="checkUser" method="post" id="container">
@@ -80,5 +86,94 @@
        
         <a href="<%=request.getContextPath()%>/index.jsp" id="goToIndex">메인으로</a>
     </section>
+=======
+	<section id="orderedList">
+		<h2 class="hidden">장바구니</h2>
+		<form action="checkUser" method="post" id="container">
+			<p>총 주문 수량을 확인하세요.</p>
+			<input type="text" name="totalNum" id="totalNum"
+				value="${sessionScope.totalNum}"> <input type="submit"
+				value="결제하기" id="payment">
+
+			<c:set var="i" value="1" />
+			<c:forEach items="${sessionScope.cart}" var="order">
+				<div id="eachCart${i}" class='commonCart'>
+					<input type='text' name="name${i}" class='cartName'
+						value="${order.menuInfo.menuName}">
+					<div id='tempWrap'>
+						<c:choose>
+							<c:when test="${order.extraTemp_Price == 0.0}">
+								<label for='hot'> <input type='radio' id='hot'
+									class='temp' name="temp${i}" value='0' checked>HOT
+								</label>
+								<label for='cold'> <input type='radio' id='cold'
+									class='temp' name="temp${i}" value='500'>COLD
+								</label>
+							</c:when>
+							<c:when test="${order.extraTemp_Price == 500.0}">
+								<label for='hot'> <input type='radio' id='hot'
+									class='temp' name="temp${i}" value='0' checked>HOT
+								</label>
+								<label for='cold'> <input type='radio' id='cold'
+									class='temp' name="temp${i}" value='500' checked>COLD
+								</label>
+							</c:when>
+						</c:choose>
+					</div>
+
+					<div id='sizeWrap'>
+						<c:choose>
+							<c:when test="${order.extraSize_Price == 0.0}">
+								<label for='small'> <input type='radio' class='size'
+									id='small' name="size${i}" value='0' checked>S
+								</label>
+								<label for='midium'> <input type='radio' class='size'
+									id='midium' name="size${i}" value='500'>M
+								</label>
+								<label for='large'> <input type='radio' class='size'
+									id='large' name="size${i}" value='1000'>L
+								</label>
+							</c:when>
+							
+							<c:when test="${order.extraSize_Price == 500.0}">
+								<label for='small'> <input type='radio' class='size'
+									id='small' name="size${i}" value='0'>S
+								</label>
+								<label for='midium'> <input type='radio' class='size'
+									id='midium' name="size${i}" value='500' checked>M
+								</label>
+								<label for='large'> <input type='radio' class='size'
+									id='large' name="size${i}" value='1000'>L
+								</label>
+							</c:when>
+							
+							<c:when test="${order.extraSize_Price == 1000.0}">
+								<label for='small'> <input type='radio' class='size'
+									id='small' name="size${i}" value='0'>S
+								</label>
+								<label for='midium'> <input type='radio' class='size'
+									id='midium' name="size${i}" value='500'>M
+								</label>
+								<label for='large'> <input type='radio' class='size'
+									id='large' name="size${i}" value='1000' checked>L
+								</label>
+							</c:when>
+						</c:choose>
+					</div>
+
+					<div id='numWrap'>
+						<input type='text' class='num' name="count${i}" value='1'>
+					</div>
+					<fmt:parseNumber var="totalPrice" value="${order.totalPrice div 1}"
+						integerOnly="true" />
+					<input type='text' name="price${i}" class='price'
+						value=${totalPrice}> <a href='#' class='remove'> X </a>
+				</div>
+				<c:set var="i" value="${i + 1}" />
+			</c:forEach>
+		</form>
+		<a href="<%=request.getContextPath()%>/index.jsp" id="goToIndex">메인으로</a>
+	</section>
+>>>>>>> branch 'main' of https://github.com/seomyeong/JVX330-PJ-A.git
 </body>
 </html>
