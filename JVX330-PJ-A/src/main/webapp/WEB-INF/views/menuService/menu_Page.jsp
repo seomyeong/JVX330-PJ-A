@@ -113,7 +113,7 @@
 						<c:choose>
 							<c:when test="${order.extraSize_Price == 0.0}">
 								<label for='small'> <input type='radio' class='size'
-									id='small' name="size${i}" value='0' checked>S
+									id='small' name="size${i}" value='0' checked>Si
 								</label>
 								<label for='midium'> <input type='radio' class='size'
 									id='midium' name="size${i}" value='500'>M
