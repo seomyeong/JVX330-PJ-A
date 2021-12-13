@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import cafe.pja.signcafe.data.DataSourceConfig;
 import cafe.pja.signcafe.domain.MenuInfo;
 import cafe.pja.signcafe.service.MenuServiceImpl;
+import cafe.pja.signcafe.service.command.OrderedCommand;
 
 @Controller("controller.menuController")
 public class MenuController {
@@ -54,8 +55,14 @@ public class MenuController {
 	}	
 
 	@PostMapping("menuService/checkUser")
-	public String checkUser() {
-		return "menuService/checkUser";
+	public ModelAndView checkUser(@ModelAttribute OrderedCommand ordered) {
+		//카트 내용 쿠키로 보내기
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("ordered", ordered);
+		System.out.println(mav);
+		//mav.setViewName("example4/checkUser");
+		
+		return mav;
 	}
 	
 	
