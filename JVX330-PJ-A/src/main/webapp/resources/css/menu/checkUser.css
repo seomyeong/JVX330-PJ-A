@@ -30,7 +30,7 @@
 }
 
 #checkUserBtn {
-    position: absolute; bottom: 20px; left: 120px;
+    position: absolute; bottom: 20px; left: 110px;
 }
 
 #checkUserPage p {
@@ -59,7 +59,7 @@
 }
 
 #addUserBtn {
-	position: absolute; bottom: 120px; left: 210px;
+	position: absolute; bottom: 120px; left: 205px;
 	width: 180px;
     line-height: 50px;
     font-size: 15px;
