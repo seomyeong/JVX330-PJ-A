@@ -317,6 +317,6 @@ $(document).ready(function () {
 
 
 //menuPage.jsp에서 메뉴를 선택하지 않고 결제창 눌렀을 때 (totalNum이 0일 경우) error띄우기
-if( $('#totalNum')==null ){
+if( $('#totalNum').val() == null ){
 	
 }
