@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,6 +43,15 @@
 			</form>
 		</div>
 	</section>
+	<div>
+	<c:forEach items="${sessionScope.cart}" var="order">
+		<p>${order.menuInfo.menuName}</p>
+		<p>${order.extraSize_Price}</p>
+		<p>${order.extraTemp_Price}</p>
+		<p>${order.totalPrice}</p>
+		<br>
+	</c:forEach>
+	</div>
 
 <script>
         $('#addUserBtn').on('click', function () {
