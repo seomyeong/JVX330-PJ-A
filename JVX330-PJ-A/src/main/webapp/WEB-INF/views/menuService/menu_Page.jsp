@@ -75,18 +75,7 @@
 			</article>
 		</div>
 	</section>
-<<<<<<< HEAD
-    <section id="orderedList">
-        <h2 class="hidden">장바구니</h2>
-        <form action="checkUser" method="post" id="container">
-            <p>주문하신 총 수량을 확인하세요.</p>
-            <input type="text" name="totalNum" id="totalNum" >
-            <input type="submit" value="결제하기" id="payment">
-        </form>            
-       
-        <a href="<%=request.getContextPath()%>/index.jsp" id="goToIndex">메인으로</a>
-    </section>
-=======
+
 	<section id="orderedList">
 		<h2 class="hidden">장바구니</h2>
 		<form action="checkUser" method="post" id="container">

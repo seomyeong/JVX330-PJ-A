@@ -15,9 +15,8 @@ $('#titleMenu p').on('click', function (e) {
 //개별 메뉴 ordered에 append
 $(document).ready(function () {
  
-	console.log(ss);
-	let ss = sessionStorage.getItem("totalNum");
-	let idNum = 0;
+	let idNum = $('#totalNum').val();
+	console.log(idNum);
     let eachCartNum = null;
     let basicSum = new Array();
     let index = 0;
