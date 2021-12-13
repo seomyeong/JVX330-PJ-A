@@ -43,7 +43,7 @@ h1 { text-align: center; padding: 20px 0; background: #aaa; }
 #membershipWrap { width: 690px; height: 177px; overflow: auto; }
 #membership {}
 
-#article3 { width: 930px; left: calc(50% - 700px); top: 48%; }
+#article3 { width: 1000px; left: calc(50% - 770px); top: 48%; }
 #orderListWrap { width: 1000px; height: 243px; overflow:auto; }
 #orderList {}
 
