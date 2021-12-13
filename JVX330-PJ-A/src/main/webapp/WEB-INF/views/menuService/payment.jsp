@@ -5,7 +5,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>signCafe</title>
+<title>SignCafe</title>
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/common.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/menu/payment.css">
 </head>
 <body>
 	<jsp:include page="/resources/incl/signCafeIncl.jsp"></jsp:include>
@@ -16,12 +20,18 @@
 					<option value="삼성카드">삼성카드</option>
 					<option value="국민카드">국민카드</option>
 					<option value="농협카드">농협카드</option>
+					<option value="농협카드">비씨카드</option>
+					<option value="농협카드">신한카드</option>
 			</select></td>
 		</tr>
 		<tr>
 			<th>카드번호</th>
-			<td><input type="text"> <input type="text"> <input
-				type="password"> <input type="password"></td>
+			<td>
+				<input type="text" pattern="[0-9]+" maxlength="4" minlength="4" required> 
+				<input type="text" pattern="[0-9]+" maxlength="4" minlength="4" required> 
+				<input type="password" pattern="[0-9]+" maxlength="4" minlength="4" required>
+				<input type="password" pattern="[0-9]+" maxlength="4" minlength="4" required>
+			</td>
 		</tr>
 		<tr>
 			<th>보유 마일리지</th>
@@ -29,7 +39,7 @@
 		</tr>
 		<tr>
 			<th>마일리지 사용</th>
-			<td><input type="text"></td>
+			<td><input type="text" pattern="[0-9]+"></td>
 		</tr>
 		<tr>
 			<th>총 결제금액</th>
