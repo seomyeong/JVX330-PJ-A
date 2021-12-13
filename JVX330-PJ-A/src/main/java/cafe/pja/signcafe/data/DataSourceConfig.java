@@ -24,7 +24,7 @@ public class DataSourceConfig {
 		ds.setMaxIdle(10); // 안적어주면 디폴드값은 100개
 		return ds;
 	}
-
+	
 	@Bean
 	public JdbcTemplate jdbcTemplate() {
 		return new JdbcTemplate(dataSource());

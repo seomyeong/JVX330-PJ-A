@@ -9,7 +9,9 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/myPage/myPage.css"></head>
 <body>
 <jsp:include page="/resources/incl/signCafeIncl.jsp"></jsp:include>	
+
 <div id="myPageWrap">
+	<div id="myPageForm">
 	<form action="myPage" method="POST">
 	
 		<h1>마이페이지</h1>
@@ -32,21 +34,25 @@
 		
 		<p>${errormsg}</p>
 		
-		<p>*마일리지 확인</p>
-		<table id="userMileage">
-			<tr>
-				<th>mileage
-				<td><input type="text" value="${user.mileage}" name="mileage" id="mileage" readonly></td>
-			</tr>
-		</table>
+		<div id="mileageWrap">
+			<p>*마일리지 확인</p>
+			<table id="userMileage">
+				<tr>
+					<th>mileage
+					<td><input type="text" value="${user.mileage}" name="mileage" id="mileage" readonly></td>
+				</tr>
+			</table>	
+		</div>
+				
 		
-		
-		<div id="modifyBtn">
+		<div id="myPageBtn">
 			<a href="../index.jsp" id="prev">이전</a> <input type="submit" value="수정">
 		</div>
 		
 	</form>
 </div>
+</div>
+
 
 </body>
 </html>

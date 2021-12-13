@@ -18,13 +18,13 @@
 					<tr>
 						<th>아이디</th>
 						<td>:</td>
-						<td><input type="text" name="name"
+						<td><input type="text" name="name" autocomplete="off"
 							placeholder="아이디를 입력하세요."></td>
 					</tr>
 					<tr>
 						<th>비밀번호</th>
 						<td>:</td>
-						<td><input type="password" name="passWd"
+						<td><input type="password" name="passWd" autocomplete="off"
 							placeholder="비밀번호를 입력하세요."></td>
 					</tr>
 				</table>

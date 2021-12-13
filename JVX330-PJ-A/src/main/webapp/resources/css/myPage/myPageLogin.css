@@ -61,6 +61,7 @@
 #myPageLoginForm form p {
 	margin: 65px 0;
 	color: red;
+	font-weight: bold;
 }
 
 #myPageLoginBtn input:hover {

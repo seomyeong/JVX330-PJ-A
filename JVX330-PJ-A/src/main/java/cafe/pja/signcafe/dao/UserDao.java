@@ -74,13 +74,11 @@ public class UserDao {
 			@Override
 			public User mapRow(ResultSet rs, int rowNum) throws SQLException {
 				User user = new User(rs.getString("name"), rs.getString("phone"), rs.getString("passWd"));
-				//System.out.println("dao test"+user);
 				return user;
 			}
 		}, user.getPhone(), user.getPassWd());
 	
 		if(pwCheck.size() == 0) {
-			//System.out.println("usercheck"+userCheck);
 			return false;
 		}	
 			
@@ -106,5 +104,6 @@ public class UserDao {
 		
 		jdbcTemplate.update(sql, user.getPhone(), user.getPassWd(), connectUserPhone);
 	}
+	
 
 }
