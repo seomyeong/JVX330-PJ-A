@@ -27,20 +27,20 @@
 						<td><input value="" type="text" autocomplete="off"
 							name="phone" id="phone" maxlength="11"
 							placeholder="-를 제외하고 입력해주세요"></td>
-						<td><input type="submit" value="확인 및 결제"></td>
+						<td class="confirm"><input type="submit" value="확인 및 결제"></td>
 					</tr>
 				</table>
+			<p>${errorMsg}</p>
 			</form>
-			<p id="errorMsg">${errorMsg}</p>
 			<div id="addUserBtn">멤버쉽가입</div>
 
-				<div id="checkUserBtn">
-					<a href="<%=request.getContextPath()%>/menuService/menuPage">이전</a>
-					<a href="<%=request.getContextPath()%>/menuService/payment">바로결제</a>
-				</div>
+			<div id="checkUserBtn">
+				<a href="<%=request.getContextPath()%>/menuService/menuPage">이전</a>
+				<a href="<%=request.getContextPath()%>/menuService/payment">바로결제</a>
+			</div>
 		</div>
 	</section>
-<script>
+	<script>
         $('#addUserBtn').on('click', function () {
         	window.open("<%=request.getContextPath()%>/addUserService/addUser","popup1","width=1280, height=700, left=100, top=50")
         	})
