@@ -9,30 +9,62 @@
 #myPageForm h1{
     text-align: center;
     font-size: 40px;
-    position: relative; top: 70px;
-    color: #000;
-    
+    position: relative; top: 60px;
+    color: #000;    
 }
+
+p { font-weight: bold; }
+
+h1+p {
+	padding-top: 90px;
+    text-align: center;
+}
+
 #userInfo {
-    margin: 110px auto;
+    margin: 10px auto;
     width: 300px;
     border-radius: 5px; text-align: center; 
 }
-#userInfo table th{ height: 70px;}
-#userInfo table input{height: 30px; padding-left: 5px; border-radius: 5px;}
 
-#mileageWrap {
-	margin:
-}
+#userInfo th{ height: 55px;}
+#userInfo input{height: 30px; padding-left: 5px; border-radius: 5px;}
 
-#myPageBtn{
-    position: absolute; bottom: 120px; left: 120px;
+#name {
+	background: #cecece;
 }
-#myPageWrap p{
+#errorMsg {
     padding-top: 60px;
     text-align: center;
 	color: red;
-	font-weight: bold;
+}
+
+#userMileageWrap {
+	width: 300px;
+	margin: -50px auto;
+    border-radius: 5px;
+}
+
+#userMileage {
+	width: 300px;
+	text-align: center;
+}
+
+#userMileage th{
+	width: 84.77px;
+	height: 55px;
+}
+
+#usesrMileage td {
+	width: 209.23px;
+}
+
+#userMileage input{height: 30px; padding-left: 5px; border-radius: 5px;}
+#mileage {
+		
+}
+
+#myPageBtn{
+    position: absolute; bottom: 60px; left: 120px;
 }
 
 #myPageBtn input{
