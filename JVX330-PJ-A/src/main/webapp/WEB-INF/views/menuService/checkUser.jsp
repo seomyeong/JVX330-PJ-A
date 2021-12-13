@@ -43,15 +43,6 @@
 			</form>
 		</div>
 	</section>
-	<div>
-	<c:forEach items="${sessionScope.cart}" var="order">
-		<p>${order.menuInfo.menuName}</p>
-		<p>${order.extraSize_Price}</p>
-		<p>${order.extraTemp_Price}</p>
-		<p>${order.totalPrice}</p>
-		<br>
-	</c:forEach>
-	</div>
 
 <script>
         $('#addUserBtn').on('click', function () {
