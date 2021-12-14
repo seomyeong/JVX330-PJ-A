@@ -92,7 +92,8 @@
 						value="${order.menuInfo.menuName}">
 					<div id='tempWrap'>
 						<c:choose>
-							<c:when test="${order.extraTemp_Price == 0.0}">
+							<c:when
+								test="${order.extraTemp_Price == 0.0}">
 								<label for="hot${i}"> <input type='radio' id="hot${i}"
 									class='temp' name="temp${i}" value='0' checked>HOT
 								</label>
@@ -100,7 +101,17 @@
 									class='temp' name="temp${i}" value='500'>COLD
 								</label>
 							</c:when>
-							<c:when test="${order.extraTemp_Price == 500.0}">
+							<c:otherwise>
+								<label for="hot${i}"> <input type='radio' id="hot${i}"
+									class='temp' name="temp${i}" value='0' checked>HOT
+								</label>
+								<label for="cold${i}"> <input type='radio' id="cold${i}"
+									class='temp' name="temp${i}" value='500'>COLD
+								</label>
+
+							</c:otherwise>
+							<c:when
+								test="${order.extraTemp_Price == 500.0}">
 								<label for="hot${i}"> <input type='radio' id="hot${i}"
 									class='temp' name="temp${i}" value='0' checked>HOT
 								</label>
@@ -117,32 +128,33 @@
 								<label for="small${i}"> <input type='radio' class='size'
 									id="small${i}" name="size${i}" value='0' checked>S
 								</label>
-								<label for="midium${i}"> <input type='radio' class='size'
-									id="midium${i}" name="size${i}" value='500'>M
+								<label for="midium${i}"> <input type='radio'
+									class='size' id="midium${i}" name="size${i}" value='500'>M
 								</label>
 								<label for="large${i}"> <input type='radio' class='size'
 									id="large${i}" name="size${i}" value='1000'>L
 								</label>
 							</c:when>
-							
+
 							<c:when test="${order.extraSize_Price == 500.0}">
 								<label for="small${i}"> <input type='radio' class='size'
 									id="small${i}" name="size${i}" value='0'>S
 								</label>
-								<label for="midium${i}"> <input type='radio' class='size'
-									id="midium${i}" name="size${i}" value='500' checked>M
+								<label for="midium${i}"> <input type='radio'
+									class='size' id="midium${i}" name="size${i}" value='500'
+									checked>M
 								</label>
 								<label for="large${i}"> <input type='radio' class='size'
 									id="large${i}" name="size${i}" value='1000'>L
 								</label>
 							</c:when>
-							
+
 							<c:when test="${order.extraSize_Price == 1000.0}">
 								<label for="small${i}"> <input type='radio' class='size'
 									id="small${i}" name="size${i}" value='0'>S
 								</label>
-								<label for="midium${i}"> <input type='radio' class='size'
-									id="midium${i}" name="size${i}" value='500'>M
+								<label for="midium${i}"> <input type='radio'
+									class='size' id="midium${i}" name="size${i}" value='500'>M
 								</label>
 								<label for="large${i}"> <input type='radio' class='size'
 									id="large${i}" name="size${i}" value='1000' checked>L

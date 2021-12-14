@@ -114,14 +114,9 @@ public class MenuController {
 		}
 
 		// 현재 장바구니 리스트를 세션으로 넘김
-//		if (totalNum != 0) {
 			session.setAttribute("cart", orderList);
 			session.setAttribute("totalNum", totalNum);
 			return "menuService/checkUser";
-//		} else {
-//			session.setAttribute("errorMsg", "메뉴를 선택하세요");
-//			return "menuService/menu_Page";
-//		}
 	}
 
 	
