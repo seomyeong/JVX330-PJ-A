@@ -100,15 +100,33 @@ $(document).ready(function () {
             "<a href='#' class='remove'>  X </a>" +
             "</div>";
 
+
  		let htmlFood=
             "<div id=" + eachCartNum + " class='commonCart'>" +
             "<input type='text' name=" + nameNameNum + " class='cartName' value=''>" +
+
+            "<div id='tempWrap'>" +
+            "<input type='hidden' id=" + eachHotNum + " class='temp' name=" + tempNameNum + " value='0' checked>" +
+            "<input type='hidden' id=" + eachColdNum + " class='temp' name=" + tempNameNum + " value='0'>" +
+            "</div>" +
+            "<div id='sizeWrap'>" +
+            "<input type='hidden' class='size' id=" + eachSmallNum + " name=" + sizeNameNum + " value='0' checked>" +
+            "<input type='hidden' class='size' id=" + eachMidiumNum + " name=" + sizeNameNum + " value='0'>" +
+            "<input type='hidden' class='size' id=" + eachLargeNum + " name=" + sizeNameNum + " value='0'>" +
+            "</div>" +
             "<div id='numWrap'>" +
             "<input type='text' class='num' name=" + countNameNum + " value='1' readonly>" +
             "</div>" +
             "<input type='text' name=" + priceNameNum + " class='price' readonly>" +
             "<a href='#' class='remove'>  X </a>" +
             "</div>";
+
+            /*"<div id='numWrap'>" +
+            "<input type='text' class='num' name=" + countNameNum + " value='1' readonly>" +
+            "</div>" +
+            "<input type='text' name=" + priceNameNum + " class='price' readonly>" +
+            "<a href='#' class='remove'>  X </a>" +
+            "</div>";*/
 
 
         	$('#totalNum').val(idNum);
@@ -335,9 +353,8 @@ $(document).ready(function () {
 
 
 //menuPage.jsp에서 메뉴를 선택하지 않고 결제창 눌렀을 때 (totalNum이 0일 경우) error띄우기
-*$('#payment').on('click', function () {
+$('#payment').on('click', function () {
     if ($('#totalNum').val() == 0) {
 		alert("메뉴를 선택하세요")
-		history.go(-1)
     }
 })

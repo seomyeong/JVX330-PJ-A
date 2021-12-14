@@ -2,10 +2,13 @@ package cafe.pja.signcafe.domain;
 
 import java.util.Date;
 
+import org.springframework.stereotype.Repository;
+
+@Repository
 public class CreditCard {
 	
-	private String card;		//카드사
-	private String cardNum;		//카드번호
+	private String creditCard;		//카드사
+	private String creditCardNum;		//카드번호
 	private double supplyPrice; //판매가
 	private double vat;			//부가세
 	private double totalPrice;	//총합
@@ -15,8 +18,8 @@ public class CreditCard {
 	
 	public CreditCard(String card, String cardNum, double supplyPrice, double vat, double totalPrice, Date regDate) {
 		super();
-		this.card = card;
-		this.cardNum = cardNum;
+		this.creditCard = card;
+		this.creditCardNum = cardNum;
 		this.supplyPrice = supplyPrice;
 		this.vat = vat;
 		this.totalPrice = totalPrice;
@@ -24,19 +27,19 @@ public class CreditCard {
 	}
 
 	public String getCard() {
-		return card;
+		return creditCard;
 	}
 
 	public void setCard(String card) {
-		this.card = card;
+		this.creditCard = card;
 	}
 
 	public String getCardNum() {
-		return cardNum;
+		return creditCardNum;
 	}
 
 	public void setCardNum(String cardNum) {
-		this.cardNum = cardNum;
+		this.creditCardNum = cardNum;
 	}
 
 	public double getSupplyPrice() {

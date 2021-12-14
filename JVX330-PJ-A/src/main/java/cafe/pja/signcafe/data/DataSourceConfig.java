@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import cafe.pja.signcafe.service.AdminServiceImpl;
 import cafe.pja.signcafe.service.MenuServiceImpl;
+import cafe.pja.signcafe.service.PaymentServiceImpl;
 import cafe.pja.signcafe.service.UserServiceImpl;
 
 @Configuration
@@ -43,6 +44,11 @@ public class DataSourceConfig {
 	@Bean
 	public MenuServiceImpl menuServiceImpl() {
 		return new MenuServiceImpl(jdbcTemplate());
+	}
+	
+	@Bean
+	public PaymentServiceImpl PaymentServiceImpl() {
+		return new PaymentServiceImpl(jdbcTemplate());
 	}
 	
 }

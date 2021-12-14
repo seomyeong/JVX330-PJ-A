@@ -1,4 +1,4 @@
-package cafe.pja.signcafe.controller;
+package cafe.pja.signcafe.web.command;
 
 public class UserCommand {
 	private String userName;

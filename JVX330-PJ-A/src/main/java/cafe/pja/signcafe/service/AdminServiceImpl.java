@@ -8,7 +8,7 @@ import cafe.pja.signcafe.dao.AdminDao;
 import cafe.pja.signcafe.domain.MenuInfo;
 import cafe.pja.signcafe.domain.OrderedList;
 import cafe.pja.signcafe.domain.User;
-import cafe.pja.signcafe.service.command.Info;
+import cafe.pja.signcafe.web.command.Info;
 
 public class AdminServiceImpl {
 	private AdminDao adminDao;

@@ -18,5 +18,10 @@ public class MenuServiceImpl {
 	public List<MenuInfo> allMenu(){
 		List<MenuInfo> menu = menuInfoDao.allMenu();
 		return menu;
-	}	
+	}
+	
+	public String findCategory(String menuName) {
+		
+		return menuInfoDao.findCategoryByName(menuName);
+	}
 }

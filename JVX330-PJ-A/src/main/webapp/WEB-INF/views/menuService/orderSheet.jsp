@@ -98,6 +98,6 @@
 		</tr>
 	</table>
 	
-	<a href="../index.jsp">확인</a>
+	<a href="../Index">확인</a>
 </body>
 </html>
