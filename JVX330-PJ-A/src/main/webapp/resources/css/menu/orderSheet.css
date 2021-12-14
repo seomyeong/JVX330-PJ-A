@@ -13,20 +13,22 @@ font-family: 'Open Sans', sans-serif;
 }
 
 h1 {
-    margin-top: 30px;
+    margin-top: 35px;
     text-align: center;
 }
 p {
-    margin-top: 30px;
+    margin-top: 33px;
     text-align: center;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 #order {
-    margin: 20px auto;
-    width: 700px;
+    margin: 25px auto 40px;
+    width: 680px;
     text-align: center;
-    border-top: 1px dotted #000;
-    border-bottom: 1px dotted #000;
+    border-top: 2px dotted #000;
+    border-bottom: 2px dotted #000;
     border-collapse: collapse;
 }
 
@@ -35,8 +37,8 @@ p {
 }
 
 #order tbody {
-    border-top: 1px dotted #000;
-    border-bottom: 1px dotted #000;
+    border-top: 2px dotted #000;
+    border-bottom: 2px dotted #000;
 }
 
 #order tbody td:first-child {
@@ -44,8 +46,8 @@ p {
     line-height: 35px;
 }
 #creditInfo {
-    margin: 20px auto;
-    width: 700px;
+    margin: 30px auto 25px;
+    width: 680px;
 }
 
 #creditInfo td {
@@ -58,13 +60,12 @@ p {
 
 a {
     position: absolute;
-    bottom: -200px; left: calc(50% - 125px);
-	width: 250px;
+    bottom: -115px; left: calc(50% - 110px);
+	width: 220px;
     display:block;
-    margin-bottom: 25px;
     text-align: center;
-    line-height: 70px;
-    font-size: 28px;
+    line-height: 60px;
+    font-size: 24px;
     border: 2px solid #000;
     border-radius: 10px;   
 }
