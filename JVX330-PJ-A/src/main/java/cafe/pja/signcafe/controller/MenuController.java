@@ -1,7 +1,9 @@
 package cafe.pja.signcafe.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -55,6 +57,8 @@ public class MenuController {
 
 		context.close();
 		return mav;
+		
+		
 	}
 
 	
@@ -65,9 +69,10 @@ public class MenuController {
 	 * ---------------------------------------
 	 */
 	@PostMapping("menuService/checkUser")
-	public String checkUser(HttpServletRequest request) {
+	public ModelAndView checkUser(HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		List<OrderedList> orderList = new ArrayList<>();
+		ModelAndView mav = new ModelAndView();
 		// 총 상품의 개수를 받아온다.
 		int totalNum = Integer.parseInt(request.getParameter("totalNum"));
 		for (int i = 1; i <= totalNum; i++) {
@@ -82,22 +87,27 @@ public class MenuController {
 
 			orderList.add(o);
 		}
-
-		// 현재 장바구니 리스트를 세션으로 넘김
-		if (totalNum != 0) {
+		
+		if(totalNum == 0) {
+//			session.setAttribute("errorMsg", "메뉴를 선택하세요");
+			mav.addObject("errorMsg", "메뉴를 선택하세요!!");
+			mav.setViewName("menuService/menu_Page");
+		}else{
 			session.setAttribute("cart", orderList);
 			session.setAttribute("totalNum", totalNum);
-			return "menuService/checkUser";
-		} else {
-			session.setAttribute("errorMsg", "메뉴를 선택하세요");
-			return "menuService/menu_Page";
+			mav.setViewName("menuService/checkUser");
+		
 		}
+		return mav;
 	}
 	
+	
+	
 	@GetMapping("menuService/checkUser")
-	public String checkUserForm(HttpServletRequest request) {
+	public ModelAndView checkUserGet(HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		List<OrderedList> orderList = new ArrayList<>();
+		ModelAndView mav = new ModelAndView();
 		// 총 상품의 개수를 받아온다.
 		int totalNum = Integer.parseInt(request.getParameter("totalNum"));
 		for (int i = 1; i <= totalNum; i++) {
@@ -112,11 +122,18 @@ public class MenuController {
 
 			orderList.add(o);
 		}
-
-		// 현재 장바구니 리스트를 세션으로 넘김
+		
+		if(totalNum == 0) {
+//			session.setAttribute("errorMsg", "메뉴를 선택하세요");
+			mav.addObject("errorMsg", "메뉴를 선택하세요!!");
+			mav.setViewName("menuService/menu_Page");
+		}else{
 			session.setAttribute("cart", orderList);
 			session.setAttribute("totalNum", totalNum);
-			return "menuService/checkUser";
+			mav.setViewName("menuService/checkUser");
+		
+		}
+		return mav;
 	}
 
 	

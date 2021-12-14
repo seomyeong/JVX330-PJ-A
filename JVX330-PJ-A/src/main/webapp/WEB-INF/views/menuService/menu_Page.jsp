@@ -80,10 +80,22 @@
 		<h2 class="hidden">장바구니</h2>
 		<form action="checkUser" method="post" id="container">
 			<p>총 주문 수량을 확인하세요.</p>
-			<p>${sessionScope.errorMsg }</p>
-			<input type="text" name="totalNum" id="totalNum"
-				value="${sessionScope.totalNum}"> <input type="submit"
-				value="결제하기" id="payment">
+			<p>${errorMsg }</p>
+
+			<c:choose>
+				<c:when test="${sessionScope.totalNum eq null}">
+					<input type="text" name="totalNum" id="totalNum"
+						value="0" readonly>
+					<input type="submit" value="결제하기" id="payment">
+				</c:when>
+
+				<c:otherwise>
+					<input type="text" name="totalNum" id="totalNum"
+						value="${sessionScope.totalNum}" readonly>
+					<input type="submit" value="결제하기" id="payment">
+				</c:otherwise>
+			</c:choose>
+
 
 			<c:set var="i" value="1" />
 			<c:forEach items="${sessionScope.cart}" var="order">
@@ -92,8 +104,7 @@
 						value="${order.menuInfo.menuName}">
 					<div id='tempWrap'>
 						<c:choose>
-							<c:when
-								test="${order.extraTemp_Price == 0.0}">
+							<c:when test="${order.extraTemp_Price == 0.0}">
 								<label for="hot${i}"> <input type='radio' id="hot${i}"
 									class='temp' name="temp${i}" value='0' checked>HOT
 								</label>
@@ -101,17 +112,7 @@
 									class='temp' name="temp${i}" value='500'>COLD
 								</label>
 							</c:when>
-							<c:otherwise>
-								<label for="hot${i}"> <input type='radio' id="hot${i}"
-									class='temp' name="temp${i}" value='0' checked>HOT
-								</label>
-								<label for="cold${i}"> <input type='radio' id="cold${i}"
-									class='temp' name="temp${i}" value='500'>COLD
-								</label>
-
-							</c:otherwise>
-							<c:when
-								test="${order.extraTemp_Price == 500.0}">
+							<c:when test="${order.extraTemp_Price == 500.0}">
 								<label for="hot${i}"> <input type='radio' id="hot${i}"
 									class='temp' name="temp${i}" value='0' checked>HOT
 								</label>
@@ -174,7 +175,7 @@
 				<c:set var="i" value="${i + 1}" />
 			</c:forEach>
 		</form>
-		<a href="<%=request.getContextPath()%>/index.jsp" id="goToIndex">메인으로</a>
+		<a href="<%=request.getContextPath()%>/Index" id="goToIndex">메인으로</a>
 	</section>
 </body>
 </html>
