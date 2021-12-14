@@ -19,10 +19,8 @@ import org.springframework.web.servlet.ModelAndView;
 import cafe.pja.signcafe.data.DataSourceConfig;
 import cafe.pja.signcafe.domain.MenuInfo;
 import cafe.pja.signcafe.domain.OrderedList;
-<<<<<<< HEAD
-=======
+
 import cafe.pja.signcafe.domain.User;
->>>>>>> branch 'main' of https://github.com/seomyeong/JVX330-PJ-A.git
 import cafe.pja.signcafe.service.MenuServiceImpl;
 import cafe.pja.signcafe.service.UserServiceImpl;
 
