@@ -23,9 +23,7 @@ import cafe.pja.signcafe.service.UserServiceImpl;
 @Controller("controller.paymentController")
 public class PaymentController {
 	
-	/*
-	 * payment.jsp
-	 */
+
 	//chechUser.jsp에서 적립하지않고 바로결제 누를 경우 이동
 	@GetMapping("menuService/payment")
 	public ModelAndView paymentForm(HttpServletRequest request) {
