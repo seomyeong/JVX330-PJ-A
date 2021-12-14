@@ -82,7 +82,7 @@
 			<p>총 주문 수량을 확인하세요.</p>
 			<p>${sessionScope.errorMsg }</p>
 			<input type="text" name="totalNum" id="totalNum"
-				value="${sessionScope.totalNum}"> <input type="submit"
+				value="${sessionScope.totalNum}" readonly> <input type="submit"
 				value="결제하기" id="payment">
 
 			<c:set var="i" value="1" />
@@ -162,7 +162,7 @@
 				<c:set var="i" value="${i + 1}" />
 			</c:forEach>
 		</form>
-		<a href="<%=request.getContextPath()%>/index.jsp" id="goToIndex">메인으로</a>
+		<a href="<%=request.getContextPath()%>/Index" id="goToIndex">메인으로</a>
 	</section>
 </body>
 </html>
