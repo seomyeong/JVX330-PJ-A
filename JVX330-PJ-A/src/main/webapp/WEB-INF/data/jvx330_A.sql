@@ -54,6 +54,7 @@ CREATE TABLE PAYMENT_HISTORY(
 ---CAFE_USER TABLE : admin 계정, 일반 멤버쉽 가입 예제---
 INSERT INTO CAFE_USER(name,phone,passWd) VALUES ('admin', 'admin', 'admin');
 INSERT INTO CAFE_USER(name, phone, passWd, mileage) VALUES('서명', '010123123', '1234', 1000000.0);
+INSERT INTO CAFE_USER(name, phone, passWd, mileage) VALUES('종성테스트', '01012344321', '1234', 12000.0);
 
 
 

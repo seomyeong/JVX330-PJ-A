@@ -2,10 +2,12 @@ package cafe.pja.signcafe.dao;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 
+
 import cafe.pja.signcafe.domain.OrderedList;
 
 public class OrderedListDao {
 	private JdbcTemplate jdbcTemplate;
+
 	
 	public OrderedListDao(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
@@ -18,4 +20,7 @@ public class OrderedListDao {
 		jdbcTemplate.update(sql, (Long)ordered.getMenuInfo().getMenuCount() + ordered.getMenuCount(), ordered.getMenuInfo().getMenuNum());
 	}
 	
+	public void updatePayment() {
+		
+	}
 }
