@@ -16,16 +16,16 @@ public class AdminDaoTest {
 	@Autowired
 	private AdminDao dao;
 		
-//	@Test
-//	public void AllInquiryMenuInfo() {
-//		List<MenuInfo> list = dao.allInquiryMenuInfo();
-//		assertTrue(list.size() == 11);
-//	}
+	@Test
+	public void AllInquiryMenuInfo() {
+		List<MenuInfo> list = dao.allInquiryMenuInfo();
+		assertTrue(list.size() == 11);
+	}
 	
 	@Test
 	public void AllInquiryUserInfo() {
-		List<User> userList = dao.allInquiryUserInfo();
-		assertTrue(userList.size() == 7);
-//		dao.AllInquiryUserInfo().forEach(m-> System.out.println(m));
+//		List<User> userList = dao.allInquiryUserInfo();
+//		assertTrue(userList.size() == 7);
+		dao.allInquiryUserInfo().forEach(m-> System.out.println(m));
 	}
 }
