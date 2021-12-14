@@ -40,11 +40,12 @@ public class CheckUserController {
 			MenuInfo m = new MenuInfo();
 			OrderedList o = new OrderedList();
 			
+			m.setMenuNum(menuService.findMenuNum(request.getParameter("name" + i)));
 			m.setMenuName(request.getParameter("name" + i));
 			m.setCategory(menuService.findCategory(request.getParameter("name" + i)));
 			
 			System.out.println(menuService.findCategory(request.getParameter("name" + i)));
-
+			
 			o.setMenuInfo(m);
 			o.setExtraTemp_Price(Double.parseDouble(request.getParameter("temp" + i)));
 			o.setExtraSize_Price(Double.parseDouble(request.getParameter("size" + i)));

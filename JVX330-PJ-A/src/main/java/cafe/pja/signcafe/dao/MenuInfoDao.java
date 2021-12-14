@@ -43,6 +43,17 @@ public class MenuInfoDao {
 		}, menuName);
 	}
 	
+	public Long findMenuNumByName(String menuName) {
+		String sql = "SELECT * FROM MENU_INFO WHERE menuName=?";
+		return jdbcTemplate.queryForObject(sql, new RowMapper<Long>() {
+
+			@Override
+			public Long mapRow(ResultSet rs, int rowNum) throws SQLException {
+				return rs.getLong("menuNum");
+			}
+		}, menuName);
+	}
+	
 	
 }
 
