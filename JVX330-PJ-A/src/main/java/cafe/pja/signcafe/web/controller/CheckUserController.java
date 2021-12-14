@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.GenericApplicationContext;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -17,6 +18,7 @@ import cafe.pja.signcafe.domain.MenuInfo;
 import cafe.pja.signcafe.domain.OrderedList;
 import cafe.pja.signcafe.service.MenuServiceImpl;
 
+@Controller("controller.checkUserController")
 public class CheckUserController {
 	
 	
@@ -39,6 +41,9 @@ public class CheckUserController {
 			OrderedList o = new OrderedList();
 			
 			m.setMenuName(request.getParameter("name" + i));
+			m.setCategory(menuService.findCategory(request.getParameter("name" + i)));
+			
+			System.out.println(menuService.findCategory(request.getParameter("name" + i)));
 
 			o.setMenuInfo(m);
 			o.setExtraTemp_Price(Double.parseDouble(request.getParameter("temp" + i)));
@@ -84,15 +89,9 @@ public class CheckUserController {
 			orderList.add(o);
 		}
 
-		// 현재 장바구니 리스트를 세션으로 넘김
-//		if (totalNum != 0) {
 			session.setAttribute("cart", orderList);
 			session.setAttribute("totalNum", totalNum);
 			return "menuService/checkUser";
-//		} else {
-//			session.setAttribute("errorMsg", "메뉴를 선택하세요");
-//			return "menuService/menu_Page";
-//		}
 	}
 
 }
