@@ -5,9 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>signCafe</title>
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/common.css">
-	
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/menu/orderSheet.css">
 </head>
 <body>
 	<jsp:include page="/resources/incl/signCafeIncl.jsp"></jsp:include>
@@ -24,6 +23,18 @@
 			</tr>
 		</thead>
 		<tbody>
+		<%-- 	<c:if test="${not empty orderedList}">
+				<c:forEach var="orderedList" items="${orderedList}">
+					<tr>
+						<td>${menuIfo.menuName}</td>
+						<td>${orderedList.menuCount}</td>
+						<td>${orderedList.extraName}</td>
+						<td>${orderedList.extraPrice}</td>
+						<td>${orderedList.totalPrice}</td>
+					</tr>
+				</c:forEach>
+			</c:if> --%>
+			<%-- 밑에는 test --%>
 			<tr>
 				<td>클래식 아메리카노</td>
 				<td>1</td>
