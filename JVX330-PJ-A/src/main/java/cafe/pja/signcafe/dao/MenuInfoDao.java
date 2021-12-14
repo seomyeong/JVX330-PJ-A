@@ -32,6 +32,17 @@ public class MenuInfoDao {
 		});
 	}//end of Method
 	
+	public String findCategoryByName(String menuName) {
+		String sql = "SELECT * FROM MENU_INFO WHERE menuName=?";
+		return jdbcTemplate.queryForObject(sql, new RowMapper<String>() {
+
+			@Override
+			public String mapRow(ResultSet rs, int rowNum) throws SQLException {
+				return rs.getString("category");
+			}
+		}, menuName);
+	}
+	
 	
 }
 

@@ -78,6 +78,9 @@ public class MenuController {
 			OrderedList o = new OrderedList();
 			
 			m.setMenuName(request.getParameter("name" + i));
+			m.setCategory(menuService.findCategory(request.getParameter("name" + i)));
+			
+			System.out.println(menuService.findCategory(request.getParameter("name" + i)));
 
 			o.setMenuInfo(m);
 			o.setExtraTemp_Price(Double.parseDouble(request.getParameter("temp" + i)));

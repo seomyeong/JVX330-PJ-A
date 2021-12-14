@@ -84,8 +84,7 @@
 
 			<c:choose>
 				<c:when test="${sessionScope.totalNum eq null}">
-					<input type="text" name="totalNum" id="totalNum"
-						value="0" readonly>
+					<input type="text" name="totalNum" id="totalNum" value="0" readonly>
 					<input type="submit" value="결제하기" id="payment">
 				</c:when>
 
@@ -104,6 +103,16 @@
 						value="${order.menuInfo.menuName}">
 					<div id='tempWrap'>
 						<c:choose>
+							<c:when
+								test="${order.extraTemp_Price == 0.0 and order.menuInfo.category eq 'FOOD'}">
+								<div style="display: none">
+									<label for="hot${i}"> <input type='radio' id="hot${i}"
+										class='temp' name="temp${i}" value='0' checked>HOT
+									</label> <label for="cold${i}"> <input type='radio'
+										id="cold${i}" class='temp' name="temp${i}" value='500'>COLD
+									</label>
+								</div>
+							</c:when>
 							<c:when test="${order.extraTemp_Price == 0.0}">
 								<label for="hot${i}"> <input type='radio' id="hot${i}"
 									class='temp' name="temp${i}" value='0' checked>HOT
@@ -125,6 +134,18 @@
 
 					<div id='sizeWrap'>
 						<c:choose>
+							<c:when
+								test="${order.extraSize_Price == 0.0 and order.menuInfo.category eq 'FOOD'}">
+								<div style="display:none;">
+									<label for="small${i}"> <input type='radio'
+										class='size' id="small${i}" name="size${i}" value='0' checked>S
+									</label> <label for="midium${i}"> <input type='radio'
+										class='size' id="midium${i}" name="size${i}" value='500'>M
+									</label> <label for="large${i}"> <input type='radio'
+										class='size' id="large${i}" name="size${i}" value='1000'>L
+									</label>
+								</div>
+							</c:when>
 							<c:when test="${order.extraSize_Price == 0.0}">
 								<label for="small${i}"> <input type='radio' class='size'
 									id="small${i}" name="size${i}" value='0' checked>S
