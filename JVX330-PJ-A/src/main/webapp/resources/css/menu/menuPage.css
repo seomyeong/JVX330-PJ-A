@@ -1,58 +1,64 @@
 @charset "utf-8";
-h1{text-align: center; font-size: 50px;}
 
 #menuListWrap{
-    width: 1280px;
+    width: 100%;
     margin: 0 auto;
     text-align: center;
     position: relative;
 }
-.menuWrap{
-    height: 85vh;
-}
+
 .menuWrap #titleMenu{
-    height: 85vh; width: 300px;
-    position: absolute;
+	width: 70.1%;
+    height: 70px; 
+    float: left;
 }
+
+.menuWrap #titleMenu p:hover {
+    background-color: rgb(82, 77, 77);
+    color: #fff;
+}
+
 .menuWrap #titleMenu>p{
+	width: 33.3333%;
+	line-height: 70px;
     cursor: pointer;
     display: block;
     font-style: italic;
     font-weight: bold;
-    height: 18%;
-    padding-top: 16%;
-    margin-bottom: 10px;
     box-sizing: border-box;
-    border-bottom: 3px solid #000;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+    float: left;
 }
 
 .menuWrap .categoryArticle{
-    position: absolute;
-    height: 46vh;
     width: 70%;
+    height: 100%;
     overflow-y: scroll;
     background: #fff;
-    border: 3px solid rgb(199, 255, 95);
-    margin: 10px 0 50px 360px;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
 }
 
 .menuWrap .categoryArticle>div{
     float: left;
-    width: 200px;
-    margin-bottom: 20px;
-}
-.menuWrap .categoryArticle>div>img{
-    width: 100px; height: 100px;
+    width: 33.333%;
+    margin: 20px 0 20px;
 }
 
+.menuWrap .categoryArticle>div>img{
+    width: 170px;
+    height: 180px;
+    
+}
 /*주문 공간*/
 #orderedList{
-    margin: 0 auto;
-    width: 1280px;
-    height: 35vh;
+	margin: 0 auto;
+    width: 30%;
+    height: 35.4vh;
     background: #eee;
     text-align: center;
-    position: relative; bottom: 250px;
+    position: absolute; top: 100vh; right: 0px;
 }
 #container{
     overflow-y: scroll;
@@ -87,7 +93,7 @@ h1{text-align: center; font-size: 50px;}
 }
 
 /* #container에 담긴 개별 메뉴*/
-.commonCart{
+/* .commonCart{
     margin: 10px;
     width: 200px;
     height: 150px;
@@ -117,5 +123,4 @@ h1{text-align: center; font-size: 50px;}
 }
 .price{
     width: 40px;
-}
-.remove{}
+} */

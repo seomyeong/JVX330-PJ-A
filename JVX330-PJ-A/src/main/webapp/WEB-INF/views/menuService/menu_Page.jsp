@@ -20,7 +20,7 @@
 
 </head>
 <body>
-	<h1>SIGN CAFE</h1>
+	<jsp:include page="/resources/incl/signCafeIncl.jsp"></jsp:include>
 	<section id="menuListWrap">
 		<h2 class="hidden">카페 메뉴</h2>
 		<div class="menuWrap">
@@ -157,7 +157,7 @@
 					<fmt:parseNumber var="totalPrice" value="${order.totalPrice div 1}"
 						integerOnly="true" />
 					<input type='text' name="price${i}" class='price'
-						value=${totalPrice}> <a href='#' class='remove'> X </a>
+						value="${totalPrice}"> <a href='#' class='remove'> X </a>
 				</div>
 				<c:set var="i" value="${i + 1}" />
 			</c:forEach>
