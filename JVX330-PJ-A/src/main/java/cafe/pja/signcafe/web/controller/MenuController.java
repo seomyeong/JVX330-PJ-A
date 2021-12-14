@@ -135,44 +135,6 @@ public class MenuController {
 	}
 
 	
-	
-	
-	
-	/*
-	 * payment.jsp
-	 */
-	//chechUser.jsp에서 적립하지않고 바로결제 누를 경우 이동
-	@GetMapping("menuService/payment")
-	public String paymentForm() {
-		return "menuService/payment";
-	}
-
-	//chechUser.jsp에서 결제버튼 클릭 시 폰번호 검사
-	@PostMapping("menuService/payment")
-	public ModelAndView paymentbySeoMyeong(@ModelAttribute User user, HttpServletResponse response) {
-		GenericApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
-		UserServiceImpl userService = context.getBean("userServiceImpl", UserServiceImpl.class);
-		ModelAndView mav = new ModelAndView();
-
-		// 유저의 폰번호와 일치하지 않으면 error, 일치하면 payment 이동
-		if (userService.checkUserbyPhone(user)) {
-			User userInfo = userService.userInfoByPhone(user);
-
-			Cookie cookie = new Cookie("cookieUserPhone", user.getPhone());
-			cookie.setMaxAge(60 * 60 * 24);
-			response.addCookie(cookie);
-
-			mav.addObject("user", userInfo);
-			mav.setViewName("menuService/payment");
-			context.close();
-			return mav;
-		} else {
-			mav.addObject("errorMsg", "입력하신 정보와 일치하는 회원정보가 없습니다.");
-			mav.setViewName("menuService/checkUser");
-			context.close();
-			return mav;
-		}
-	}
 
 	/*
 	 * ——————————————————— 
