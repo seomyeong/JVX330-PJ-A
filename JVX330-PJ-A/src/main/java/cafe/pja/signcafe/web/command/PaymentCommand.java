@@ -4,7 +4,7 @@ public class PaymentCommand {
 	private String creditCard;
 	private String cardNum;
 	private double mileage;
-	private int amount;
+	private double amount;
 	private double orderPrice;
 	
 	public String getCreditCard() {
@@ -25,10 +25,10 @@ public class PaymentCommand {
 	public void setMileage(double mileage) {
 		this.mileage = mileage;
 	}
-	public int getAmount() {
+	public double getAmount() {
 		return amount;
 	}
-	public void setAmount(int amount) {
+	public void setAmount(double amount) {
 		this.amount = amount;
 	}
 	public double getOrderPrice() {
