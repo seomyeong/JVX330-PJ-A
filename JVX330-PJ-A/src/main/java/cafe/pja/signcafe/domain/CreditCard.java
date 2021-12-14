@@ -2,6 +2,9 @@ package cafe.pja.signcafe.domain;
 
 import java.util.Date;
 
+import org.springframework.stereotype.Repository;
+
+@Repository
 public class CreditCard {
 	
 	private String card;		//카드사
