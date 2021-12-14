@@ -1,4 +1,4 @@
-package cafe.pja.signcafe.controller;
+package cafe.pja.signcafe.web.controller;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.GenericApplicationContext;
@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import cafe.pja.signcafe.data.DataSourceConfig;
 import cafe.pja.signcafe.domain.User;
 import cafe.pja.signcafe.service.AdminServiceImpl;
-import cafe.pja.signcafe.service.command.Info;
+import cafe.pja.signcafe.web.command.Info;
 
 @Controller("controller.adminController")
 public class AdminController {

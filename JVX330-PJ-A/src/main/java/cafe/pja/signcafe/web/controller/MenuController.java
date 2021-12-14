@@ -1,4 +1,4 @@
-package cafe.pja.signcafe.controller;
+package cafe.pja.signcafe.web.controller;
 
 import java.util.ArrayList;
 import java.util.List;
