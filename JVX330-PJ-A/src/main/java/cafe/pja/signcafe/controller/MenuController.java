@@ -165,24 +165,4 @@ public class MenuController {
 		}
 	}
 
-	/*
-	 * -------------------------------------- 
-	 * payment.jsp 페이지 버튼
-	 * --------------------------------------
-	 */
-	@GetMapping("menuService/orderSheet")
-	public String orderSheetForm() {
-		return "menuService/menuPage";
-	}
-
-	@PostMapping("menuService/orderSheet")
-	public String orderSheet() {
-		GenericApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
-		MenuServiceImpl menuService = (MenuServiceImpl) context.getBean("menuServiceImpl");
-
-		ModelAndView mav = new ModelAndView();
-
-		return "menuService/orderSheet";
-	}
-
 }

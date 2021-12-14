@@ -19,31 +19,31 @@
 				<th>카드사 선택</th>
 				<td>
 					<select>
-						<option value="삼성카드">삼성카드</option>
-						<option value="국민카드">국민카드</option>
-						<option value="농협카드">농협카드</option>
-						<option value="비씨카드">비씨카드</option>
-						<option value="신한카드">신한카드</option>
+						<option value="삼성카드" name="creditCard">삼성카드</option>
+						<option value="국민카드" name="creditCard">국민카드</option>
+						<option value="농협카드" name="creditCard">농협카드</option>
+						<option value="비씨카드" name="creditCard">비씨카드</option>
+						<option value="신한카드" name="creditCard">신한카드</option>
 					</select>
 				</td>
 			</tr>
 			<tr class="cardNum">
 				<th>카드번호</th>
 				<td>
-					<input type="text" pattern="[0-9]+" maxlength="19" minlength="19" required>
+					<input type="text" pattern="[0-9]+" maxlength="19" minlength="19" name="cardNum" required>
 				</td>
 			</tr>
 			<tr class="userMileage">
 				<th>보유 마일리지</th>
-				<td><input type="text" readonly="readonly"></td>
+				<td><input type="text" name="mileage"></td>
 			</tr>
 			<tr class="mileageUse">
 				<th>마일리지 사용</th>
-				<td><input type="text" pattern="[0-9]+"></td>
+				<td><input type="text" pattern="[0-9]+" name="amount" ></td>
 			</tr>
 			<tr class="totalPrice">
 				<th>총 결제금액</th>
-				<td><input type="text"></td>
+				<td><input type="text" name="orderPrice"></td>
 			</tr>
 		</table>
 		<form action="orderSheet" method="POST">

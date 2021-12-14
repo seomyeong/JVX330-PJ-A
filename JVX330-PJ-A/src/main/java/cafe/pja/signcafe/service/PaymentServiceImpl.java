@@ -2,14 +2,20 @@ package cafe.pja.signcafe.service;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import cafe.pja.signcafe.dao.CreditCardDao;
-import cafe.pja.signcafe.domain.CreditCard;
+import cafe.pja.signcafe.dao.PaymentDao;
+import cafe.pja.signcafe.web.command.PaymentCommand;
 
 public class PaymentServiceImpl {
 
-	private CreditCardDao creditCardDao;
+	private PaymentDao paymentDao;
 	
 	public PaymentServiceImpl(JdbcTemplate jdbcTemplate) {
-		creditCardDao = new CreditCardDao(jdbcTemplate);
+		paymentDao = new PaymentDao(jdbcTemplate);
+	}
+	
+	public boolean payByCreditCard(PaymentCommand paymentCommand) {
+		if(paymentDao.getCreditCardInfo(paymentCommand)) {
+			return true;
+		}
 	}
 }
