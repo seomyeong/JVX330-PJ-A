@@ -57,6 +57,13 @@ public class MenuController {
 		return mav;
 	}
 
+	
+	
+	/*
+	 * ---------------------------------------
+	 * checkUser
+	 * ---------------------------------------
+	 */
 	@PostMapping("menuService/checkUser")
 	public String checkUser(HttpServletRequest request) {
 		HttpSession session = request.getSession();
@@ -77,22 +84,60 @@ public class MenuController {
 		}
 
 		// 현재 장바구니 리스트를 세션으로 넘김
-		session.setAttribute("cart", orderList);
-		session.setAttribute("totalNum", totalNum);
-		return "menuService/checkUser";
+		if (totalNum != 0) {
+			session.setAttribute("cart", orderList);
+			session.setAttribute("totalNum", totalNum);
+			return "menuService/checkUser";
+		} else {
+			session.setAttribute("errorMsg", "메뉴를 선택하세요");
+			return "menuService/menu_Page";
+		}
+	}
+	
+	@GetMapping("menuService/checkUser")
+	public String checkUserForm(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		List<OrderedList> orderList = new ArrayList<>();
+		// 총 상품의 개수를 받아온다.
+		int totalNum = Integer.parseInt(request.getParameter("totalNum"));
+		for (int i = 1; i <= totalNum; i++) {
+			MenuInfo m = new MenuInfo();
+			OrderedList o = new OrderedList();
+			m.setMenuName(request.getParameter("name" + i));
+
+			o.setMenuInfo(m);
+			o.setExtraTemp_Price(Double.parseDouble(request.getParameter("temp" + i)));
+			o.setExtraSize_Price(Double.parseDouble(request.getParameter("size" + i)));
+			o.setTotalPrice(Double.parseDouble(request.getParameter("price" + i)));
+
+			orderList.add(o);
+		}
+
+		// 현재 장바구니 리스트를 세션으로 넘김
+//		if (totalNum != 0) {
+			session.setAttribute("cart", orderList);
+			session.setAttribute("totalNum", totalNum);
+			return "menuService/checkUser";
+//		} else {
+//			session.setAttribute("errorMsg", "메뉴를 선택하세요");
+//			return "menuService/menu_Page";
+//		}
 	}
 
+	
+	
+	
+	
 	/*
-	 * chechUser.jsp에서 적립하지않고 바로결제 누를 경우 이동
+	 * payment.jsp
 	 */
+	//chechUser.jsp에서 적립하지않고 바로결제 누를 경우 이동
 	@GetMapping("menuService/payment")
 	public String paymentForm() {
 		return "menuService/payment";
 	}
 
-	/*
-	 * chechUser.jsp에서 결제버튼 클릭 시 폰번호 검사
-	 */
+	//chechUser.jsp에서 결제버튼 클릭 시 폰번호 검사
 	@PostMapping("menuService/payment")
 	public ModelAndView paymentbySeoMyeong(@ModelAttribute User user, HttpServletResponse response) {
 		GenericApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
@@ -118,10 +163,9 @@ public class MenuController {
 			return mav;
 		}
 	}
-	
-	
+
 	/*
-	 * --------------------------------------
+	 * -------------------------------------- 
 	 * payment.jsp 페이지 버튼
 	 * --------------------------------------
 	 */
@@ -132,6 +176,11 @@ public class MenuController {
 
 	@PostMapping("menuService/orderSheet")
 	public String orderSheet() {
+		GenericApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
+		MenuServiceImpl menuService = (MenuServiceImpl) context.getBean("menuServiceImpl");
+
+		ModelAndView mav = new ModelAndView();
+
 		return "menuService/orderSheet";
 	}
 

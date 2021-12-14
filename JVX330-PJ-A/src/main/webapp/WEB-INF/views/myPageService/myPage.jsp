@@ -36,7 +36,7 @@
 			<p>*마일리지 확인</p>
 			<table id="userMileage">
 				<tr>
-					<th>mileage
+					<th>Mileage
 					<td><input type="text" value="${user.mileage}" name="mileage" id="mileage" readonly></td>
 				</tr>
 			</table>	
