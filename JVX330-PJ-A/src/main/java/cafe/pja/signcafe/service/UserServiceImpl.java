@@ -2,14 +2,17 @@ package cafe.pja.signcafe.service;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import cafe.pja.signcafe.dao.OrderedListDao;
 import cafe.pja.signcafe.dao.UserDao;
 import cafe.pja.signcafe.domain.User;
 
 public class UserServiceImpl {
+	private OrderedListDao orderedListDao;
 	private UserDao userDao;
 
 	public UserServiceImpl(JdbcTemplate jdbcTemplate) {
 		userDao = new UserDao(jdbcTemplate);
+		orderedListDao = new OrderedListDao(jdbcTemplate);
 	}
 
 	public boolean addUser(User user) {
@@ -68,7 +71,11 @@ public class UserServiceImpl {
 			return false;
 		}
 	}
+
 	
-	
+	public boolean updatePayment() {
+		return false;
+		
+	}
 
 }

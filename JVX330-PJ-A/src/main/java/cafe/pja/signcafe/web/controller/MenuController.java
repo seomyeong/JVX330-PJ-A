@@ -60,20 +60,27 @@ public class MenuController {
 	
 	
 	/*
-	 * ---------------------------------------
+	 * ———————————————————
 	 * checkUser
-	 * ---------------------------------------
+	 * ———————————————————
 	 */
 	@PostMapping("menuService/checkUser")
-	public String checkUser(HttpServletRequest request) {
+	public ModelAndView checkUser(HttpServletRequest request) {
+		GenericApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
+		MenuServiceImpl menuService = (MenuServiceImpl) context.getBean("menuServiceImpl");
 		HttpSession session = request.getSession();
 		List<OrderedList> orderList = new ArrayList<>();
+		ModelAndView mav = new ModelAndView();
 		// 총 상품의 개수를 받아온다.
 		int totalNum = Integer.parseInt(request.getParameter("totalNum"));
 		for (int i = 1; i <= totalNum; i++) {
 			MenuInfo m = new MenuInfo();
 			OrderedList o = new OrderedList();
+			
 			m.setMenuName(request.getParameter("name" + i));
+			m.setCategory(menuService.findCategory(request.getParameter("name" + i)));
+			
+			System.out.println(menuService.findCategory(request.getParameter("name" + i)));
 
 			o.setMenuInfo(m);
 			o.setExtraTemp_Price(Double.parseDouble(request.getParameter("temp" + i)));
@@ -84,14 +91,20 @@ public class MenuController {
 		}
 
 		// 현재 장바구니 리스트를 세션으로 넘김
-		if (totalNum != 0) {
+		if (totalNum == 0) {
+			List<MenuInfo> menuInfoList = menuService.allMenu();
+			mav.addObject("menuInfoList", menuInfoList);
+			mav.addObject("errorMsg", "메뉴를 선택하세요");
+			mav.setViewName("menuService/menu_Page");
+		} else {
 			session.setAttribute("cart", orderList);
 			session.setAttribute("totalNum", totalNum);
-			return "menuService/checkUser";
-		} else {
-			session.setAttribute("errorMsg", "메뉴를 선택하세요");
-			return "menuService/menu_Page";
+			mav.setViewName("menuService/checkUser");
 		}
+		
+		return mav;
+		
+		
 	}
 	
 	@GetMapping("menuService/checkUser")
@@ -125,49 +138,11 @@ public class MenuController {
 	}
 
 	
-	
-	
-	
-	/*
-	 * payment.jsp
-	 */
-	//chechUser.jsp에서 적립하지않고 바로결제 누를 경우 이동
-	@GetMapping("menuService/payment")
-	public String paymentForm() {
-		return "menuService/payment";
-	}
-
-	//chechUser.jsp에서 결제버튼 클릭 시 폰번호 검사
-	@PostMapping("menuService/payment")
-	public ModelAndView paymentbySeoMyeong(@ModelAttribute User user, HttpServletResponse response) {
-		GenericApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
-		UserServiceImpl userService = context.getBean("userServiceImpl", UserServiceImpl.class);
-		ModelAndView mav = new ModelAndView();
-
-		// 유저의 폰번호와 일치하지 않으면 error, 일치하면 payment 이동
-		if (userService.checkUserbyPhone(user)) {
-			User userInfo = userService.userInfoByPhone(user);
-
-			Cookie cookie = new Cookie("cookieUserPhone", user.getPhone());
-			cookie.setMaxAge(60 * 60 * 24);
-			response.addCookie(cookie);
-
-			mav.addObject("user", userInfo);
-			mav.setViewName("menuService/payment");
-			context.close();
-			return mav;
-		} else {
-			mav.addObject("errorMsg", "입력하신 정보와 일치하는 회원정보가 없습니다.");
-			mav.setViewName("menuService/checkUser");
-			context.close();
-			return mav;
-		}
-	}
 
 	/*
-	 * -------------------------------------- 
+	 * ——————————————————— 
 	 * payment.jsp 페이지 버튼
-	 * --------------------------------------
+	 * ———————————————————
 	 */
 	@GetMapping("menuService/orderSheet")
 	public String orderSheetForm() {
