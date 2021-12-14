@@ -1,4 +1,4 @@
-package cafe.pja.signcafe.controller;
+package cafe.pja.signcafe.web.controller;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.GenericApplicationContext;

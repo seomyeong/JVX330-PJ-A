@@ -1,4 +1,4 @@
-package cafe.pja.signcafe.controller;
+package cafe.pja.signcafe.web.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;

@@ -30,10 +30,7 @@
 			<tr class="cardNum">
 				<th>카드번호</th>
 				<td>
-					<input type="text" pattern="[0-9]+" maxlength="4" minlength="4" required> -
-					<input type="text" pattern="[0-9]+" maxlength="4" minlength="4" required> -
-					<input type="password" pattern="[0-9]+" maxlength="4" minlength="4" required> -
-					<input type="password" pattern="[0-9]+" maxlength="4" minlength="4" required>
+					<input type="text" pattern="[0-9]+" maxlength="19" minlength="19" required>
 				</td>
 			</tr>
 			<tr class="userMileage">

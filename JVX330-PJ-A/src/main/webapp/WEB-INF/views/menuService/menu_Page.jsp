@@ -80,7 +80,7 @@
 		<h2 class="hidden">장바구니</h2>
 		<form action="checkUser" method="post" id="container">
 			<p>총 주문 수량을 확인하세요.</p>
-			<p>${errorMsg }</p>
+			<!-- <p>${errorMsg }</p> -->
 
 			<c:choose>
 				<c:when test="${sessionScope.totalNum eq null}">

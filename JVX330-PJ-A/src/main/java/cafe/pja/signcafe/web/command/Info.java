@@ -1,4 +1,4 @@
-package cafe.pja.signcafe.service.command;
+package cafe.pja.signcafe.web.command;
 
 import java.util.List;
 

@@ -1,9 +1,7 @@
-package cafe.pja.signcafe.controller;
+package cafe.pja.signcafe.web.controller;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -57,19 +55,19 @@ public class MenuController {
 
 		context.close();
 		return mav;
-		
-		
 	}
 
 	
 	
 	/*
-	 * ---------------------------------------
+	 * ———————————————————
 	 * checkUser
-	 * ---------------------------------------
+	 * ———————————————————
 	 */
 	@PostMapping("menuService/checkUser")
 	public ModelAndView checkUser(HttpServletRequest request) {
+		GenericApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
+		MenuServiceImpl menuService = (MenuServiceImpl) context.getBean("menuServiceImpl");
 		HttpSession session = request.getSession();
 		List<OrderedList> orderList = new ArrayList<>();
 		ModelAndView mav = new ModelAndView();
@@ -78,6 +76,7 @@ public class MenuController {
 		for (int i = 1; i <= totalNum; i++) {
 			MenuInfo m = new MenuInfo();
 			OrderedList o = new OrderedList();
+			
 			m.setMenuName(request.getParameter("name" + i));
 
 			o.setMenuInfo(m);
@@ -87,27 +86,28 @@ public class MenuController {
 
 			orderList.add(o);
 		}
-		
-		if(totalNum == 0) {
-//			session.setAttribute("errorMsg", "메뉴를 선택하세요");
-			mav.addObject("errorMsg", "메뉴를 선택하세요!!");
+
+		// 현재 장바구니 리스트를 세션으로 넘김
+		if (totalNum == 0) {
+			List<MenuInfo> menuInfoList = menuService.allMenu();
+			mav.addObject("menuInfoList", menuInfoList);
+			mav.addObject("errorMsg", "메뉴를 선택하세요");
 			mav.setViewName("menuService/menu_Page");
-		}else{
+		} else {
 			session.setAttribute("cart", orderList);
 			session.setAttribute("totalNum", totalNum);
 			mav.setViewName("menuService/checkUser");
-		
 		}
+		
 		return mav;
+		
+		
 	}
 	
-	
-	
 	@GetMapping("menuService/checkUser")
-	public ModelAndView checkUserGet(HttpServletRequest request) {
+	public String checkUserForm(HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		List<OrderedList> orderList = new ArrayList<>();
-		ModelAndView mav = new ModelAndView();
 		// 총 상품의 개수를 받아온다.
 		int totalNum = Integer.parseInt(request.getParameter("totalNum"));
 		for (int i = 1; i <= totalNum; i++) {
@@ -122,18 +122,16 @@ public class MenuController {
 
 			orderList.add(o);
 		}
-		
-		if(totalNum == 0) {
-//			session.setAttribute("errorMsg", "메뉴를 선택하세요");
-			mav.addObject("errorMsg", "메뉴를 선택하세요!!");
-			mav.setViewName("menuService/menu_Page");
-		}else{
+
+		// 현재 장바구니 리스트를 세션으로 넘김
+//		if (totalNum != 0) {
 			session.setAttribute("cart", orderList);
 			session.setAttribute("totalNum", totalNum);
-			mav.setViewName("menuService/checkUser");
-		
-		}
-		return mav;
+			return "menuService/checkUser";
+//		} else {
+//			session.setAttribute("errorMsg", "메뉴를 선택하세요");
+//			return "menuService/menu_Page";
+//		}
 	}
 
 	
@@ -177,9 +175,9 @@ public class MenuController {
 	}
 
 	/*
-	 * -------------------------------------- 
+	 * ——————————————————— 
 	 * payment.jsp 페이지 버튼
-	 * --------------------------------------
+	 * ———————————————————
 	 */
 	@GetMapping("menuService/orderSheet")
 	public String orderSheetForm() {
