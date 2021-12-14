@@ -3,8 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -103,82 +101,89 @@
 				<div id="eachCart${i}" class='commonCart'>
 					<input type='text' name="name${i}" class='cartName'
 						value="${order.menuInfo.menuName}">
-						<div id='tempWrap'>
-							<p>${order.menuInfo.category}</p>
-							<c:choose>
-								<c:when	test="${order.extraTemp_Price == 0.0 and order.menuInfo.category eq 'FOOD'}">
-									<label for="hot${i}"> <input type='radio' id="hot${i}"
-										class='temp' style="display: none" name="temp${i}" value='0'
-										checked>HOT
-									</label>
-									<label for="cold${i}"> <input type='radio'
-										id="cold${i}" style="display: none" class='temp'
-										name="temp${i}" value='500'>COLD
-									</label>
-								</c:when>
-
-								<c:when test="${order.extraTemp_Price == 0.0 and order.menuInfo.category ne 'FOOD'}">
+					<div id='tempWrap'>
+						<c:choose>
+							<c:when
+								test="${order.extraTemp_Price == 0.0 and order.menuInfo.category eq 'FOOD'}">
+								<div style="display: none">
 									<label for="hot${i}"> <input type='radio' id="hot${i}"
 										class='temp' name="temp${i}" value='0' checked>HOT
-									</label>
-									<label for="cold${i}"> <input type='radio'
+									</label> <label for="cold${i}"> <input type='radio'
 										id="cold${i}" class='temp' name="temp${i}" value='500'>COLD
 									</label>
-								</c:when>
+								</div>
+							</c:when>
+							<c:when test="${order.extraTemp_Price == 0.0}">
+								<label for="hot${i}"> <input type='radio' id="hot${i}"
+									class='temp' name="temp${i}" value='0' checked>HOT
+								</label>
+								<label for="cold${i}"> <input type='radio' id="cold${i}"
+									class='temp' name="temp${i}" value='500'>COLD
+								</label>
+							</c:when>
+							<c:when test="${order.extraTemp_Price == 500.0}">
+								<label for="hot${i}"> <input type='radio' id="hot${i}"
+									class='temp' name="temp${i}" value='0' checked>HOT
+								</label>
+								<label for="cold${i}"> <input type='radio' id="cold${i}"
+									class='temp' name="temp${i}" value='500' checked>COLD
+								</label>
+							</c:when>
+						</c:choose>
+					</div>
 
-
-								<c:when test="${order.extraTemp_Price == 500.0}">
-									<label for="hot${i}"> <input type='radio' id="hot${i}"
-										class='temp' name="temp${i}" value='0' checked>HOT
-									</label>
-									<label for="cold${i}"> <input type='radio'
-										id="cold${i}" class='temp' name="temp${i}" value='500' checked>COLD
-									</label>
-								</c:when>
-							</c:choose>
-						</div>
-
-						<div id='sizeWrap'>
-							<c:choose>
-								<c:when test="${order.extraSize_Price == 0.0}">
+					<div id='sizeWrap'>
+						<c:choose>
+							<c:when
+								test="${order.extraSize_Price == 0.0 and order.menuInfo.category eq 'FOOD'}">
+								<div style="display:none;">
 									<label for="small${i}"> <input type='radio'
 										class='size' id="small${i}" name="size${i}" value='0' checked>S
-									</label>
-									<label for="midium${i}"> <input type='radio'
+									</label> <label for="midium${i}"> <input type='radio'
 										class='size' id="midium${i}" name="size${i}" value='500'>M
-									</label>
-									<label for="large${i}"> <input type='radio'
+									</label> <label for="large${i}"> <input type='radio'
 										class='size' id="large${i}" name="size${i}" value='1000'>L
 									</label>
-								</c:when>
+								</div>
+							</c:when>
+							<c:when test="${order.extraSize_Price == 0.0}">
+								<label for="small${i}"> <input type='radio' class='size'
+									id="small${i}" name="size${i}" value='0' checked>S
+								</label>
+								<label for="midium${i}"> <input type='radio'
+									class='size' id="midium${i}" name="size${i}" value='500'>M
+								</label>
+								<label for="large${i}"> <input type='radio' class='size'
+									id="large${i}" name="size${i}" value='1000'>L
+								</label>
+							</c:when>
 
-								<c:when test="${order.extraSize_Price == 500.0}">
-									<label for="small${i}"> <input type='radio'
-										class='size' id="small${i}" name="size${i}" value='0'>S
-									</label>
-									<label for="midium${i}"> <input type='radio'
-										class='size' id="midium${i}" name="size${i}" value='500'
-										checked>M
-									</label>
-									<label for="large${i}"> <input type='radio'
-										class='size' id="large${i}" name="size${i}" value='1000'>L
-									</label>
-								</c:when>
+							<c:when test="${order.extraSize_Price == 500.0}">
+								<label for="small${i}"> <input type='radio' class='size'
+									id="small${i}" name="size${i}" value='0'>S
+								</label>
+								<label for="midium${i}"> <input type='radio'
+									class='size' id="midium${i}" name="size${i}" value='500'
+									checked>M
+								</label>
+								<label for="large${i}"> <input type='radio' class='size'
+									id="large${i}" name="size${i}" value='1000'>L
+								</label>
+							</c:when>
 
-								<c:when test="${order.extraSize_Price == 1000.0}">
-									<label for="small${i}"> <input type='radio'
-										class='size' id="small${i}" name="size${i}" value='0'>S
-									</label>
-									<label for="midium${i}"> <input type='radio'
-										class='size' id="midium${i}" name="size${i}" value='500'>M
-									</label>
-									<label for="large${i}"> <input type='radio'
-										class='size' id="large${i}" name="size${i}" value='1000'
-										checked>L
-									</label>
-								</c:when>
-							</c:choose>
-						</div>
+							<c:when test="${order.extraSize_Price == 1000.0}">
+								<label for="small${i}"> <input type='radio' class='size'
+									id="small${i}" name="size${i}" value='0'>S
+								</label>
+								<label for="midium${i}"> <input type='radio'
+									class='size' id="midium${i}" name="size${i}" value='500'>M
+								</label>
+								<label for="large${i}"> <input type='radio' class='size'
+									id="large${i}" name="size${i}" value='1000' checked>L
+								</label>
+							</c:when>
+						</c:choose>
+					</div>
 
 					<div id='numWrap'>
 						<input type='text' class='num' name="count${i}" value='1'>
