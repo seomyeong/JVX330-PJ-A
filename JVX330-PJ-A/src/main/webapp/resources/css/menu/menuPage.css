@@ -82,14 +82,14 @@
 }
 #container p{
     text-align: left;
-    position: absolute; bottom: 120px; right: 0px;
+    position: absolute; bottom: 120px; left: 260px;
 }
 #totalNum{
     width: 150px;
     height: 100px;
     text-align: center;
     font-size: 50px;
-    position: absolute; bottom: 0px; right: 0px;
+    position: absolute; bottom: 0px; left: 280px;
 }
 
 #payment{
