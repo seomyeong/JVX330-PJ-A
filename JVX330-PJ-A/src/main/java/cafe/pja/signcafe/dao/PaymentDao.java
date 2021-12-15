@@ -21,7 +21,7 @@ public class PaymentDao {
 	 * 
 	 */
 	public void insertCreditCardInfo(PaymentHistory paymentHistory) {
-		String sql = "INSERT INTO PAYMENT_HISTORY(payment_customerInfo, creditCard, cardNum, orderPrice) VALUES(?, ?, ?, ?)";
+		String sql = "INSERT INTO PAYMENT_HISTORY(payment_customerInfo, creditCard, creditCardNum, orderPrice) VALUES(?, ?, ?, ?)";
 		jdbcTemplate.update(sql, paymentHistory.getPayment_customerInfo(), paymentHistory.getCreditCard(), paymentHistory.getCreditCardNum(), paymentHistory.getOrderPrice());
 	}
 }

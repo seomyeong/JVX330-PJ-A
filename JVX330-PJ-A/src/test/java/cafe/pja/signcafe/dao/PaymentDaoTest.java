@@ -15,7 +15,7 @@ public class PaymentDaoTest {
 
 	@Test
 	public void getCreditCardInfo(PaymentCommand paymentCommand) {
-		dao.getCreditCardInfo(new PaymentCommand("삼성카드", "1111222233334444", 0, 0, 6000.0));
+//		dao.getCreditCardInfo(new PaymentCommand("삼성카드", "1111222233334444", 0, 0, 6000.0));
 
 		//	String sql = "INSERT INTO PAYMENT_HISTORY(creditCard, cardNum, mileage, amount, orderPrice) VALUES(?, ?, ?, ?, ?)";
 		//	jdbcTemplate.update(sql, paymentCommand.getCreditCard(), paymentCommand.getCardNum(), paymentCommand.getMileage(),

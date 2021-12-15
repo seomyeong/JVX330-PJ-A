@@ -41,23 +41,12 @@ CREATE TABLE ORDERED(
 )
 
 CREATE TABLE PAYMENT_HISTORY(
-<<<<<<< HEAD
 	paymentList				BIGINT		PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 	payment_customerInfo	VARCHAR(11)	NOT NULL	DEFAULT 'GUEST',
 	creditCard				VARCHAR(30)	NOT NULL,
-	cardNum					VARCHAR(19)	NOT NULL,
+	creditCardNum					VARCHAR(19)	NOT NULL,
 	orderPrice				DOUBLE		NOT NULL	DEFAULT 0.0,
 	paymentDate				TIMESTAMP	NOT NULL	DEFAULT CURRENT_TIMESTAMP
-=======
-   paymentList            	BIGINT      	PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-   payment_customerInfo   	VARCHAR(11)   	NOT NULL   DEFAULT 'GUEST',
-   creditCard            	VARCHAR(30)    	NOT NULL,
-   cardNum               	VARCHAR(19)   	NOT NULL,
-   mileage               	DOUBLE      	NOT NULL   DEFAULT 0.0,
-   amount               	BIGINT      	NOT NULL   DEFAULT 0,
-   orderPrice            	DOUBLE      	NOT NULL   DEFAULT 0.0,
-   paymentDate            	TIMESTAMP   	NOT NULL   DEFAULT CURRENT_TIMESTAMP
->>>>>>> branch 'main' of https://github.com/seomyeong/JVX330-PJ-A.git
 )
 
 
