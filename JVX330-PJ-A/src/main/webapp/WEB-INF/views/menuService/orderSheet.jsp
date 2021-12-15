@@ -7,8 +7,10 @@
 <head>
 <meta charset="UTF-8">
 <title>signCafe</title>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/menu/orderSheet.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/common.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/menu/orderSheet.css">
 </head>
 <body>
 	<jsp:include page="/resources/incl/signCafeIncl.jsp"></jsp:include>
@@ -25,19 +27,34 @@
 			</tr>
 		</thead>
 		<tbody>
-		 	<c:if test="${not empty orderedList}">
-				<c:forEach var="orderedList" items="${orderedList}">
-					<tr>
-						<td>${menuIfo.menuName}</td>
-						<td>${orderedList.menuCount}</td>
-						<td>${orderedList.extraName}</td>
-						<td>${orderedList.extraPrice}</td>
-						<td>${orderedList.totalPrice}</td>
-					</tr>
-				</c:forEach>
-			</c:if>
+			<c:forEach items="cart.allOrderedListInfo" var="order">
+				<tr>
+					<td>${order.menuInfo.menuName}</td>
+					<td>${order.menuCount}</td>
+					<td><c:choose>
+							<c:when test="${order.extraSize_Price eq 0}">
+
+							</c:when>
+							<c:otherwise>
+									얼음 추가
+								</c:otherwise>
+						</c:choose> <c:choose>
+							<c:when test="${order.extraTemp_Price eq 0}">
+									기본 사이즈
+								</c:when>
+							<c:when test="${order.extraTemp_Price eq 500}">
+									M 사이즈
+								</c:when>
+							<c:when test="${order.extraTemp_Price eq 1000}">
+									L 사이즈
+								</c:when>
+						</c:choose></td>
+					<td>${order.extraPrice}</td>
+					<td>${order.totalPrice}</td>
+				</tr>
+			</c:forEach>
 			<%-- 밑에는 test --%>
-			<tr>
+			<!-- <tr>
 				<td>클래식 아메리카노</td>
 				<td>1</td>
 				<td>얼음 추가</td>
@@ -57,17 +74,17 @@
 				<td>얼음 추가, 사이즈 M</td>
 				<td>1000</td>
 				<td>8500</td>
-			</tr>
+			</tr> -->
 		</tbody>
 		<tfoot>
 			<td>총 합계금액</td>
 			<td></td>
 			<td></td>
 			<td></td>
-			<td>23800원</td>
+			<td>${totalPrice}원</td>
 		</tfoot>
 	</table>
-	
+
 	<p>신용승인정보</p>
 	<table id="creditInfo">
 		<tr>
@@ -99,7 +116,7 @@
 			<td>2021-01-07 17:29:22</td>
 		</tr>
 	</table>
-	
+
 	<a href="../Index">확인</a>
 </body>
 </html>
