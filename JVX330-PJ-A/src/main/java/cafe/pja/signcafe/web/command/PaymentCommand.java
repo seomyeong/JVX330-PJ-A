@@ -1,20 +1,10 @@
 package cafe.pja.signcafe.web.command;
 
-import org.springframework.context.support.GenericApplicationContext;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.ModelAndView;
-
-import cafe.pja.signcafe.data.DataSourceConfig;
-import cafe.pja.signcafe.service.PaymentServiceImpl;
-
 public class PaymentCommand {
 	private String creditCard;
 	private String cardNum;
 	private double mileage;
-	private int amount;
+	private double amount;
 	private double orderPrice;
 	
 	
@@ -53,11 +43,11 @@ public class PaymentCommand {
 		this.mileage = mileage;
 	}
 
-	public int getAmount() {
+	public double getAmount() {
 		return amount;
 	}
 
-	public void setAmount(int amount) {
+	public void setAmount(double amount) {
 		this.amount = amount;
 	}
 

@@ -21,7 +21,10 @@ public class MenuServiceImpl {
 	}
 	
 	public String findCategory(String menuName) {
-		
 		return menuInfoDao.findCategoryByName(menuName);
+	}
+	
+	public long findMenuNum(String menuName) {
+		return menuInfoDao.findMenuNumByName(menuName);
 	}
 }
