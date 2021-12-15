@@ -14,7 +14,7 @@ public class PaymentServiceImpl {
 	}
 	
 	public boolean payByCreditCard(PaymentCommand paymentCommand) {
-		if(paymentDao.getCreditCardInfo(paymentCommand)) {
+		if(paymentDao.insertCreditCardInfo(paymentCommand)) {
 			return true;
 		}
 	}
