@@ -78,11 +78,18 @@
 		</tbody>
 		<tfoot>
 			<tr>
+				<td>사용한 마일리지</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>-${payment.amount} 원</td>
+			</tr>
+			<tr>
 				<td>총 합계금액</td>
 				<td></td>
 				<td></td>
 				<td></td>
-				<td>${totalPrice}원</td>
+				<td>${totalPrice - payment.amount} 원</td>
 			</tr>
 		</tfoot>
 	</table>
@@ -90,31 +97,35 @@
 	<p>신용승인정보</p>
 	<table id="creditInfo">
 		<tr>
-			<th>카 드 종 류 :
+			<th>카 드 종 류 :</th>
 			<td>${payment.creditCard}</td>
 		</tr>
 		<tr>
-			<th>카 드 번 호 :
+			<th>카 드 번 호 :</th>
 			<td>${payment.cardNum}</td>
 		</tr>
 		<tr>
-			<th>할 부 개 월 :
+			<th>할 부 개 월 :</th>
 			<td>일시불</td>
 		</tr>
 		<tr>
-			<th>판 매 금 액 :
+			<th>판 매 금 액 :</th>
 			<td>${payment.orderPrice / 100 * 90}</td>
 		</tr>
 		<tr>
-			<th>부 가 세 :
+			<th>부 가 세 :</th>
 			<td>${payment.orderPrice / 100 * 10}</td>
 		</tr>
 		<tr>
-			<th>승 인 금 액 :
-			<td>${payment.orderPrice}</td>
+			<th>할인 금액 :</th>
+			<td>${payment.amount}</td>
 		</tr>
 		<tr>
-			<th>승 인 일 시 :
+			<th>승 인 금 액 :</th>
+			<td>${totalPrice - payment.amount}</td>
+		</tr>
+		<tr>
+			<th>승 인 일 시 :</th>
 			<td>2021-00-00 00:00:00</td>
 		</tr>
 	</table>

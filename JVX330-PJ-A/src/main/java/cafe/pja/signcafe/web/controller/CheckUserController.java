@@ -61,9 +61,10 @@ public class CheckUserController {
 			mav.addObject("errorMsg", "메뉴를 선택하세요");
 			mav.setViewName("menuService/menu_Page");
 		} else {
+			session.setMaxInactiveInterval(30*60);
 			session.setAttribute("cart", orderList);
 			session.setAttribute("totalNum", totalNum);
-			mav.setViewName("menuService/checkUser");
+			mav.setViewName("menuService/check_user");
 		}
 		
 		return mav;
