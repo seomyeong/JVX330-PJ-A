@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import cafe.pja.signcafe.service.AdminServiceImpl;
 import cafe.pja.signcafe.service.MenuServiceImpl;
+import cafe.pja.signcafe.service.OrderedListServiceImpl;
 import cafe.pja.signcafe.service.PaymentServiceImpl;
 import cafe.pja.signcafe.service.UserServiceImpl;
 
@@ -47,8 +48,22 @@ public class DataSourceConfig {
 	}
 	
 	@Bean
+<<<<<<< HEAD
+	public PaymentServiceImpl paymentServiceImpl() {
+=======
+	public OrderedListServiceImpl orderedListServiceImpl() {
+		return new OrderedListServiceImpl(jdbcTemplate());
+	}
+	
+	@Bean
 	public PaymentServiceImpl PaymentServiceImpl() {
+>>>>>>> branch 'main' of https://git@github.com/seomyeong/JVX330-PJ-A.git
 		return new PaymentServiceImpl(jdbcTemplate());
+	}
+	
+	@Bean
+	public OrderedListServiceImpl orderedListServiceImpl() {
+		return new OrderedListServiceImpl(jdbcTemplate());
 	}
 	
 }

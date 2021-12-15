@@ -70,10 +70,9 @@
 				<tr>
 					<th>주문번호</th>
 					<th>회원 구분(전화번호)</th>
-					<th>제품번호</th>
+					<th>제품명</th>
 					<th>제품 사이즈</th>
 					<th>제품 온도</th>
-					<th>수량</th>
 					<th>사용한 마일리지</th>
 					<th>총 가격</th>
 					<th>주문 일시</th>
@@ -83,15 +82,15 @@
 					<tr>
 						<td>${allOrderedListInfo.orderedList}</td>
 						<td>${allOrderedListInfo.customerInfo}</td>
-						<td>${allOrderedListInfo.menuInfo.menuNum}</td>
+						<td>${allOrderedListInfo.menuInfo.menuName}</td>
 						<td><c:choose>
 								<c:when test="${allOrderedListInfo.extraSize_Price == 0}">
 							S
 						</c:when>
-								<c:when test="${allOrderedListInfo.extraSize_Price == 300}">
+								<c:when test="${allOrderedListInfo.extraSize_Price == 500}">
 							M
 						</c:when>
-								<c:when test="${allOrderedListInfo.extraSize_Price == 500}">
+								<c:when test="${allOrderedListInfo.extraSize_Price == 1000}">
 							L
 						</c:when>
 							</c:choose></td>
@@ -103,7 +102,6 @@
 						Ice
 					</c:when>
 							</c:choose></td>
-						<td>${allOrderedListInfo.menuCount}</td>
 						<td>${allOrderedListInfo.usingMileage}</td>
 						<td>${allOrderedListInfo.totalPrice}</td>
 						<td>${allOrderedListInfo.orderedDate}</td>
