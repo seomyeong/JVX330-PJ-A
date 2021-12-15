@@ -22,9 +22,9 @@ public class OrderedListDao {
 	}
 
 	//MenuInfo테이블에 usingMileage update
-	public void updateMenuMileage() {
+	public void updateMenuMileage(OrderedList ordered) {
 		String sql = "UPDATE MENU_INFO SET mileageCount=? WHERE ordered_MenuNum=?";
-		
+		jdbcTemplate.update(sql, ordered.getMenuCount(), ordered.getMenuInfo().getMenuNum());
 	}
 	
 	public void updatePayment() {

@@ -16,4 +16,10 @@ public class OrderedListServiceImpl {
 	public void updateMenuCount(OrderedList orderedList) {
 		orderedListDao.updateMenuCount(orderedList);
 	}
+	
+	
+	//MenuInfo테이블에 usingMileage update
+	public void updateMenuMileage(OrderedList orderedList) {
+		orderedListDao.updateMenuMileage(orderedList);
+	}
 }
