@@ -19,6 +19,7 @@ import lombok.Getter;
 
 @Controller("controller.myPageController")
 public class MyPageController {
+	
 	@GetMapping("myPageService/myPage") // jsp주소에 들어가면 바로 일어나는 일. input 버튼 누르면 서블릿 넘어가기 전에
 	public String myPageForm(HttpServletResponse response) {
 		// 기존에 'connectUserPhone'의 이름을 가지는 쿠키의 값을 null로 만든다.
@@ -33,6 +34,7 @@ public class MyPageController {
 		return "myPageService/myPage";
 	}
 
+	
 	@PostMapping("myPageService/myPage")
 	public ModelAndView myPage(@ModelAttribute User user, HttpServletRequest request, HttpServletResponse response) {
 		GenericApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
@@ -76,5 +78,4 @@ public class MyPageController {
 
 		return mav;
 	}
-
 }
