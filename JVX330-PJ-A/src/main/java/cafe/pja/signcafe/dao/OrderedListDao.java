@@ -30,4 +30,12 @@ public class OrderedListDao {
 	public void updatePayment() {
 		
 	}
+	
+	public void updateOrderedTable(List<OrderedList> orderedList) {
+		String sql = "INSERT INTO ORDERED(ordered_customerInfo, ordered_MenuName, ordered_extraSize_Price, ordered_extraTemp_Price, ordered_menuCount, ordered_usingMileage, ordered_totalPrice) VALUES (?, ?, ?, ?, ?, ?, ?)";
+		
+		for(OrderedList o : orderedList) {
+			jdbcTemplate.update(sql, o.getCustomerInfo(), o.getMenuInfo().getMenuName(), o.getExtraSize_Price(), o.getExtraTemp_Price(), o.getMenuCount(), o.getUsingMileage(), o.getTotalPrice());			
+		}
+	}
 }

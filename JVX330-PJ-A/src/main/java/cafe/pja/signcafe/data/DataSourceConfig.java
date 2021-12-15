@@ -48,13 +48,13 @@ public class DataSourceConfig {
 	}
 	
 	@Bean
-	public OrderedListServiceImpl orderedListServiceImpl() {
-		return new OrderedListServiceImpl(jdbcTemplate());
+	public PaymentServiceImpl paymentServiceImpl() {
+		return new PaymentServiceImpl(jdbcTemplate());
 	}
 	
 	@Bean
-	public PaymentServiceImpl PaymentServiceImpl() {
-		return new PaymentServiceImpl(jdbcTemplate());
+	public OrderedListServiceImpl orderedListServiceImpl() {
+		return new OrderedListServiceImpl(jdbcTemplate());
 	}
 	
 }
