@@ -71,28 +71,6 @@ public class CheckUserController {
 		
 	}
 	
-	@GetMapping("menuService/checkUser")
-	public String checkUserForm(HttpServletRequest request) {
-		HttpSession session = request.getSession();
-		List<OrderedList> orderList = new ArrayList<>();
-		// 총 상품의 개수를 받아온다.
-		int totalNum = Integer.parseInt(request.getParameter("totalNum"));
-		for (int i = 1; i <= totalNum; i++) {
-			MenuInfo m = new MenuInfo();
-			OrderedList o = new OrderedList();
-			m.setMenuName(request.getParameter("name" + i));
-
-			o.setMenuInfo(m);
-			o.setExtraTemp_Price(Double.parseDouble(request.getParameter("temp" + i)));
-			o.setExtraSize_Price(Double.parseDouble(request.getParameter("size" + i)));
-			o.setTotalPrice(Double.parseDouble(request.getParameter("price" + i)));
-
-			orderList.add(o);
-		}
-
-			session.setAttribute("cart", orderList);
-			session.setAttribute("totalNum", totalNum);
-			return "menuService/checkUser";
-	}
+	
 
 }
