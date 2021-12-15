@@ -93,7 +93,7 @@ public class OrderSheetController {
 		orderedListService.order(orderedList);
 		
 		// PAYMENT_HISTORY 테이블에 payment에서 요소 뽑아와서 넣기
-		// MENU_INFO 테이블에 menuCount, mileageCount 정산 
+		// MENU_INFO 테이블에 menuCount, mileageCount 정산
 		// CAFE_USER 테이블에 mileage 정산
 		
 		// + 예외

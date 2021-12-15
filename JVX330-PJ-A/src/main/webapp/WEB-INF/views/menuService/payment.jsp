@@ -54,7 +54,7 @@
 						</tr>
 						<tr class="mileageUse">
 							<th>마일리지 사용</th>
-							<td><input type="text" name="amount" pattern="[0-9]+"></td>
+							<td><input type="text" name="amount" pattern="[0-9]+" value="0"></td>
 						</tr>
 					</c:otherwise>
 				</c:choose>
