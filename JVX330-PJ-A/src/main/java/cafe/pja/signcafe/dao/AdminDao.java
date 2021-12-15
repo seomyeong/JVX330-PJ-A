@@ -59,7 +59,7 @@ public class AdminDao {
 			public OrderedList mapRow(ResultSet rs, int rowNum) throws SQLException {
 				SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 				MenuInfo menuInfo = new MenuInfo();
-				menuInfo.setMenuNum(rs.getLong("ordered_MenuNum"));
+				menuInfo.setMenuName(rs.getString("ordered_menuName"));
 				return new OrderedList(rs.getLong("orderedList"), rs.getString("ordered_customerInfo"), menuInfo, rs.getDouble("ordered_extraSize_Price"), rs.getDouble("ordered_extraTemp_Price"), rs.getInt("ordered_menuCount"), rs.getDouble("ordered_usingMileage"), rs.getDouble("ordered_totalPrice"), fmt.format(rs.getTimestamp("ordered_orderedDate")));
 			}
 			
