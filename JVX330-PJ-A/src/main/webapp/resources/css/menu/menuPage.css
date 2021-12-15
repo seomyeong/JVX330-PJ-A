@@ -45,7 +45,6 @@
     float: left;
     width: 33.333%;
     margin: 20px 0 20px; 
-    overflow-y: scroll;
 }
 
 .menuWrap .categoryArticle>div>img{
@@ -76,8 +75,9 @@
     position: absolute; bottom: 0px; right: 0px;
 }
 #container{
+	width: 100%;
     overflow-y: scroll;
-    height: 45vh;
+    height: 50vh;
     float: left;
 }
 #container p{
