@@ -29,7 +29,7 @@
 				<tr class="cardNum">
 					<th>카드번호</th>
 					<td><input type="text" name="cardNum" pattern="[0-9]+"
-						maxlength="19" minlength="19" required></td>
+						maxlength="16" minlength="16" required></td>
 				</tr>
 
 				<c:choose>
@@ -54,7 +54,7 @@
 						</tr>
 						<tr class="mileageUse">
 							<th>마일리지 사용</th>
-							<td><input type="text" name="amount" pattern="[0-9]+"></td>
+							<td><input type="text" name="amount" pattern="[0-9]+" value="0"></td>
 						</tr>
 					</c:otherwise>
 				</c:choose>

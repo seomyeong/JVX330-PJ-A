@@ -79,7 +79,7 @@
 	<section id="orderedList">
 		<h2 class="hidden">장바구니</h2>
 		<form action="checkUser" method="post" id="container">
-			<p>총 주문 수량을 확인하세요.</p>
+			<p>총 주문 수량</p>
 			<!-- <p>${errorMsg }</p> -->
 
 			<c:choose>
