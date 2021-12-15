@@ -29,7 +29,7 @@
 				<tr class="cardNum">
 					<th>카드번호</th>
 					<td><input type="text" name="cardNum" pattern="[0-9]+"
-						maxlength="16" minlength="16" required></td>
+						maxlength="16" minlength="16" required autocomplete="off"></td>
 				</tr>
 
 				<c:choose>
@@ -65,7 +65,7 @@
 					<td><input type="text" name="orderPrice" value="${orderPrice}"></td>
 				</tr>
 			</table>
-
+		
 			<div id="paymentBtn">
 				<a href="<%=request.getContextPath()%>/menuService/menuPage">주문취소</a>
 				<input type="submit" value="결제">
