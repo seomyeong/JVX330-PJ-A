@@ -98,6 +98,7 @@ public class OrderSheetController {
 		// MENU_INFO 테이블에 menuCount, mileageCount 정산
 		// CAFE_USER 테이블에 mileage 정산
 		// 영수증 출력
+		mav.addObject("payment", payment);
 		mav.addObject("totalPrice", totalPrice);
 		mav.addObject("cart", cart);
 		mav.setViewName("menuService/orderSheet");
@@ -105,7 +106,7 @@ public class OrderSheetController {
 		
 		// + 예외
 		// 		-. 마일리지 초과시 에러
-		
+		context.close();
 		return mav;
 	}
 

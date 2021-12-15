@@ -19,38 +19,38 @@
 	<table id="order">
 		<thead>
 			<tr>
-				<th>MenuName
-				<th>Ea
-				<th>OptionName
-				<th>OptionPrice
-				<th>TotalPrice
+				<th>MenuName</th>
+				<th>Ea</th>
+				<th>OptionName</th>
+				<th>OptionPrice</th>
+				<th>TotalPrice</th>
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="cart.allOrderedListInfo" var="order">
+			<c:forEach items="${cart}" var="orderedList">
 				<tr>
-					<td>${order.menuInfo.menuName}</td>
-					<td>${order.menuCount}</td>
+					<td>${orderedList.menuInfo.menuName}</td>
+					<td>1</td>
 					<td><c:choose>
-							<c:when test="${order.extraSize_Price eq 0}">
+							<c:when test="${orderedList.extraTemp_Price eq 0.0}">
 
 							</c:when>
 							<c:otherwise>
 									얼음 추가
 								</c:otherwise>
 						</c:choose> <c:choose>
-							<c:when test="${order.extraTemp_Price eq 0}">
+							<c:when test="${orderedList.extraSize_Price eq 0.0}">
 									기본 사이즈
 								</c:when>
-							<c:when test="${order.extraTemp_Price eq 500}">
+							<c:when test="${orderedList.extraSize_Price eq 500.0}">
 									M 사이즈
 								</c:when>
-							<c:when test="${order.extraTemp_Price eq 1000}">
+							<c:when test="${orderedList.extraSize_Price eq 1000.0}">
 									L 사이즈
 								</c:when>
 						</c:choose></td>
-					<td>${order.extraPrice}</td>
-					<td>${order.totalPrice}</td>
+					<td>${orderedList.extraSize_Price + orderedList.extraTemp_Price}</td>
+					<td>${orderedList.totalPrice}</td>
 				</tr>
 			</c:forEach>
 			<%-- 밑에는 test --%>
@@ -77,11 +77,13 @@
 			</tr> -->
 		</tbody>
 		<tfoot>
-			<td>총 합계금액</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td>${totalPrice}원</td>
+			<tr>
+				<td>총 합계금액</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>${totalPrice}원</td>
+			</tr>
 		</tfoot>
 	</table>
 
@@ -89,11 +91,11 @@
 	<table id="creditInfo">
 		<tr>
 			<th>카 드 종 류 :
-			<td>국민카드</td>
+			<td>${payment.creditCard}</td>
 		</tr>
 		<tr>
 			<th>카 드 번 호 :
-			<td>1212-2323-3434-4545</td>
+			<td>${payment.cardNum}</td>
 		</tr>
 		<tr>
 			<th>할 부 개 월 :
@@ -101,19 +103,19 @@
 		</tr>
 		<tr>
 			<th>판 매 금 액 :
-			<td>21570</td>
+			<td>${payment.orderPrice / 100 * 90}</td>
 		</tr>
 		<tr>
 			<th>부 가 세 :
-			<td>2380</td>
+			<td>${payment.orderPrice / 100 * 10}</td>
 		</tr>
 		<tr>
 			<th>승 인 금 액 :
-			<td>23800</td>
+			<td>${payment.orderPrice}</td>
 		</tr>
 		<tr>
 			<th>승 인 일 시 :
-			<td>2021-01-07 17:29:22</td>
+			<td>2021-00-00 00:00:00</td>
 		</tr>
 	</table>
 

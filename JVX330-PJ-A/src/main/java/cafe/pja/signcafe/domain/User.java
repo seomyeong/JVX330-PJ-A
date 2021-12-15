@@ -1,7 +1,5 @@
 package cafe.pja.signcafe.domain;
 
-import java.util.Date;
-
 public class User {
 	
 	private long id; // PK
