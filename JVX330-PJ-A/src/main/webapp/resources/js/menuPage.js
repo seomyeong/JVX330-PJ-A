@@ -21,10 +21,10 @@ $(document).ready(function () {
     let eachCartNum = null;
     let basicSum = new Array();
 	let checkStateOnce  = new Array();
-	let tempState = 0;
-	let sizeState = 0;
-    let sizeState2 = 0;
-    let sizeState3 = 0;
+	let tempState = new Array();
+	let sizeState = new Array();
+    let sizeState2 = new Array();
+    let sizeState3 = new Array();
 	
 	
 	
@@ -46,18 +46,17 @@ $(document).ready(function () {
 	for(let j = 0; j < idNum; j++){
 		if($('#eachCart' + (j + 1)).find('#small' + (j + 1)).is(":checked")){
 			checkStateOnce[j] = "s";
-			console.log("dfdfdf");
-			sizeState3 = 0;
+			sizeState3[j] = 0;
 		}
 		else if($('#eachCart' + (j + 1)).find('#midium' + (j + 1)).is(":checked")){
 			checkStateOnce[j] = "m";
-			sizeState3 = 1;
-            sizeState2 = 1;
+			sizeState3[j] = 1;
+            sizeState2[j] = 1;
 		}
 		else if($('#eachCart' + (j + 1)).find('#large' + (j + 1)).is(":checked")){
 			checkStateOnce[j] = "l";
-			sizeState = 1;
-            sizeState2 = 0;
+			sizeState[j] = 1;
+            sizeState2[j] = 0;
 		}
 	}
 	
@@ -179,7 +178,6 @@ $(document).ready(function () {
 
 
             basicSum[idNum - 1] = 7500;
-            //conValue1[idNum - 1] = 3500;
         } else if ($(this).next().text() == "콩고물 블랙 밀크 티") {
             $('#container').append(html);
             $('#' + eachCartNum).find('.cartName').val("콩고물 블랙 밀크 티");
@@ -187,7 +185,6 @@ $(document).ready(function () {
 
 
             basicSum[idNum - 1] = 7000;
-            //conValue1[idNum - 1] = 3500;
         } else if ($(this).next().text() == "피치레몬 블렌디드") {
             $('#container').append(html);
             $('#' + eachCartNum).find('.cartName').val("피치레몬 블렌디드");
@@ -195,12 +192,10 @@ $(document).ready(function () {
 
 
             basicSum[idNum - 1] = 8000;
-            //conValue1[idNum - 1] = 3500;
         } else if ($(this).next().text() == "우유 품은 초콜릿 크루아상") {
             $('#container').append(htmlFood);
             $('#' + eachCartNum).find('.cartName').val("우유 품은 초콜릿 크루아상");
             $('#' + eachCartNum).find('.price').val(Number("6000"));
-
 
             basicSum[idNum - 1] = 6000;
             //conValue1[idNum - 1] = 3500;
@@ -209,17 +204,13 @@ $(document).ready(function () {
             $('#' + eachCartNum).find('.cartName').val("한 입에 쏙 치즈 꿀 볼");
             $('#' + eachCartNum).find('.price').val(Number("5500"));
 
-
             basicSum[idNum - 1] = 5500;
-            //conValue1[idNum - 1] = 3500;
         } else if ($(this).next().text() == "트리플 치즈 크로크무슈") {
             $('#container').append(htmlFood);
             $('#' + eachCartNum).find('.cartName').val("트리플 치즈 크로크무슈");
             $('#' + eachCartNum).find('.price').val(Number("6500"));
 
-
             basicSum[idNum - 1] = 6500;
-            //conValue1[idNum - 1] = 3500;
         }
     })
 
@@ -232,9 +223,9 @@ $(document).ready(function () {
 		
         if (tempValue == 0) {
             if(checkStateOnce[index] == "h"){return false;}
-            if (tempState == 1) {
+            if (tempState[index] == 1) {
                 basicSum[index] -= 500;
-                tempState = 0;
+                tempState[index] = 0;
             }
             else { basicSum[index] += tempValue; }
 
@@ -248,7 +239,7 @@ $(document).ready(function () {
             basicSum[index] += tempValue;
             $('#eachCart' + (index + 1)).find('.price').val(basicSum[index]);
 			
-            tempState = 1;
+            tempState[index] = 1;
             checkStateOnce[index] = "c";
         }
     });
@@ -257,29 +248,29 @@ $(document).ready(function () {
     
     
     $(document).on("click", ".size", function (event) {
-        let sum = 0;
+      	
         let sizeValue = Number($(this).val());
         index = Number($(this).attr('name').slice(4, 5)) - 1;
-
+       
         ////////////////////////////////////////
-
+  
         if (sizeValue == 0) {
             if(checkStateOnce[index] == "s"){return false;}
-            if (sizeState2 == 1) {
+            if (sizeState2[index] == 1) {
                 basicSum[index] -= 500;
-                sizeState2 = 0;
-                sizeState3 = 0;
+                sizeState2[index] = 0;
+                sizeState3[index] = 0;
                 $('#eachCart' + (index + 1)).find('.price').val(basicSum[index]);
             }
-            if (sizeState == 1) {
+            if (sizeState[index] == 1) {
                 basicSum[index] -= 1000;
-                sizeState = 0;
-                sizeState3 = 0;
+                sizeState[index] = 0;
+                sizeState3[index] = 0;
                 $('#eachCart' + (index + 1)).find('.price').val(basicSum[index]);
             }
             else { 
                 basicSum[index] += sizeValue;
-                sizeState3 = 0;
+                sizeState3[index] = 0;
                 $('#eachCart' + (index + 1)).find('.price').val(basicSum[index]);
             }
             checkStateOnce[index] = "s";
@@ -289,16 +280,16 @@ $(document).ready(function () {
 
         if (sizeValue == 500) {
             if(checkStateOnce[index] == "m"){return false;}
-            if (sizeState == 1) {
+            if (sizeState[index] == 1) {
                 basicSum[index] -= 500;
-                sizeState = 0;
-                sizeState2 = 1;
-                sizeState3 = 1;
+                sizeState[index] = 0;
+                sizeState2[index] = 1;
+                sizeState3[index] = 1;
             }
             else { 
                 basicSum[index] += sizeValue; 
-                sizeState3 = 1;
-                sizeState2 = 1;
+                sizeState3[index] = 1;
+                sizeState2[index] = 1;
             }
             $('#eachCart' + (index + 1)).find('.price').val(basicSum[index]);
             checkStateOnce[index] = "m";
@@ -308,9 +299,9 @@ $(document).ready(function () {
 
         if (sizeValue == 1000) {
             if(checkStateOnce[index] == "l"){return false;}
-            if(sizeState3 == 1){
+            if(sizeState3[index] == 1){
                 basicSum[index] += 500;
-                sizeState3 = 0;
+                sizeState3[index] = 0;
                 
             }
             else{
@@ -319,8 +310,8 @@ $(document).ready(function () {
             }
             $('#eachCart' + (index + 1)).find('.price').val(basicSum[index]);
 
-            sizeState = 1;
-            sizeState2 = 0;
+            sizeState[index] = 1;
+            sizeState2[index] = 0;
             checkStateOnce[index] = "l";
         }
     });
