@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/menu/orderSheet.css">
 </head>
 <body>
-	<jsp:include page="/resources/incl/signCafeIncl.jsp"></jsp:include>
+	<%-- <jsp:include page="/resources/incl/signCafeIncl.jsp"></jsp:include> --%>
 	<h1>주문서</h1>
 	<p>주문이 성공적으로 완료되었습니다.</p>
 	<table id="order">
