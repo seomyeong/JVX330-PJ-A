@@ -48,7 +48,16 @@ public class DataSourceConfig {
 	}
 	
 	@Bean
+<<<<<<< HEAD
 	public PaymentServiceImpl paymentServiceImpl() {
+=======
+	public OrderedListServiceImpl orderedListServiceImpl() {
+		return new OrderedListServiceImpl(jdbcTemplate());
+	}
+	
+	@Bean
+	public PaymentServiceImpl PaymentServiceImpl() {
+>>>>>>> branch 'main' of https://git@github.com/seomyeong/JVX330-PJ-A.git
 		return new PaymentServiceImpl(jdbcTemplate());
 	}
 	
