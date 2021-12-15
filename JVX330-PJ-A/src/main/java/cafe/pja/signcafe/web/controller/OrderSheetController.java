@@ -38,7 +38,7 @@ public class OrderSheetController {
 	}
 
 	@PostMapping("menuService/orderSheet")
-	public String orderSheet(@ModelAttribute PaymentCommand payment, HttpServletRequest request) {
+	public ModelAndView orderSheet(@ModelAttribute PaymentCommand payment, HttpServletRequest request) {
 		GenericApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
 		MenuServiceImpl menuService = (MenuServiceImpl) context.getBean("menuServiceImpl");
 		OrderedListServiceImpl orderedListService = (OrderedListServiceImpl) context.getBean("orderedListServiceImpl");
@@ -53,6 +53,7 @@ public class OrderSheetController {
 		List<OrderedList> orderedList = new ArrayList<>();
 		Cookie[] cookies = request.getCookies();
 		String userPhone = null;
+		double totalPrice = 0;
 		
 		PaymentHistory paymentHistory = new PaymentHistory();
 		
@@ -85,7 +86,8 @@ public class OrderSheetController {
 			o.setUsingMileage(payment.getAmount() / totalNum);
 			o.setTotalPrice(c.getTotalPrice());
 			
-			System.out.println(o.toString());
+			totalPrice += c.getTotalPrice();
+			
 			orderedList.add(o);
 		}
 		
@@ -95,11 +97,16 @@ public class OrderSheetController {
 		// PAYMENT_HISTORY 테이블에 payment에서 요소 뽑아와서 넣기
 		// MENU_INFO 테이블에 menuCount, mileageCount 정산
 		// CAFE_USER 테이블에 mileage 정산
+		// 영수증 출력
+		mav.addObject("totalPrice", totalPrice);
+		mav.addObject("cart", cart);
+		mav.setViewName("menuService/orderSheet");
+		
 		
 		// + 예외
 		// 		-. 마일리지 초과시 에러
 		
-		return "menuService/orderSheet";
+		return mav;
 	}
 
 }
