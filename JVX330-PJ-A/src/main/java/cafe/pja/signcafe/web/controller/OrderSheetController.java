@@ -64,6 +64,7 @@ public class OrderSheetController {
 			}
 		}
 		
+		// PAYMENT_HISTORY 테이블에 payment에서 요소 뽑아와서 넣기
 		paymentHistory.setPayment_customerInfo(userPhone);
 		paymentHistory.setCreditCard(payment.getCreditCard());
 		paymentHistory.setCreditCardNum(payment.getCardNum());
@@ -86,17 +87,23 @@ public class OrderSheetController {
 			o.setUsingMileage(payment.getAmount() / totalNum);
 			o.setTotalPrice(c.getTotalPrice());
 			
-			totalPrice += c.getTotalPrice();
 			
+			// MENU_INFO 테이블에 menuCount, mileageCount 정산
+			menuService.updateMenuInfoCount(m.getMenuName(), 1, payment.getAmount() / totalNum);
+			
+			totalPrice += c.getTotalPrice();
 			orderedList.add(o);
 		}
 		
 		// orderedList를 db안에 넣기
 		orderedListService.order(orderedList);
 		
-		// PAYMENT_HISTORY 테이블에 payment에서 요소 뽑아와서 넣기
-		// MENU_INFO 테이블에 menuCount, mileageCount 정산
+		
+		
+		
 		// CAFE_USER 테이블에 mileage 정산
+		
+		
 		// 영수증 출력
 		mav.addObject("payment", payment);
 		mav.addObject("totalPrice", totalPrice);
