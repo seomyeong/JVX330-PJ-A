@@ -29,6 +29,7 @@ public class AdminServiceImpl {
 		List<User> u = adminDao.allInquiryUserInfo();
 		List<OrderedList> o = adminDao.allInquiryOrderedListInfo();
 		
+		
 		return new Info(m, u, o);
 	}
 }

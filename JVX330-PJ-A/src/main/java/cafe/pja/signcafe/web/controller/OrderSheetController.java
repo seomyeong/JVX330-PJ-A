@@ -19,6 +19,7 @@ import cafe.pja.signcafe.data.DataSourceConfig;
 import cafe.pja.signcafe.domain.MenuInfo;
 import cafe.pja.signcafe.domain.OrderedList;
 import cafe.pja.signcafe.service.MenuServiceImpl;
+import cafe.pja.signcafe.service.OrderedListServiceImpl;
 import cafe.pja.signcafe.web.command.PaymentCommand;
 
 @Controller("controller.orderSheetController")
@@ -38,6 +39,7 @@ public class OrderSheetController {
 	public String orderSheet(@ModelAttribute PaymentCommand payment, HttpServletRequest request) {
 		GenericApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
 		MenuServiceImpl menuService = (MenuServiceImpl) context.getBean("menuServiceImpl");
+		OrderedListServiceImpl orderedListService = (OrderedListServiceImpl) context.getBean("orderedListServiceImpl");
 
 		ModelAndView mav = new ModelAndView();
 		
@@ -59,6 +61,7 @@ public class OrderSheetController {
 			OrderedList o = new OrderedList();
 			MenuInfo m = new MenuInfo();
 			
+			m.setMenuName(c.getMenuInfo().getMenuName());
 			m.setMenuNum(c.getMenuInfo().getMenuNum());
 			
 			o.setCustomerInfo(userPhone);
@@ -74,6 +77,8 @@ public class OrderSheetController {
 		}
 		
 		// orderedList를 db안에 넣기
+		orderedListService.order(orderedList);
+		
 		// PAYMENT_HISTORY 테이블에 payment에서 요소 뽑아와서 넣기
 		// MENU_INFO 테이블에 menuCount, mileageCount 정산 
 		// CAFE_USER 테이블에 mileage 정산

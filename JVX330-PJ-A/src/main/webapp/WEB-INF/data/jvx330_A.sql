@@ -31,15 +31,13 @@ CREATE TABLE MENU_INFO(
 CREATE TABLE ORDERED(
 	orderedList				BIGINT		PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 	ordered_customerInfo	VARCHAR(50)	NOT NULL 	DEFAULT 'GUEST', --회원번호가 있으면 회원번호가 찍힐것
-	ordered_MenuNum			BIGINT		NOT NULL,
+	ordered_menuName		VARCHAR(30)	NOT NULL	DEFAULT '',
 	ordered_extraSize_Price	DOUBLE		NOT NULL 	DEFAULT 0.0,
 	ordered_extraTemp_Price	DOUBLE		NOT NULL 	DEFAULT 0.0,
 	ordered_menuCount		DOUBLE		NOT NULL 	DEFAULT 0.0,
 	ordered_usingMileage	DOUBLE		NOT NULL 	DEFAULT 0.0,
 	ordered_totalPrice		DOUBLE		NOT NULL 	DEFAULT 0.0,
-	ordered_orderedDate		TIMESTAMP	NOT NULL	DEFAULT CURRENT_TIMESTAMP,
-	
-	CONSTRAINT ORDERED_ordered_MenuNum_FK FOREIGN KEY(ordered_MenuNum) REFERENCES MENU_INFO(menuNum)
+	ordered_orderedDate		TIMESTAMP	NOT NULL	DEFAULT CURRENT_TIMESTAMP
 )
 
 CREATE TABLE PAYMENT_HISTORY(
@@ -80,12 +78,17 @@ INSERT INTO MENU_INFO(category, menuName, menuPrice, menuImgPath) VALUES('FOOD',
 --MENU_INFO TABLE : 판매누적수량, 마일리지 사용액 누적 예제--
 UPDATE MENU_INFO SET menuCount=2 WHERE menuNum=1;
 UPDATE MENU_INFO SET menuCount=5, MILEAGECOUNT=500.0 WHERE menuNum=2;
+UPDATE MENU_INFO SET menuCount=11 WHERE ordered_MenuNum=11 AND orderedList=2;
+UPDATE MENU_INFO SET FROM ORDERED a INNER JOIN 
 
 --ORDERED TABLE : INSERT 예제--
 INSERT INTO ORDERED(ordered_customerInfo, ordered_MenuNum, ordered_extraSize_Price, ordered_extraTemp_Price,
 ordered_menuCount, ordered_usingMileage, ordered_totalPrice) 
 VALUES ('GUEST',1,300.0,500.0,2,0.0,6000.0+300.0+500.0);
 
+INSERT INTO ORDERED(ordered_customerInfo, ordered_MenuNum, ordered_extraSize_Price, ordered_extraTemp_Price,
+ordered_menuCount, ordered_usingMileage, ordered_totalPrice) 
+VALUES ('01023542214',11,0.0,0.0,1,0.0,6500.0);
 
 
 
