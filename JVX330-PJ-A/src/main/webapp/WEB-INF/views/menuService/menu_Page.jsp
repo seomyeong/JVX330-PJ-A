@@ -97,12 +97,15 @@
 
 
 			<c:set var="i" value="1" />
+			
 			<c:forEach items="${sessionScope.cart}" var="order">
 				<div id="eachCart${i}" class='commonCart'>
 					<input type='text' name="name${i}" class='cartName'
 						value="${order.menuInfo.menuName}">
 					<div id='tempWrap'>
 						<c:choose>
+						
+						
 							<c:when
 								test="${order.extraTemp_Price == 0.0 and order.menuInfo.category eq 'FOOD'}">
 								<div style="display: none">
@@ -113,6 +116,8 @@
 									</label>
 								</div>
 							</c:when>
+							
+							
 							<c:when test="${order.extraTemp_Price == 0.0}">
 								<label for="hot${i}"> <input type='radio' id="hot${i}"
 									class='temp' name="temp${i}" value='0' checked>HOT
@@ -121,6 +126,8 @@
 									class='temp' name="temp${i}" value='500'>COLD
 								</label>
 							</c:when>
+							
+						
 							<c:when test="${order.extraTemp_Price == 500.0}">
 								<label for="hot${i}"> <input type='radio' id="hot${i}"
 									class='temp' name="temp${i}" value='0' checked>HOT
@@ -129,6 +136,8 @@
 									class='temp' name="temp${i}" value='500' checked>COLD
 								</label>
 							</c:when>
+						
+						
 						</c:choose>
 					</div>
 
