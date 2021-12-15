@@ -105,5 +105,9 @@ public class UserDao {
 		jdbcTemplate.update(sql, user.getPhone(), user.getPassWd(), connectUserPhone);
 	}
 	
+	public void updateMileage(String userPhone, double mileage) {
+		String sql = "UPDATE CAFE_USER SET mileage=? WHERE phone=?";
+		jdbcTemplate.update(sql, mileage, userPhone);
+	}
 
 }
