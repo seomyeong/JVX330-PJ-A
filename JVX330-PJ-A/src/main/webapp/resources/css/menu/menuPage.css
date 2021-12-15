@@ -85,14 +85,14 @@
 #container p{
 	z-index: 1;
     text-align: left;
-    position: absolute; bottom: 2px; left: 310px;
+    position: absolute; bottom: 2px; left: 72%;
 }
 #totalNum{
-    width: 150px;
+    width: 159px;
     height: 98px;
     text-align: center;
     font-size: 50px;
-    position: absolute; bottom: 0px; left: 271px;
+    position: absolute; bottom: 0px; left: 64%;
     border: 1px soild #000;
 }
 
@@ -143,6 +143,7 @@
 }
 #numWrap input{
     width: 10px;
+    display: none;
     visibility: hidden;
 }
 .price{
