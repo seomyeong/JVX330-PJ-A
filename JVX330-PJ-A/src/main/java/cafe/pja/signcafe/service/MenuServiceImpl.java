@@ -27,4 +27,15 @@ public class MenuServiceImpl {
 	public long findMenuNum(String menuName) {
 		return menuInfoDao.findMenuNumByName(menuName);
 	}
+	
+	// 영수증 출력할때 수량이랑 팔린가격 업데이트
+	public void updateMenuInfoCount(String menuName, int menuCount, double UsingMileage) {
+		MenuInfo menuInfo = menuInfoDao.findMenuInfoByName(menuName);
+		
+		long resultMenuCount = menuInfo.getMenuCount() + menuCount;
+		double resultMileageCount = menuInfo.getMileageCount() + UsingMileage;
+		
+		menuInfoDao.updateMenuInfoCount(menuName, resultMenuCount, resultMileageCount);
+		
+	}
 }
