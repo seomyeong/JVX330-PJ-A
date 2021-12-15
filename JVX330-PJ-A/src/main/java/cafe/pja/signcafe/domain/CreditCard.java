@@ -7,12 +7,12 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class CreditCard {
 	
-	private String creditCard;		//카드사
-	private String creditCardNum;		//카드번호
+	private String creditCard; //카드사
+	private String creditCardNum; //카드번호
 	private double supplyPrice; //판매가
-	private double vat;			//부가세
-	private double totalPrice;	//총합
-	private Date regDate;		//결제일시
+	private double vat;	//부가세
+	private double totalPrice; //총합
+	private Date regDate; //결제일시
 	
 	public CreditCard () {}
 	
