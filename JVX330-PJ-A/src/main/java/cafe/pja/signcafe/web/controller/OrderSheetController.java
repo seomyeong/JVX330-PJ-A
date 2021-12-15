@@ -100,9 +100,10 @@ public class OrderSheetController {
 		
 		
 		
-		
+		//////////
 		// CAFE_USER 테이블에 mileage 정산
-		
+		// 마일리지 부족하면 안되게하기
+		//////////
 		
 		// 영수증 출력
 		mav.addObject("payment", payment);
