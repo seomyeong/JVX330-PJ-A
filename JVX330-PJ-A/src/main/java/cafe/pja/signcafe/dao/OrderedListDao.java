@@ -19,7 +19,9 @@ public class OrderedListDao {
 	//MenuInfo테이블에 주문갯수 update
 	public void updateMenuCount(OrderedList ordered) {
 		String sql = "UPDATE MENU_INFO SET MENUCOUNT=? WHERE ordered_MenuNum=? AND orderedList=?";
-		jdbcTemplate.update(sql, (Long)ordered.getMenuInfo().getMenuCount() + ordered.getMenuCount(), ordered.getMenuInfo().getMenuNum(), ordered.getOrderedList());
+		jdbcTemplate.update(sql, (Long)ordered.getMenuInfo().getMenuCount() + ordered.getMenuCount(),
+				ordered.getMenuInfo().getMenuNum(),
+				ordered.getOrderedList());
 	}
 
 	//MenuInfo테이블에 usingMileage update
