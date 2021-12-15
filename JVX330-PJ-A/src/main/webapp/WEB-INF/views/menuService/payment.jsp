@@ -29,7 +29,7 @@
 				<tr class="cardNum">
 					<th>카드번호</th>
 					<td><input type="text" name="cardNum" pattern="[0-9]+"
-						maxlength="19" minlength="19" required></td>
+						maxlength="16" minlength="16" required></td>
 				</tr>
 
 				<c:choose>

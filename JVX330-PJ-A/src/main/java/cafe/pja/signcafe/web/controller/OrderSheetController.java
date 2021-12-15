@@ -18,8 +18,10 @@ import org.springframework.web.servlet.ModelAndView;
 import cafe.pja.signcafe.data.DataSourceConfig;
 import cafe.pja.signcafe.domain.MenuInfo;
 import cafe.pja.signcafe.domain.OrderedList;
+import cafe.pja.signcafe.domain.PaymentHistory;
 import cafe.pja.signcafe.service.MenuServiceImpl;
 import cafe.pja.signcafe.service.OrderedListServiceImpl;
+import cafe.pja.signcafe.service.PaymentServiceImpl;
 import cafe.pja.signcafe.web.command.PaymentCommand;
 
 @Controller("controller.orderSheetController")
@@ -36,11 +38,12 @@ public class OrderSheetController {
 	}
 
 	@PostMapping("menuService/orderSheet")
-	public String orderSheet(@ModelAttribute PaymentCommand payment, HttpServletRequest request) {
+	public ModelAndView orderSheet(@ModelAttribute PaymentCommand payment, HttpServletRequest request) {
 		GenericApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
 		MenuServiceImpl menuService = (MenuServiceImpl) context.getBean("menuServiceImpl");
 		OrderedListServiceImpl orderedListService = (OrderedListServiceImpl) context.getBean("orderedListServiceImpl");
-
+		PaymentServiceImpl paymentService = (PaymentServiceImpl) context.getBean("paymentServiceImpl");
+		
 		ModelAndView mav = new ModelAndView();
 		
 		HttpSession session = request.getSession();
@@ -50,12 +53,23 @@ public class OrderSheetController {
 		List<OrderedList> orderedList = new ArrayList<>();
 		Cookie[] cookies = request.getCookies();
 		String userPhone = null;
+		double totalPrice = 0;
+		
+		PaymentHistory paymentHistory = new PaymentHistory();
+		
 		
 		for(Cookie cookie : cookies) {
 			if(cookie.getName().equals("cookieUserPhone")) {
 				userPhone = cookie.getValue();
 			}
 		}
+		
+		paymentHistory.setPayment_customerInfo(userPhone);
+		paymentHistory.setCreditCard(payment.getCreditCard());
+		paymentHistory.setCreditCardNum(payment.getCardNum());
+		paymentHistory.setOrderPrice(payment.getOrderPrice());
+		
+		paymentService.payByCreditCard(paymentHistory);
 		
 		for(OrderedList c : cart) {
 			OrderedList o = new OrderedList();
@@ -72,7 +86,8 @@ public class OrderSheetController {
 			o.setUsingMileage(payment.getAmount() / totalNum);
 			o.setTotalPrice(c.getTotalPrice());
 			
-			System.out.println(o.toString());
+			totalPrice += c.getTotalPrice();
+			
 			orderedList.add(o);
 		}
 		
@@ -82,11 +97,16 @@ public class OrderSheetController {
 		// PAYMENT_HISTORY 테이블에 payment에서 요소 뽑아와서 넣기
 		// MENU_INFO 테이블에 menuCount, mileageCount 정산
 		// CAFE_USER 테이블에 mileage 정산
+		// 영수증 출력
+		mav.addObject("totalPrice", totalPrice);
+		mav.addObject("cart", cart);
+		mav.setViewName("menuService/orderSheet");
+		
 		
 		// + 예외
 		// 		-. 마일리지 초과시 에러
 		
-		return "menuService/orderSheet";
+		return mav;
 	}
 
 }

@@ -14,7 +14,7 @@
 }
 
 .menuWrap #titleMenu p:hover {
-    background-color: rgb(82, 77, 77);
+    background-color: #000;
     color: #fff;
 }
 
@@ -88,11 +88,11 @@
     position: absolute; bottom: 2px; left: 72%;
 }
 #totalNum{
-    width: 159px;
+    width: 154px;
     height: 98px;
     text-align: center;
     font-size: 50px;
-    position: absolute; bottom: 0px; left: 64%;
+    position: absolute; bottom: 0px; left: 63%;
     border: 1px soild #000;
 }
 
@@ -115,6 +115,17 @@
     border: 1px solid #000;
     position: absolute; bottom: 0px; left: -10px;
 }
+
+#goToIndex:hover {
+	background-color: #000;
+	color: #fff;
+}
+
+#payment:hover {
+	background-color: #000;
+	color: #fff;
+}
+
 
 /* #container에 담긴 개별 메뉴*/
 .commonCart{
@@ -141,6 +152,11 @@
 .sizeWrap{
     font-size: 5px;
 }
+
+.sizeWrap label {
+	padding: 10px;
+}
+
 #numWrap input{
 	display: none;
     width: 10px;

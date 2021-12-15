@@ -41,14 +41,12 @@ CREATE TABLE ORDERED(
 )
 
 CREATE TABLE PAYMENT_HISTORY(
-   paymentList            	BIGINT      	PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-   payment_customerInfo   	VARCHAR(11)   	NOT NULL   DEFAULT 'GUEST',
-   creditCard            	VARCHAR(30)    	NOT NULL,
-   cardNum               	VARCHAR(19)   	NOT NULL,
-   mileage               	DOUBLE      	NOT NULL   DEFAULT 0.0,
-   amount               	BIGINT      	NOT NULL   DEFAULT 0,
-   orderPrice            	DOUBLE      	NOT NULL   DEFAULT 0.0,
-   paymentDate            	TIMESTAMP   	NOT NULL   DEFAULT CURRENT_TIMESTAMP
+	paymentList				BIGINT		PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+	payment_customerInfo	VARCHAR(11)	NOT NULL	DEFAULT 'GUEST',
+	creditCard				VARCHAR(30)	NOT NULL,
+	creditCardNum					VARCHAR(19)	NOT NULL,
+	orderPrice				DOUBLE		NOT NULL	DEFAULT 0.0,
+	paymentDate				TIMESTAMP	NOT NULL	DEFAULT CURRENT_TIMESTAMP
 )
 
 
@@ -90,7 +88,9 @@ INSERT INTO ORDERED(ordered_customerInfo, ordered_MenuNum, ordered_extraSize_Pri
 ordered_menuCount, ordered_usingMileage, ordered_totalPrice) 
 VALUES ('01023542214',11,0.0,0.0,1,0.0,6500.0);
 
-
+--PAYMENT_HISTORY TABLE : 결제이력 테스트 --
+INSERT INTO PAYMENT_HISTORY(payment_customerInfo, creditCard, cardNum,	mileage, amount, orderPrice)
+VALUES ('010123123', '국민카드', '1111222233334444', 50000.0, 3000, 15300.0);
 
 --서명 SQL 예제 테스트중--
 SELECT * FROM MENU_INFO WHERE CATEGORY='COFFEE';
