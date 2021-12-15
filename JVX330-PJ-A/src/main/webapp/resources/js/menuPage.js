@@ -253,7 +253,7 @@ $(document).ready(function () {
         index = Number($(this).attr('name').slice(4, 5)) - 1;
        
         ////////////////////////////////////////
-
+ 
         if (sizeValue == 0) {
             if(checkStateOnce[index] == "s"){return false;}
             if (sizeState2[index] == 1) {
