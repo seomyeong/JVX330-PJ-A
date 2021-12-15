@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import cafe.pja.signcafe.dao.PaymentDao;
 import cafe.pja.signcafe.service.AdminServiceImpl;
 import cafe.pja.signcafe.service.MenuServiceImpl;
 import cafe.pja.signcafe.service.OrderedListServiceImpl;

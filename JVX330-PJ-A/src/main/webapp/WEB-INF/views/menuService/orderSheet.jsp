@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +25,7 @@
 			</tr>
 		</thead>
 		<tbody>
-		<%-- 	<c:if test="${not empty orderedList}">
+		 	<c:if test="${not empty orderedList}">
 				<c:forEach var="orderedList" items="${orderedList}">
 					<tr>
 						<td>${menuIfo.menuName}</td>
@@ -33,7 +35,7 @@
 						<td>${orderedList.totalPrice}</td>
 					</tr>
 				</c:forEach>
-			</c:if> --%>
+			</c:if>
 			<%-- 밑에는 test --%>
 			<tr>
 				<td>클래식 아메리카노</td>

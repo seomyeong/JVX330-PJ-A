@@ -18,8 +18,10 @@ import org.springframework.web.servlet.ModelAndView;
 import cafe.pja.signcafe.data.DataSourceConfig;
 import cafe.pja.signcafe.domain.MenuInfo;
 import cafe.pja.signcafe.domain.OrderedList;
+import cafe.pja.signcafe.domain.PaymentHistory;
 import cafe.pja.signcafe.service.MenuServiceImpl;
 import cafe.pja.signcafe.service.OrderedListServiceImpl;
+import cafe.pja.signcafe.service.PaymentServiceImpl;
 import cafe.pja.signcafe.web.command.PaymentCommand;
 
 @Controller("controller.orderSheetController")
@@ -40,7 +42,8 @@ public class OrderSheetController {
 		GenericApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
 		MenuServiceImpl menuService = (MenuServiceImpl) context.getBean("menuServiceImpl");
 		OrderedListServiceImpl orderedListService = (OrderedListServiceImpl) context.getBean("orderedListServiceImpl");
-
+		PaymentServiceImpl paymentService = (PaymentServiceImpl) context.getBean("paymentServiceImpl");
+		
 		ModelAndView mav = new ModelAndView();
 		
 		HttpSession session = request.getSession();
@@ -51,11 +54,21 @@ public class OrderSheetController {
 		Cookie[] cookies = request.getCookies();
 		String userPhone = null;
 		
+		PaymentHistory paymentHistory = new PaymentHistory();
+		
+		
 		for(Cookie cookie : cookies) {
 			if(cookie.getName().equals("cookieUserPhone")) {
 				userPhone = cookie.getValue();
 			}
 		}
+		
+		paymentHistory.setPayment_customerInfo(userPhone);
+		paymentHistory.setCreditCard(payment.getCreditCard());
+		paymentHistory.setCreditCardNum(payment.getCardNum());
+		paymentHistory.setOrderPrice(payment.getOrderPrice());
+		
+		paymentService.payByCreditCard(paymentHistory);
 		
 		for(OrderedList c : cart) {
 			OrderedList o = new OrderedList();
