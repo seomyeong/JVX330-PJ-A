@@ -54,13 +54,8 @@ public class DataSourceConfig {
 	}
 	
 	@Bean
-<<<<<<< HEAD
-	public PaymentDao paymentDao() {
-		return new PaymentDao(jdbcTemplate());
-=======
 	public OrderedListServiceImpl orderedListServiceImpl() {
 		return new OrderedListServiceImpl(jdbcTemplate());
->>>>>>> branch 'main' of https://github.com/seomyeong/JVX330-PJ-A.git
 	}
 	
 }

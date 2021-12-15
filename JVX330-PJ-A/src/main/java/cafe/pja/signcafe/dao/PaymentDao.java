@@ -3,11 +3,12 @@ package cafe.pja.signcafe.dao;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import cafe.pja.signcafe.web.command.PaymentCommand;
+import cafe.pja.signcafe.domain.PaymentHistory;
 
 @Repository
 public class PaymentDao {
 	private JdbcTemplate jdbcTemplate;
+	/* public boolean insertCreditCardInfo; */
 
 	public PaymentDao(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
@@ -19,9 +20,8 @@ public class PaymentDao {
 	 * @param paymentCommand
 	 * 
 	 */
-	public void insertCreditCardInfo(PaymentCommand paymentCommand) {
-		String sql = "INSERT INTO PAYMENT_HISTORY(creditCard, cardNum, mileage, amount, orderPrice) VALUES(?, ?, ?, ?, ?)";
-		jdbcTemplate.update(sql, paymentCommand.getCreditCard(), paymentCommand.getCardNum(), paymentCommand.getMileage(),
-				paymentCommand.getAmount(), paymentCommand.getOrderPrice());
+	public void insertCreditCardInfo(PaymentHistory paymentHistory) {
+		String sql = "INSERT INTO PAYMENT_HISTORY(payment_customerInfo, creditCard, cardNum, orderPrice) VALUES(?, ?, ?, ?)";
+		jdbcTemplate.update(sql, paymentHistory.getPayment_customerInfo(), paymentHistory.getCreditCard(), paymentHistory.getCreditCardNum(), paymentHistory.getOrderPrice());
 	}
 }

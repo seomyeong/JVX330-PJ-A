@@ -3,7 +3,7 @@ package cafe.pja.signcafe.service;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import cafe.pja.signcafe.dao.PaymentDao;
-import cafe.pja.signcafe.web.command.PaymentCommand;
+import cafe.pja.signcafe.domain.PaymentHistory;
 
 public class PaymentServiceImpl {
 
@@ -13,7 +13,7 @@ public class PaymentServiceImpl {
 		paymentDao = new PaymentDao(jdbcTemplate);
 	}
 	
-	public boolean payByCreditCard(PaymentCommand paymentCommand) {
-			return true;
-		}
+	public void payByCreditCard(PaymentHistory paymentHistory) {
+		paymentDao.insertCreditCardInfo(paymentHistory);
+	}
 }

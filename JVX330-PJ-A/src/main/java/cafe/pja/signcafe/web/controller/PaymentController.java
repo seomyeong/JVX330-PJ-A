@@ -1,3 +1,5 @@
+package cafe.pja.signcafe.web.controller;
+
 import java.util.List;
 
 import javax.servlet.http.Cookie;
@@ -79,22 +81,5 @@ public class PaymentController {
 		
 	}
 	
-	@Controller("controller.paymentController")
-	public class PaymentController {
-		
-		@GetMapping("menuService/payment")
-		public String paymentForm() {
-			return "menuService/payment";
-		}
-		
-		@PostMapping("menuService/payment")
-		public ModelAndView payment(@ModelAttribute PaymentCommand paymentCommand) {
-			GenericApplicationContext context = AnnotationConfigApplicationContext(DataSourceConfig.class);
-			PaymentServiceImpl service = (PaymentServiceImpl) context.getBean("paymentImpl");
-			
-			
-			return null;
-		}
-
 	
 }
