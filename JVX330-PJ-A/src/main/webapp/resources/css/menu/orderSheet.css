@@ -1,77 +1,108 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-body,h1,h2,h3,h4,h5,h6,table,tr,th,td,ul,p,img,input{margin: 0; padding: 0;}
-a{text-decoration: none; color: #000;}
-li{list-style: none;}
-.hidden{position: absolute; left: -9999px;}
-
-body{min-width: 1280px; position: relative; 
-/* overflow: hidden; */
-font-family: 'Raleway', sans-serif;
-font-family: 'Open Sans', sans-serif;
-}
-
-h1 {
-    margin-top: 35px;
-    text-align: center;
-}
-p {
-    margin-top: 33px;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-#order {
-    margin: 25px auto 40px;
-    width: 680px;
-    text-align: center;
-    border-top: 2px dotted #000;
-    border-bottom: 2px dotted #000;
-    border-collapse: collapse;
-}
-
-#order tr {
-    height: 35px;
-}
-
-#order tbody {
-    border-top: 2px dotted #000;
-    border-bottom: 2px dotted #000;
-}
-
-#order tbody td:first-child {
-    float: left;
-    line-height: 35px;
-}
-#creditInfo {
-    margin: 30px auto 25px;
-    width: 680px;
-}
-
-#creditInfo td {
-    float: right;
-}
-
-#creditInfo th {
-    float: left;
+body, h1, h2, h3, h4, h5, h6, table, tr, th, td, ul, p, img, input {
+	margin: 0;
+	padding: 0;
 }
 
 a {
-    position: absolute;
-    bottom: -115px; left: calc(50% - 110px);
+	text-decoration: none;
+	color: #000;
+}
+
+li {
+	list-style: none;
+}
+
+.hidden {
+	position: absolute;
+	left: -9999px;
+}
+
+body {
+	min-width: 1280px;
+	position: relative;
+	/* overflow: hidden; */
+	font-family: 'Raleway', sans-serif;
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+	margin-top: 28px;
+	text-align: center;
+	font-size: 65px;
+	font-weight: bold;
+}
+
+caption {
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+
+p {
+	margin-top: 20px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.creditInfo {
+	margin: -15px;
+}
+
+#order {
+	overflow-y: scroll;
+	margin: 25px auto 40px;
+	width: 680px;
+	text-align: center;
+	border-top: 2px dotted #000;
+	border-bottom: 2px dotted #000;
+	border-collapse: collapse;
+}
+
+#order tr {
+	height: 35px;
+}
+
+#order tbody {
+	border-top: 2px dotted #000;
+	border-bottom: 2px dotted #000;
+}
+
+#order tbody td:first-child {
+	float: left;
+	line-height: 35px;
+}
+
+#creditInfo {
+	margin: 30px auto 25px;
+	width: 680px;
+}
+
+#creditInfo td {
+	float: right;
+}
+
+#creditInfo th {
+	float: left;
+}
+
+a {
+	position: absolute;
+	bottom: -115px;
+	left: calc(50% - 110px);
 	width: 220px;
-    display:block;
-    text-align: center;
-    line-height: 60px;
-    font-size: 24px;
-    border: 2px solid #000;
-    border-radius: 10px;   
+	display: block;
+	text-align: center;
+	line-height: 60px;
+	font-size: 24px;
+	border: 2px solid #000;
+	border-radius: 10px;
 }
 
 a:hover {
-    background: #000;
-    color: #fff;
-    border-radius: 10px;
+	background: #000;
+	color: #fff;
+	border-radius: 10px;
 }
