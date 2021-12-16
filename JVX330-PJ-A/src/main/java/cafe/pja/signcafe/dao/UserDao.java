@@ -95,7 +95,6 @@ public class UserDao {
 				return new User(rs.getString("name"), rs.getString("phone"), rs.getString("passWd"), rs.getDouble("mileage"));
 			}
 
-
 		}, user.getPhone());
 	}
 	

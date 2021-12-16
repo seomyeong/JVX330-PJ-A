@@ -88,6 +88,9 @@ public class OrderSheetController {
 		paymentHistory.setOrderPrice(payment.getOrderPrice());
 
 		paymentService.payByCreditCard(paymentHistory);
+		String payRegDate = paymentService.getPayRegDate(paymentService.totalCount());
+		
+		
 
 		for (OrderedList c : cart) {
 			OrderedList o = new OrderedList();
@@ -118,6 +121,7 @@ public class OrderSheetController {
 		mav.addObject("payment", payment);
 		mav.addObject("totalPrice", totalPrice);
 		mav.addObject("cart", cart);
+		mav.addObject("payRegDate", payRegDate);
 		mav.setViewName("menuService/orderSheet");
 
 		// + 예외

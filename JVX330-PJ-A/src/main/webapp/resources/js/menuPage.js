@@ -8,9 +8,9 @@ $('#titleMenu p').on('click', function(e) {
 	$(this).parent().siblings('article:eq(' + num + ')').show()
 	e.preventDefault()
 })
-
-
-
+ 
+ 
+   
 
 //개별 메뉴 ordered에 append
 $(document).ready(function() {
@@ -21,6 +21,7 @@ $(document).ready(function() {
 	let eachCartNum = null;
 	let basicSum = new Array();
 	let checkStateOnce = new Array();
+	let checkStateOnce2 = new Array();
 	let tempState = new Array();
 	let sizeState = new Array();
 	let sizeState2 = new Array();
@@ -268,13 +269,13 @@ $(document).ready(function() {
 		////////////////////////////////////////
 
 		if (sizeValue == 0) {
-			if (checkStateOnce[index] == "s") { return false; }
+			if (checkStateOnce2[index] == "s") { return false; }
 			if (sizeState2[index] == 1) {
 				basicSum[index] -= 500;
 				sizeState2[index] = 0;
 				sizeState3[index] = 0;
 				$('#eachCart' + (index + 1)).find('.price').val(basicSum[index]);
-			}
+			} 
 			if (sizeState[index] == 1) {
 				basicSum[index] -= 1000;
 				sizeState[index] = 0;
@@ -286,32 +287,35 @@ $(document).ready(function() {
 				sizeState3[index] = 0;
 				$('#eachCart' + (index + 1)).find('.price').val(basicSum[index]);
 			}
-			checkStateOnce[index] = "s";
+			checkStateOnce2[index] = "s";
 		}
 
 		/////////////////////////////////////
 
 		if (sizeValue == 500) {
-			if (checkStateOnce[index] == "m") { return false; }
+			if (checkStateOnce2[index] == "m") { return false; }
 			if (sizeState[index] == 1) {
 				basicSum[index] -= 500;
 				sizeState[index] = 0;
 				sizeState2[index] = 1;
 				sizeState3[index] = 1;
 			}
+			
 			else {
 				basicSum[index] += sizeValue;
 				sizeState3[index] = 1;
 				sizeState2[index] = 1;
 			}
+			
 			$('#eachCart' + (index + 1)).find('.price').val(basicSum[index]);
-			checkStateOnce[index] = "m";
+			checkStateOnce2[index] = "m";
 		}
 
 		//////////////////////////////////
 
 		if (sizeValue == 1000) {
-			if (checkStateOnce[index] == "l") { return false; }
+			if (checkStateOnce2[index] == "l") { return false; }
+			
 			if (sizeState3[index] == 1) {
 				basicSum[index] += 500;
 				sizeState3[index] = 0;
@@ -325,7 +329,7 @@ $(document).ready(function() {
 
 			sizeState[index] = 1;
 			sizeState2[index] = 0;
-			checkStateOnce[index] = "l";
+			checkStateOnce2[index] = "l";
 		}
 	});
 

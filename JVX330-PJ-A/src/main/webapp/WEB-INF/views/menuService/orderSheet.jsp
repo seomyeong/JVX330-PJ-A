@@ -127,7 +127,7 @@
 		</tr>
 		<tr>
 			<th>승 인 일 시 :</th>
-			<td>2021-00-00 00:00:00</td>
+			<td>${payRegDate}</td>
 		</tr>
 	</table>
 
