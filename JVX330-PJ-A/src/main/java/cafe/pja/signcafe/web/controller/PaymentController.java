@@ -69,6 +69,7 @@ public class PaymentController {
 		}
 	}
 	
+	// 장바구니에 있는 가격들을 모두 더해주는 메소드
 	private double orderPrice(HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		List<OrderedList> cart = (List<OrderedList>)session.getAttribute("cart");
