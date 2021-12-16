@@ -13,14 +13,17 @@ public class PaymentServiceImpl implements PaymentService{
 		paymentDao = new PaymentDao(jdbcTemplate);
 	}
 	
+	@Override
 	public void payByCreditCard(PaymentHistory paymentHistory) {
 		paymentDao.insertCreditCardInfo(paymentHistory);
 	}
 
+	@Override
 	public String getPayRegDate(int totalPayRegDateNum) {
 		return paymentDao.selectPayRegDate(totalPayRegDateNum);
 	}
 
+	@Override
 	public int totalCount() {
 		return paymentDao.totalCount();
 	}

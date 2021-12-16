@@ -12,6 +12,7 @@ public class UserServiceImpl implements UserService{
 		userDao = new UserDao(jdbcTemplate);
 	}
 
+	@Override
 	public boolean addUser(User user) {
 		if(userDao.duplicateCheck(user)) {
 			System.out.println("해당 번호로 가입된 계정이 있습니다.");
@@ -23,6 +24,7 @@ public class UserServiceImpl implements UserService{
 		}
 	}
 	
+	@Override
 	public boolean myPageLogin(User user) {
 		if(userDao.userCheck(user)) {
 			System.out.println("로그인에 성공했습니다.");
@@ -33,6 +35,7 @@ public class UserServiceImpl implements UserService{
 		}
 	}
 	
+	@Override
 	public User userInfoByPhone(User user) {
 		
 		return userDao.searchUserByPhone(user);
@@ -46,6 +49,7 @@ public class UserServiceImpl implements UserService{
 	 * @param user
 	 * @param connectUserPhone
 	 */
+	@Override
 	public boolean updateUserInfo(User user, String connectUserPhone) {
 		if(userDao.duplicateCheck(user) && !(user.getPhone().equals(connectUserPhone))) {
 			return false;
@@ -59,6 +63,7 @@ public class UserServiceImpl implements UserService{
 	/**
 	 * checkUser.jsp 에서 입력한 폰번호가 디비의 폰번호와 일치하는지 확인
 	 */
+	@Override
 	public boolean checkUserbyPhone(User user) {
 		if(userDao.duplicateCheck(user)) {
 			System.out.println("폰번호 일치");
@@ -74,6 +79,7 @@ public class UserServiceImpl implements UserService{
 		return false;
 	}
 	
+	@Override
 	public boolean calculMileage(String userPhone, double amount) {
 		User userCommand = new User();
 		userCommand.setPhone(userPhone);

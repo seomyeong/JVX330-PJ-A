@@ -41,7 +41,7 @@ public class PaymentController {
 
 	//chechUser.jsp에서 결제버튼 클릭 시 폰번호 검사
 	@PostMapping("menuService/payment")
-	public ModelAndView paymentbySeoMyeong(@ModelAttribute User user, HttpServletRequest request, HttpServletResponse response) {
+	public ModelAndView payment(@ModelAttribute User user, HttpServletRequest request, HttpServletResponse response) {
 		GenericApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
 		UserServiceImpl userService = context.getBean("userServiceImpl", UserServiceImpl.class);
 		ModelAndView mav = new ModelAndView();

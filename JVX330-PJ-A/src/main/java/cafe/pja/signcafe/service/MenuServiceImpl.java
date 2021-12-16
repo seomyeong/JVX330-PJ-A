@@ -15,20 +15,24 @@ public class MenuServiceImpl implements MenuService{
 	}
 	
 	//전체메뉴 조회
+	@Override
 	public List<MenuInfo> allMenu(){
 		List<MenuInfo> menu = menuInfoDao.allMenu();
 		return menu;
 	}
 	
+	@Override
 	public String findCategory(String menuName) {
 		return menuInfoDao.findCategoryByName(menuName);
 	}
 	
+	@Override
 	public long findMenuNum(String menuName) {
 		return menuInfoDao.findMenuNumByName(menuName);
 	}
 	
 	// 영수증 출력할때 수량이랑 팔린가격 업데이트
+	@Override
 	public void updateMenuInfoCount(String menuName, int menuCount, double UsingMileage) {
 		MenuInfo menuInfo = menuInfoDao.findMenuInfoByName(menuName);
 		

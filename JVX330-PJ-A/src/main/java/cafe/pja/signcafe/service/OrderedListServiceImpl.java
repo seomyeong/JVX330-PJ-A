@@ -15,16 +15,19 @@ public class OrderedListServiceImpl implements OrderedListService {
 	}
 	
 	//MenuInfo테이블에 주문갯수 update
+	@Override
 	public void updateMenuCount(OrderedList orderedList) {
 		orderedListDao.updateMenuCount(orderedList);
 	}
 
 	//MenuInfo테이블에 usingMileage update
+	@Override
 	public void updateMenuMileage(OrderedList orderedList) {
 		orderedListDao.updateMenuMileage(orderedList);
 	}
 
 	//Ordered테이블에 insert
+	@Override
 	public void order(List<OrderedList> orderedList) {
 		orderedListDao.updateOrderedTable(orderedList);
 	}

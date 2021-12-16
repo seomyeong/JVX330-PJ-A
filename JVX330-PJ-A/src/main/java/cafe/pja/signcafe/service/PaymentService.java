@@ -5,12 +5,12 @@ import cafe.pja.signcafe.web.command.PaymentCommand;
 
 public interface PaymentService {
 	
-	// 결제한 카드 정보
+	// PAYMENT_HISTORY 테이블의 결제한 카드 정보
 	public void payByCreditCard(PaymentHistory paymentHistory);
 	
-	// 결제날짜 받아오기
+	// PAYMENT_HISTORY 테이블의 결제날짜
 	public String getPayRegDate(int totalPayRegDateNum);
 	
-	// PAYMENT_HISTORY테이블 기본컬럼값 count
+	// PAYMENT_HISTORY 테이블의 기본 row count
 	public int totalCount();
 }
