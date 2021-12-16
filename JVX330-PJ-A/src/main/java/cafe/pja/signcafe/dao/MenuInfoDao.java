@@ -54,6 +54,25 @@ public class MenuInfoDao {
 		}, menuName);
 	}
 	
+	public MenuInfo findMenuInfoByName(String menuName) {
+		String sql = "SELECT * FROM MENU_INFO WHERE menuName=?";
+		return jdbcTemplate.queryForObject(sql, new RowMapper<MenuInfo>() {
+
+			@Override
+			public MenuInfo mapRow(ResultSet rs, int rowNum) throws SQLException {
+				MenuInfo m = new MenuInfo(rs.getLong("menuNum"), rs.getString("category"), rs.getString("menuName"), rs.getDouble("menuPrice"), rs.getLong("menuCount"), rs.getDouble("mileageCount"), rs.getString("menuImgPath"));
+				
+				return m;
+			}
+			
+		}, menuName);
+	}
+	
+	public void updateMenuInfoCount(String menuName, long menuCount, double mileageCount) {
+		String sql = "UPDATE MENU_INFO SET menuCount=?, mileageCount=? WHERE menuName=?";
+		jdbcTemplate.update(sql, menuCount, mileageCount, menuName);
+	}
+	
 	
 }
 

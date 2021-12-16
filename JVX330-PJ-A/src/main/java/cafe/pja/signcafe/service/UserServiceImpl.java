@@ -7,7 +7,7 @@ import cafe.pja.signcafe.dao.UserDao;
 import cafe.pja.signcafe.domain.User;
 
 public class UserServiceImpl {
-	private OrderedListDao orderedListDao;
+	private OrderedListDao orderedListDao = null;
 	private UserDao userDao;
 
 	public UserServiceImpl(JdbcTemplate jdbcTemplate) {

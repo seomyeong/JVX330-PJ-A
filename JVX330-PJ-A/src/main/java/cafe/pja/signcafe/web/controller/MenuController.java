@@ -31,6 +31,7 @@ public class MenuController {
 		return mav;
 	}
 
+	
 	@PostMapping("menuService/menuPage")
 	public ModelAndView menuPage() {
 		GenericApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
