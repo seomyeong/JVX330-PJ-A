@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 import cafe.pja.signcafe.domain.User;
+import lombok.Getter;
 
 public class UserDao {
 	private JdbcTemplate jdbcTemplate;
