@@ -3,7 +3,9 @@ package cafe.pja.signcafe.web.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -27,12 +29,17 @@ public class CheckUserController {
 	 * ———————————————————
 	 */
 	@PostMapping("menuService/checkUser")
-	public ModelAndView checkUser(HttpServletRequest request) {
+	public ModelAndView checkUser(HttpServletRequest request, HttpServletResponse response) {
 		GenericApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
 		MenuServiceImpl menuService = (MenuServiceImpl) context.getBean("menuServiceImpl");
 		HttpSession session = request.getSession();
 		List<OrderedList> orderList = new ArrayList<>();
 		ModelAndView mav = new ModelAndView();
+		
+		Cookie cookie = new Cookie("cookieUserPhone", null);
+		cookie.setMaxAge(0);
+		response.addCookie(cookie);
+		
 		// 총 상품의 개수를 받아온다.
 		int totalNum = Integer.parseInt(request.getParameter("totalNum"));
 		for (int i = 1; i <= totalNum; i++) {
