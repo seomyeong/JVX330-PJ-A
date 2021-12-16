@@ -30,7 +30,7 @@ body {
 h1 {
 	margin-top: 28px;
 	text-align: center;
-	font-size: 65px;
+	font-size: 35px;
 	font-weight: bold;
 }
 
@@ -52,9 +52,10 @@ p {
 }
 
 #order {
-	overflow-y: scroll;
+    position: relative;
 	margin: 25px auto 40px;
 	width: 680px;
+    height: 230px;
 	text-align: center;
 	border-top: 2px dotted #000;
 	border-bottom: 2px dotted #000;
@@ -66,13 +67,16 @@ p {
 }
 
 #order tbody {
+	position: absolute; top: 100px; left: 0px;
 	border-top: 2px dotted #000;
 	border-bottom: 2px dotted #000;
+	height: 100px;
+    width: 680px;
+    overflow-y: scroll;
 }
 
-#order tbody td:first-child {
-	float: left;
-	line-height: 35px;
+#order tbody tr td{
+   width: 20%;
 }
 
 #creditInfo {
@@ -90,7 +94,7 @@ p {
 
 a {
 	position: absolute;
-	bottom: -115px;
+	bottom: -60px;
 	left: calc(50% - 110px);
 	width: 220px;
 	display: block;

@@ -16,4 +16,12 @@ public class PaymentServiceImpl implements PaymentService{
 	public void payByCreditCard(PaymentHistory paymentHistory) {
 		paymentDao.insertCreditCardInfo(paymentHistory);
 	}
+
+	public String getPayRegDate(int totalPayRegDateNum) {
+		return paymentDao.selectPayRegDate(totalPayRegDateNum);
+	}
+
+	public int totalCount() {
+		return paymentDao.totalCount();
+	}
 }
