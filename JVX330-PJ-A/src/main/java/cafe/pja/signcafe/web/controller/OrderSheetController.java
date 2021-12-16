@@ -62,15 +62,23 @@ public class OrderSheetController {
 				userPhone = cookie.getValue();
 			}
 		}
+		// 쿠키가 없으면 GUEST
+		if(userPhone == null) {
+			userPhone = "GUEST";
+		}
+		
+		System.out.println(userPhone);
 
-		// CAFE_USER 테이블에 mileage 정산
-		// 마일리지 부족하면 안되게하기
-		if (!(userService.calculMileage(userPhone, payment.getAmount()))) {
-			mav.addObject("errorMsg", "사용할 마일리지가 보유한 마일리지를 초과했습니다.");
-			mav.setViewName("menuService/payment_Page");
-			
-			context.close();
-			return mav;
+		if(!(userPhone.equals("GUEST"))) {
+			// CAFE_USER 테이블에 mileage 정산
+			// 마일리지 부족하면 안되게하기
+			if (!(userService.calculMileage(userPhone, payment.getAmount()))) {
+				mav.addObject("errorMsg", "사용할 마일리지가 보유한 마일리지를 초과했습니다.");
+				mav.setViewName("menuService/payment_Page");
+				
+				context.close();
+				return mav;
+			}			
 		}
 
 		// PAYMENT_HISTORY 테이블에 payment에서 요소 뽑아와서 넣기
