@@ -8,9 +8,9 @@ $('#titleMenu p').on('click', function(e) {
 	$(this).parent().siblings('article:eq(' + num + ')').show()
 	e.preventDefault()
 })
-
-
-
+ 
+ 
+ 
 
 //개별 메뉴 ordered에 append
 $(document).ready(function() {
@@ -275,7 +275,7 @@ $(document).ready(function() {
 				sizeState2[index] = 0;
 				sizeState3[index] = 0;
 				$('#eachCart' + (index + 1)).find('.price').val(basicSum[index]);
-			}
+			} 
 			if (sizeState[index] == 1) {
 				basicSum[index] -= 1000;
 				sizeState[index] = 0;
