@@ -10,7 +10,7 @@ import cafe.pja.signcafe.domain.OrderedList;
 import cafe.pja.signcafe.domain.User;
 import cafe.pja.signcafe.web.command.Info;
 
-public class AdminServiceImpl {
+public class AdminServiceImpl implements AdminService {
 	private AdminDao adminDao;
 
 	public AdminServiceImpl(JdbcTemplate jdbcTemplate) {
