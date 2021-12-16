@@ -5,7 +5,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import cafe.pja.signcafe.dao.UserDao;
 import cafe.pja.signcafe.domain.User;
 
-public class UserServiceImpl {
+public class UserServiceImpl implements UserService{
 	private UserDao userDao;
 
 	public UserServiceImpl(JdbcTemplate jdbcTemplate) {

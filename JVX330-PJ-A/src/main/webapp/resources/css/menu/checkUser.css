@@ -1,22 +1,25 @@
 @charset "UTF-8";
 
 #checkUserPage {
-    position: relative;
-    margin: 10px auto 10px;
-    width: 600px; height: 480px;
+	position: relative;
+	margin: 10px auto 10px;
+	width: 600px;
+	height: 480px;
 }
 
 #checkUserForm h2 {
-    text-align: center;
-    font-size: 40px;
-    position: relative; top: 70px;
-    color: #000;
+	text-align: center;
+	font-size: 40px;
+	position: relative;
+	top: 70px;
+	color: #000;
 }
 
 #checkUserForm table {
-    margin: 140px auto;
-    width: 300px;
-    border-radius: 5px; text-align: center; 
+	margin: 140px auto;
+	width: 300px;
+	border-radius: 5px;
+	text-align: center;
 }
 
 #checkUserForm table th {
@@ -34,49 +37,58 @@
 }
 
 #checkUserBtn {
-    position: absolute; bottom: 20px; left: 110px;
+	position: absolute;
+	bottom: 20px;
+	left: 110px;
 }
 
 #checkUserPage p {
-	position: relative; top: 120px;
-    text-align: center;
-    color: #000;
-    font-weight: bold;
+	position: relative;
+	top: 120px;
+	text-align: center;
+	color: #000;
+	font-weight: bold;
 }
 
 #checkUserBtn input {
-    width: 180px;
-    line-height: 50px;
-    font-size: 15px;
-    border-radius: 10px; border: 2px solid #000;
-    background: #fff;
-    font-family: 'EliceDigitalBaeum_Bold';
-    cursor: pointer;
+	width: 180px;
+	line-height: 50px;
+	font-size: 15px;
+	border-radius: 10px;
+	border: 2px solid #000;
+	background: #fff;
+	font-family: 'EliceDigitalBaeum_Bold';
+	cursor: pointer;
 }
 
 #checkUserBtn a {
-    display: inline-block;
-    width: 180px; line-height: 50px;
-    border: 2px solid #000;
-    border-radius: 10px;
-    text-align: center;
+	display: inline-block;
+	width: 180px;
+	line-height: 50px;
+	border: 2px solid #000;
+	border-radius: 10px;
+	text-align: center;
 }
 
 #addUserBtn {
-	position: absolute; bottom: 85px; left: 115px;
+	position: absolute;
+	bottom: 85px;
+	left: 115px;
 	width: 360px;
-    line-height: 40px;
-    font-size: 15px;
-    border-radius: 10px; border: 2px solid #000;
-    background: #fff;
-    font-family: 'EliceDigitalBaeum_Bold';
-    cursor: pointer;
-    text-align: center;
-    background-color: #ddd;
+	line-height: 40px;
+	font-size: 15px;
+	border-radius: 10px;
+	border: 2px solid #000;
+	background: #fff;
+	font-family: 'EliceDigitalBaeum_Bold';
+	cursor: pointer;
+	text-align: center;
+	background-color: #ddd;
 }
 
 #checkUserBtn input:hover {
-	background: #000; color: #fff;
+	background: #000;
+	color: #fff;
 }
 
 #checkUserBtn a:hover {

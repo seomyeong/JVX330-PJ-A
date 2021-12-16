@@ -14,9 +14,10 @@
 </head>
 <body>
 	<%-- <jsp:include page="/resources/incl/signCafeIncl.jsp"></jsp:include> --%>
-	<h1>주문서</h1>
+	<h1>SIGN CAFE</h1>
 	<p>주문이 성공적으로 완료되었습니다.</p>
 	<table id="order">
+		<caption>주문서</caption>
 		<thead>
 			<tr>
 				<th>MenuName</th>
@@ -94,7 +95,7 @@
 		</tfoot>
 	</table>
 
-	<p>신용승인정보</p>
+	<p class="creditInfo">신용승인정보</p>
 	<table id="creditInfo">
 		<tr>
 			<th>카 드 종 류 :</th>

@@ -7,7 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import cafe.pja.signcafe.dao.MenuInfoDao;
 import cafe.pja.signcafe.domain.MenuInfo;
 
-public class MenuServiceImpl {
+public class MenuServiceImpl implements MenuService{
 	private MenuInfoDao menuInfoDao;
 	
 	public MenuServiceImpl(JdbcTemplate jdbcTemplate) {

@@ -5,7 +5,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import cafe.pja.signcafe.dao.PaymentDao;
 import cafe.pja.signcafe.domain.PaymentHistory;
 
-public class PaymentServiceImpl {
+public class PaymentServiceImpl implements PaymentService{
 
 	private PaymentDao paymentDao;
 	
