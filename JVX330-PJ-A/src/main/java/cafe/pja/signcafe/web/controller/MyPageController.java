@@ -15,7 +15,6 @@ import org.springframework.web.servlet.ModelAndView;
 import cafe.pja.signcafe.data.DataSourceConfig;
 import cafe.pja.signcafe.domain.User;
 import cafe.pja.signcafe.service.UserServiceImpl;
-import lombok.Getter;
 
 @Controller("controller.myPageController")
 public class MyPageController {
