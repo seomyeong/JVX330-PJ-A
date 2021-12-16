@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 import cafe.pja.signcafe.domain.User;
+import lombok.Getter;
 
 public class UserDao {
 	private JdbcTemplate jdbcTemplate;
@@ -105,5 +106,9 @@ public class UserDao {
 		jdbcTemplate.update(sql, user.getPhone(), user.getPassWd(), connectUserPhone);
 	}
 	
+	public void updateMileage(String userPhone, double mileage) {
+		String sql = "UPDATE CAFE_USER SET mileage=? WHERE phone=?";
+		jdbcTemplate.update(sql, mileage, userPhone);
+	}
 
 }

@@ -58,7 +58,7 @@ public class PaymentController {
 			
 			mav.addObject("orderPrice", orderPrice);
 			mav.addObject("user", userInfo);
-			mav.setViewName("menuService/payment");
+			mav.setViewName("menuService/payment_Page");
 			context.close();
 			return mav;
 		} else {

@@ -1,6 +1,5 @@
 package cafe.pja.signcafe.domain;
 
-
 public class MenuInfo {
 	private long menuNum;		//PK
 	private String category;
