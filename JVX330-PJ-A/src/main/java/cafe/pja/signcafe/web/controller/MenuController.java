@@ -15,31 +15,14 @@ import cafe.pja.signcafe.service.MenuServiceImpl;
 
 @Controller("controller.menuController")
 public class MenuController {
-	@GetMapping("menuService/menuPage")
-	public ModelAndView menuPageGet() {
-		GenericApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
-		MenuServiceImpl menuService = (MenuServiceImpl) context.getBean("menuServiceImpl");
-
-		ModelAndView mav = new ModelAndView();
-
-		// menu_Page.jsp 진입시 메뉴목록들을 보여준다.
-		List<MenuInfo> menuInfoList = menuService.allMenu();
-		mav.addObject("menuInfoList", menuInfoList);
-
-		mav.setViewName("menuService/menu_Page");
-
-		context.close();
-		return mav;
-	}
-
-	
-//	@PostMapping("menuService/menuPage")
-//	public ModelAndView menuPage() {
+//	@GetMapping("menuService/menuPage")
+//	public ModelAndView menuPageGet() {
 //		GenericApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
 //		MenuServiceImpl menuService = (MenuServiceImpl) context.getBean("menuServiceImpl");
 //
 //		ModelAndView mav = new ModelAndView();
 //
+//		// menu_Page.jsp 진입시 메뉴목록들을 보여준다.
 //		List<MenuInfo> menuInfoList = menuService.allMenu();
 //		mav.addObject("menuInfoList", menuInfoList);
 //
@@ -48,5 +31,22 @@ public class MenuController {
 //		context.close();
 //		return mav;
 //	}
+
+	
+	@PostMapping("menuService/menuPage")
+	public ModelAndView menuPage() {
+		GenericApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
+		MenuServiceImpl menuService = (MenuServiceImpl) context.getBean("menuServiceImpl");
+
+		ModelAndView mav = new ModelAndView();
+
+		List<MenuInfo> menuInfoList = menuService.allMenu();
+		mav.addObject("menuInfoList", menuInfoList);
+
+		mav.setViewName("menuService/menu_Page");
+
+		context.close();
+		return mav;
+	}
 
 }

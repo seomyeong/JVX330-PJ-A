@@ -10,7 +10,7 @@ $('#titleMenu p').on('click', function(e) {
 })
  
  
-  
+   
 
 //개별 메뉴 ordered에 append
 $(document).ready(function() {
@@ -82,7 +82,7 @@ $(document).ready(function() {
 
 		let html =
 			"<div id=" + eachCartNum + " class='commonCart'>" +
-			"<input type='text' name=" + nameNameNum + " class='cartName' value=''>" +
+			"<input type='text' name=" + nameNameNum + " class='cartName' value='' readonly>" +
 
 			"<div id='tempWrap'>" +
 			"<label for=" + eachHotNum + "><input type='radio' id=" + eachHotNum + " class='temp' name=" + tempNameNum + " value='0' checked>HOT</label>" +
@@ -103,7 +103,7 @@ $(document).ready(function() {
 
 		let htmlFood =
 			"<div id=" + eachCartNum + " class='commonCart'>" +
-			"<input type='text' name=" + nameNameNum + " class='cartName' value=''>" +
+			"<input type='text' name=" + nameNameNum + " class='cartName' value='' readonly>" +
 
 			"<div id='tempWrap'>" +
 			"<input type='hidden' id=" + eachHotNum + " class='temp' name=" + tempNameNum + " value='0' checked>" +
@@ -123,7 +123,7 @@ $(document).ready(function() {
 
 		let htmlBlended =
 			"<div id=" + eachCartNum + " class='commonCart'>" +
-			"<input type='text' name=" + nameNameNum + " class='cartName' value=''>" +
+			"<input type='text' name=" + nameNameNum + " class='cartName' value='' readonly>" +
 
 			"<div id='tempWrap'>" +
 			"<input type='hidden' id=" + eachHotNum + " class='temp' name=" + tempNameNum + " value='0' checked>" +
