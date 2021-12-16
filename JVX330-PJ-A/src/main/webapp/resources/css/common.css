@@ -1,11 +1,16 @@
 @charset "utf-8";
 
-@import
-	url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@font-face {
+    font-family: 'OTWelcomeRA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 
 body, h1, h2, h3, h4, h5, h6, table, tr, th, td, ul, p, img, input {
 	margin: 0;
 	padding: 0;
+	font-family: 'OTWelcomeRA';
 }
 
 a {
@@ -26,6 +31,5 @@ body {
 	min-width: 1280px;
 	position: relative;
 	overflow: hidden;
-	font-family: 'Raleway', sans-serif;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'OTWelcomeRA';
 }
