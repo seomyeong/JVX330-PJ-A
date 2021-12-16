@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>signCafe</title>
+<title>SignCafe</title>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/common.css">
 <link rel="stylesheet"

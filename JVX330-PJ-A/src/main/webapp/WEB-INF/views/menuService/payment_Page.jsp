@@ -66,6 +66,7 @@
 				</tr>
 			</table>
 		
+			<p id="errorMsg">${errorMsg}</p>
 			<div id="paymentBtn">
 				<a href="<%=request.getContextPath()%>/menuService/menuPage">주문취소</a>
 				<input type="submit" value="결제">

@@ -32,6 +32,7 @@ public class MyPageLoginController {
 		
 		if(service.myPageLogin(user)) { // 로그인에 성공한 경우, 마이페이지로 이동
 			User userInfo = service.userInfoByPhone(user);
+			// 비밀번호만 수정하고 싶을 때 중복확인에서 현재 로그인한 아이디는 배제하기 위해서 작성
 			Cookie cookie = new Cookie("connectUserPhone", user.getPhone());
 			
 			cookie.setMaxAge(60*60*24);

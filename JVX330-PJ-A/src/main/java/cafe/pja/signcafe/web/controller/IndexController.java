@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class IndexController {
 	@GetMapping("Index")
 	public String mainPage(HttpServletRequest request) {
+		// inex.jsp진입시 세션 초기화
 		HttpSession session = request.getSession();
 		
 		session.invalidate();
