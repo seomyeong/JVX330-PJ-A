@@ -63,7 +63,7 @@ public class PaymentController {
 			return mav;
 		} else {
 			mav.addObject("errorMsg", "입력하신 정보와 일치하는 회원정보가 없습니다.");
-			mav.setViewName("menuService/checkUser");
+			mav.setViewName("menuService/check_user");
 			context.close();
 			return mav;
 		}
