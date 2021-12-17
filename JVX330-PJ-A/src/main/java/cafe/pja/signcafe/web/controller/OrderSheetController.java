@@ -67,8 +67,6 @@ public class OrderSheetController {
 			userPhone = "GUEST";
 		}
 		
-		System.out.println(userPhone);
-
 		if(!(userPhone.equals("GUEST"))) {
 			// CAFE_USER 테이블에 mileage 정산
 			// 마일리지 부족하면 안되게하기
@@ -113,15 +111,18 @@ public class OrderSheetController {
 			orderedList.add(o);
 		}
 		
-		double addMileage = totalPrice / 100 * 3;
+		double addMileage = 0;
 		
-		if(!(userPhone.equals("GUEST"))) {
-			// totalPrice에 대한 0.03% 마일리지 적립
-			paymentService.addMileage(userPhone, userService.findMileage(userPhone) + addMileage);
-			
-		} else {
-			addMileage = 0;
+		// 마일리지를 쓸 경우에는 0.03% 마일리지 적립이 되지않는다.
+		if(payment.getAmount() == 0) {
+			if(!(userPhone.equals("GUEST"))) {
+				// totalPrice에 대한 0.03% 마일리지 적립
+				addMileage = totalPrice / 100 * 3;
+				paymentService.addMileage(userPhone, userService.findMileage(userPhone) + addMileage);
+				
+			}			
 		}
+		
 
 		// orderedList를 db안에 넣기
 		orderedListService.order(orderedList);
