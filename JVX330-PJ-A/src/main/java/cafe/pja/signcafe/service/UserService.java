@@ -13,7 +13,7 @@ public interface UserService {
 	//폰번호로 유저 찾기
 	public User userInfoByPhone(User user);
 	
-	//쿠키로 넘겨온 폰번호로 유저 정보 수정
+	//쿠키 폰번호로 유저 정보 수정
 	public boolean updateUserInfo(User user, String connectUserPhone);
 	
 	//checkUser.jsp 에서 입력한 폰번호가 디비의 폰번호와 일치하는지 확인

@@ -118,12 +118,16 @@
 			<td>${payment.orderPrice / 100 * 10}</td>
 		</tr>
 		<tr>
-			<th>할인 금액 :</th>
+			<th>할 인 금액 :</th>
 			<td>${payment.amount}</td>
 		</tr>
 		<tr>
 			<th>승 인 금 액 :</th>
 			<td>${totalPrice - payment.amount}</td>
+		</tr>
+		<tr>
+			<th>적 립 금 액 :</th>
+			<td>${addMileage}</td>
 		</tr>
 		<tr>
 			<th>승 인 일 시 :</th>

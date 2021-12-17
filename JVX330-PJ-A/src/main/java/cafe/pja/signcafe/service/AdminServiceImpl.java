@@ -17,6 +17,7 @@ public class AdminServiceImpl implements AdminService {
 		adminDao = new AdminDao(jdbcTemplate);
 	}
 
+	@Override
 	public boolean adminLogin(User user) {
 		if (user.getName().equals("admin") && user.getPassWd().equals("admin")) {
 			return true;
@@ -24,6 +25,7 @@ public class AdminServiceImpl implements AdminService {
 		return false;
 	}
 	
+	@Override
 	public Info allInquiryInfo() {
 		List<MenuInfo> m = adminDao.allInquiryMenuInfo();
 		List<User> u = adminDao.allInquiryUserInfo();

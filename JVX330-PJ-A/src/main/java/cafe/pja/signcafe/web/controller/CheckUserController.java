@@ -75,8 +75,6 @@ public class CheckUserController {
 		
 		context.close();
 		return mav;
-		
-		
 	}
 	
 	

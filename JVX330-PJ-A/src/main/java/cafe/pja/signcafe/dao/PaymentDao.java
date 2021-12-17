@@ -60,4 +60,9 @@ public class PaymentDao {
 		});
 		return this.count;
 	}
+
+	public void addMileage(String userPhone, double mileage) {
+		String sql = "UPDATE CAFE_USER SET mileage=? WHERE phone=?";
+		jdbcTemplate.update(sql, mileage, userPhone);
+	}
 }

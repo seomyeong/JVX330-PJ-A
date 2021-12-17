@@ -24,10 +24,6 @@ public class AddUserController {
 		GenericApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
 		UserServiceImpl service = (UserServiceImpl) context.getBean("userServiceImpl");
 
-		System.out.println("Input user Name : " + user.getName());
-		System.out.println("Input user Phone : " + user.getPhone());
-		System.out.println("Input user passWd : " + user.getPassWd());
-
 		ModelAndView mav = new ModelAndView();
 
 		if (service.addUser(user)) {

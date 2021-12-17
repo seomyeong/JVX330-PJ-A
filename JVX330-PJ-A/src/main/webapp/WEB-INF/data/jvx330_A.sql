@@ -52,7 +52,7 @@ CREATE TABLE PAYMENT_HISTORY(
 
 ---CAFE_USER TABLE : admin 계정, 일반 멤버쉽 가입 예제---
 INSERT INTO CAFE_USER(name,phone,passWd) VALUES ('admin', 'admin', 'admin');
-INSERT INTO CAFE_USER(name, phone, passWd, mileage) VALUES('서명', '010123123', '1234', 1000000.0);
+INSERT INTO CAFE_USER(name, phone, passWd, mileage) VALUES('이서명', '01012341234', '1234', 10000.0);
 INSERT INTO CAFE_USER(name, phone, passWd, mileage) VALUES('종성테스트', '01012344321', '1234', 12000.0);
 
 
@@ -76,8 +76,7 @@ INSERT INTO MENU_INFO(category, menuName, menuPrice, menuImgPath) VALUES('FOOD',
 --MENU_INFO TABLE : 판매누적수량, 마일리지 사용액 누적 예제--
 UPDATE MENU_INFO SET menuCount=2 WHERE menuNum=1;
 UPDATE MENU_INFO SET menuCount=5, MILEAGECOUNT=500.0 WHERE menuNum=2;
-UPDATE MENU_INFO SET menuCount=11 WHERE ordered_MenuNum=11 AND orderedList=2;
-UPDATE MENU_INFO SET FROM ORDERED a INNER JOIN 
+
 
 --ORDERED TABLE : INSERT 예제--
 INSERT INTO ORDERED(ordered_customerInfo, ordered_MenuNum, ordered_extraSize_Price, ordered_extraTemp_Price,
