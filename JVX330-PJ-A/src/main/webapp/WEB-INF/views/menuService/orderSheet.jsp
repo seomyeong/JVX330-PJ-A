@@ -127,7 +127,7 @@
 		</tr>
 		<tr>
 			<th>적 립 금 액 :</th>
-			<td>${totalPrice / 100 * 3}</td>
+			<td>${addMileage}</td>
 		</tr>
 		<tr>
 			<th>승 인 일 시 :</th>

@@ -113,15 +113,21 @@ public class OrderSheetController {
 			orderedList.add(o);
 		}
 		
+		double addMileage = totalPrice / 100 * 3;
+		
 		if(!(userPhone.equals("GUEST"))) {
 			// totalPrice에 대한 0.03% 마일리지 적립
-			paymentService.addMileage(userPhone, userService.findMileage(userPhone) + totalPrice / 100 * 3);
+			paymentService.addMileage(userPhone, userService.findMileage(userPhone) + addMileage);
+			
+		} else {
+			addMileage = 0;
 		}
 
 		// orderedList를 db안에 넣기
 		orderedListService.order(orderedList);
 		
 		// 영수증 출력
+		mav.addObject("addMileage", addMileage);
 		mav.addObject("payment", payment);
 		mav.addObject("totalPrice", totalPrice);
 		mav.addObject("cart", cart);
