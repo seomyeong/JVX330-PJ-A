@@ -52,10 +52,10 @@ p {
 }
 
 #order {
-    position: relative;
+   position: relative;
    margin: 25px auto 40px;
    width: 680px;
-    height: 230px;
+   height: 230px;
    text-align: center;
    border-top: 2px dotted #000;
    border-bottom: 2px dotted #000;
@@ -71,15 +71,16 @@ p {
    border-top: 2px dotted #000;
    border-bottom: 2px dotted #000;
    height: 100px;
-    width: 680px;
-    overflow-y: scroll;
+   width: 680px;
+   overflow-y: scroll;
 }
 
 #order tbody tr td{
    width: 9%;
 }
 
-#order thead tr th{
+#order thead tr th {
+	height: 62px;
 	width: 9%;
 }
 
