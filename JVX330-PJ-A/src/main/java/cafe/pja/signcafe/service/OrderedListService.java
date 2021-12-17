@@ -12,7 +12,7 @@ public interface OrderedListService {
 	// MenuInfo테이블에 usingMileage update
 	public void updateMenuMileage(OrderedList orderedList);
 	
-	//
+	//Ordered테이블에 insert
 	public void order(List<OrderedList> orderedList);
 
 }

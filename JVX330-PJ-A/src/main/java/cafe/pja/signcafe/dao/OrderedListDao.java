@@ -36,11 +36,6 @@ public class OrderedListDao {
 		jdbcTemplate.update(sql, user.getMileage()+usingMileage, connectUserPhone);
 	}
 	
-	
-	public void updatePayment() {
-		
-	}
-	
 	public void updateOrderedTable(List<OrderedList> orderedList) {
 		String sql = "INSERT INTO ORDERED(ordered_customerInfo, ordered_MenuName, ordered_extraSize_Price, ordered_extraTemp_Price, ordered_menuCount, ordered_usingMileage, ordered_totalPrice) VALUES (?, ?, ?, ?, ?, ?, ?)";
 		
