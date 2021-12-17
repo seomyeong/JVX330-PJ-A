@@ -19,7 +19,7 @@
 	defer="defer"></script>
 
 </head>
-<body>
+<body> 
 	<jsp:include page="/resources/incl/signCafeIncl.jsp"></jsp:include>
 	<section id="menuListWrap">
 		<h2 class="hidden">카페 메뉴</h2>

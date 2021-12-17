@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>signCafeIncl</title>
-<style>
+<style> 
 @import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
 
