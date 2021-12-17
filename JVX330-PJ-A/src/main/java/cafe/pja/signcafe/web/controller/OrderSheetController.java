@@ -36,6 +36,7 @@ public class OrderSheetController {
 		return "menuService/menuPage";
 	}
 
+	
 	@PostMapping("menuService/orderSheet")
 	public ModelAndView orderSheet(@ModelAttribute PaymentCommand payment, HttpServletRequest request) {
 		GenericApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
@@ -77,16 +78,16 @@ public class OrderSheetController {
 				context.close();
 				return mav;
 			}
-
 		}
 
+		
 		// PAYMENT_HISTORY 테이블에 payment에서 요소 뽑아와서 넣기
 		paymentHistory.setPayment_customerInfo(userPhone);
 		paymentHistory.setCreditCard(payment.getCreditCard());
 		paymentHistory.setCreditCardNum(payment.getCardNum());
 		paymentHistory.setOrderPrice(payment.getOrderPrice());
-
 		paymentService.payByCreditCard(paymentHistory);
+		
 		String payRegDate = paymentService.getPayRegDate(paymentService.totalCount());
 
 		for (OrderedList c : cart) {
