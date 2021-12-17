@@ -96,4 +96,10 @@ public class UserServiceImpl implements UserService{
 		return true;
 	}
 
+	public double findMileage(String userPhone) {
+		User user = new User();
+		user.setPhone(userPhone);
+		return userDao.searchUserByPhone(user).getMileage();
+	}
+
 }

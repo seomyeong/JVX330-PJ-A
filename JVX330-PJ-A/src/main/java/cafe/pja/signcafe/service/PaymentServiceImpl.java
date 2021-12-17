@@ -29,6 +29,6 @@ public class PaymentServiceImpl implements PaymentService{
 	}
 
 	public void addMileage(String userPhone, double totalPrice) {
-		paymentDao.addMileage(userPhone, totalPrice / 100 * 3);
+		paymentDao.addMileage(userPhone, totalPrice);
 	}
 }

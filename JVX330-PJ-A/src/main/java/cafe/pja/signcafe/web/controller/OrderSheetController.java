@@ -115,8 +115,7 @@ public class OrderSheetController {
 		
 		if(!(userPhone.equals("GUEST"))) {
 			// totalPrice에 대한 0.03% 마일리지 적립
-			paymentService.addMileage(userPhone, totalPrice);
-			System.out.println(totalPrice + " / 0.03 = " + totalPrice / 100 * 3 );
+			paymentService.addMileage(userPhone, userService.findMileage(userPhone) + totalPrice / 100 * 3);
 		}
 
 		// orderedList를 db안에 넣기
