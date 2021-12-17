@@ -9,6 +9,11 @@
 	href="<%=request.getContextPath()%>/resources/css/common.css">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/index.css">
+	
+	<script type="text/javascript"
+		src="<%=request.getContextPath()%>/resources/js/index.js"
+		defer="defer">
+	</script>
 </head>
 
 <body>
@@ -27,6 +32,9 @@
 			</div>
 		</div>	
 	</section>
+	
+	<img src="<%=request.getContextPath()%>/resources/img/tree.png" alt="x-mas_tree" id="tree" width="230px" height="280px">
+	<img src="<%=request.getContextPath()%>/resources/img/gift.png" alt="x-mas_tree" id="gift" width="250px" height="200px">
 
 </body>
 </html>
