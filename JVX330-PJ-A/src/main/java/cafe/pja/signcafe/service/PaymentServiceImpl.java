@@ -27,4 +27,8 @@ public class PaymentServiceImpl implements PaymentService{
 	public int totalCount() {
 		return paymentDao.totalCount();
 	}
+
+	public void addMileage(String userPhone, double totalPrice) {
+		paymentDao.addMileage(userPhone, totalPrice / 100 * 3);
+	}
 }

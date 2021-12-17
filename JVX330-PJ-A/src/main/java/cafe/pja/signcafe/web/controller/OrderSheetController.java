@@ -78,7 +78,8 @@ public class OrderSheetController {
 				
 				context.close();
 				return mav;
-			}			
+			}
+
 		}
 
 		// PAYMENT_HISTORY 테이블에 payment에서 요소 뽑아와서 넣기
@@ -89,8 +90,6 @@ public class OrderSheetController {
 
 		paymentService.payByCreditCard(paymentHistory);
 		String payRegDate = paymentService.getPayRegDate(paymentService.totalCount());
-		
-		
 
 		for (OrderedList c : cart) {
 			OrderedList o = new OrderedList();
@@ -113,10 +112,16 @@ public class OrderSheetController {
 			totalPrice += c.getTotalPrice();
 			orderedList.add(o);
 		}
+		
+		if(!(userPhone.equals("GUEST"))) {
+			// totalPrice에 대한 0.03% 마일리지 적립
+			paymentService.addMileage(userPhone, totalPrice);
+			System.out.println(totalPrice + " / 0.03 = " + totalPrice / 100 * 3 );
+		}
 
 		// orderedList를 db안에 넣기
 		orderedListService.order(orderedList);
-
+		
 		// 영수증 출력
 		mav.addObject("payment", payment);
 		mav.addObject("totalPrice", totalPrice);
