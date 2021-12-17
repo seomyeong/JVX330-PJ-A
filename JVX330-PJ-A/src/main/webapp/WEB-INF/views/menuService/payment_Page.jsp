@@ -65,7 +65,7 @@
 					<td><input type="text" name="orderPrice" value="${orderPrice}"></td>
 				</tr>
 			</table>
-			<p>마일리지를 사용할 경우에는 현재 결제금액에 대해 적립이 되지 않습니다.</p>
+			<p id="warning">비회원이거나 마일리지를 사용할 경우에는 현재 결제금액에 대해 적립이 되지 않습니다.</p>
 			<p id="errorMsg">${errorMsg}</p>
 			<div id="paymentBtn">
 				<a href="<%=request.getContextPath()%>/menuService/menuPage">주문취소</a>
