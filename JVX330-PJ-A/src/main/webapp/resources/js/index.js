@@ -1,8 +1,8 @@
-for(let i = 0 ; i < 50 ; i++){
+for(let i = 0 ; i < 20 ; i++){
     
 	let randTop =  Math.floor(Math.random() * (-window.innerHeight));
     let randLeft = Math.floor(Math.random() * window.innerWidth);
-	let size = Math.ceil(Math.random()*10)+20;  
+	let size = Math.ceil(Math.random()*10)+30;  
 	
 	let newDiv = document.createElement('div');
 	
